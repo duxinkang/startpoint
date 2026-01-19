@@ -5,6 +5,7 @@ import React from "react"
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navItems = [
   { label: "痛点", href: "#problems" },
@@ -49,8 +50,14 @@ export function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-[#fc9918] flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-md">
-              <span className="text-white font-bold text-sm">SP</span>
+            <div className="w-8 h-8 rounded-lg overflow-hidden group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-md">
+              <Image 
+                src="/logo.jpg" 
+                alt="StartPoint Logo" 
+                width={32} 
+                height={32} 
+                className="object-cover"
+              />
             </div>
             <span className="font-bold text-lg text-foreground">
               起始点 <span className="text-gradient-animate">StartPoint</span>
