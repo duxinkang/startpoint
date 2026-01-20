@@ -14,7 +14,7 @@ const steps = [
     icon: Route,
     number: "二",
     title: "打通渠道",
-    description: "建立1-2条有效的初始获客路径，并验证转化",
+    description: "建立2-3条有效的初始获客路径，并验证转化",
   },
   {
     icon: BookOpen,

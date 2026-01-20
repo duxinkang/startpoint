@@ -13,7 +13,7 @@ const problems = [
   {
     icon: Target,
     number: "2",
-    title: '产品能用，但没人"非你不可"',
+    title: '产品能用，但没"非你不可"',
     description: "功能完善，却缺乏让用户选择你的独特理由",
   },
   {
