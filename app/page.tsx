@@ -6,6 +6,7 @@ import { Promise } from "@/components/sections/promise";
 import { Comparison } from "@/components/sections/comparison";
 import { Engine } from "@/components/sections/engine";
 import { Advantages } from "@/components/sections/advantages";
+import { ClientCase } from "@/components/sections/client-case";
 import { FAQ } from "@/components/sections/faq";
 import { Team } from "@/components/sections/team";
 import { Pricing } from "@/components/sections/pricing";
@@ -27,6 +28,9 @@ export default function Home() {
         <Engine />
         <section id="advantages">
           <Advantages />
+        </section>
+        <section id="client-case">
+          <ClientCase />
         </section>
         <FAQ />
         <section id="team">
