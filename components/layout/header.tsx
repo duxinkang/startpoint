@@ -13,7 +13,7 @@ const navItems = [
   { label: "优势", href: "#advantages" },
   { label: "团队", href: "#team" },
   { label: "价格", href: "#pricing" },
-  { label: "毒舌Agent", href: "/dify" },
+  { label: "毒舌Agent", href: "/viperVC" },
 ];
 
 const externalNavItems = navItems.filter(item => item.href.startsWith('/'));
