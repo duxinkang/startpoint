@@ -13,7 +13,10 @@ const navItems = [
   { label: "优势", href: "#advantages" },
   { label: "团队", href: "#team" },
   { label: "价格", href: "#pricing" },
+  { label: "Dify", href: "/dify" },
 ];
+
+const externalNavItems = navItems.filter(item => item.href.startsWith('/'));
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,11 +32,13 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
     setIsMobileMenuOpen(false);
   };
@@ -49,7 +54,7 @@ export function Header() {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
+          <a href="/" className="flex items-center gap-2 group">
             <div className="w-8 h-8 rounded-lg overflow-hidden group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-md">
               <Image 
                 src="/logo.jpg" 
@@ -70,7 +75,7 @@ export function Header() {
               <a
                 key={item.label}
                 href={item.href}
-                onClick={(e) => handleSmoothScroll(e, item.href)}
+                onClick={(e) => handleNavigation(e, item.href)}
                 className={`relative text-muted-foreground hover:text-primary transition-all duration-300 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-[#fc9918] after:transition-all after:duration-300 hover:after:w-full ${
                   mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
                 }`}
@@ -125,7 +130,7 @@ export function Header() {
                     isMobileMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
                   }`}
                   style={{ transitionDelay: `${index * 50}ms` }}
-                  onClick={(e) => handleSmoothScroll(e, item.href)}
+                  onClick={(e) => handleNavigation(e, item.href)}
                 >
                   {item.label}
                 </a>
