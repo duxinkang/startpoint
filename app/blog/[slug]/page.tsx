@@ -80,7 +80,7 @@ const BlogPost = ({ params }: { params: Promise<{ slug: string }> }) => {
     }).join('\n');
     
     // Replace ul blocks
-    htmlContent = ulLines.replace(/(<li class="ml-6">.*?\n?)+/gs, match => {
+    htmlContent = ulLines.replace(/(<li class="ml-6">[^\0]*?\n?)+/g, match => {
       return `<ul class="list-disc my-4 pl-6">${match}</ul>`;
     });
 
@@ -95,7 +95,7 @@ const BlogPost = ({ params }: { params: Promise<{ slug: string }> }) => {
     }).join('\n');
     
     // Replace ol blocks
-    htmlContent = olLines.replace(/(<li class="ml-6">.*?\n?)+/gs, match => {
+    htmlContent = olLines.replace(/(<li class="ml-6">[^\0]*?\n?)+/g, match => {
       return `<ol class="list-decimal my-4 pl-6">${match}</ol>`;
     });
 

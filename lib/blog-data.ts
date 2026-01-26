@@ -1,13 +1,4 @@
-export interface BlogPost {
-  id: string;
-  slug: string;
-  title: string;
-  author: string;
-  readTime: string;
-  originalUrl: string;
-  fetchTime: string;
-  content: string;
-}
+import { BlogPost } from '@/lib/types/blog.types';
 
 const blogPosts: BlogPost[] = [
   {
@@ -113,4 +104,4 @@ const blogPosts: BlogPost[] = [
 ];
 
 export default blogPosts;
-export { BlogPost };
+export type { BlogPost };
