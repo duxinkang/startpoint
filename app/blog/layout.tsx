@@ -25,7 +25,7 @@ const BlogLayout = ({ children }: { children: React.ReactNode }) => {
       
       <footer className="bg-white border-t mt-12 py-8">
         <div className="container mx-auto px-6 text-center text-muted-foreground">
-          <p>© {new Date().getFullYear()} 品牌营销深度解析 - Demand Curve</p>
+          <p>© {new Date().getFullYear()} 品牌营销深度解析 - Start Point</p>
         </div>
       </footer>
     </div>

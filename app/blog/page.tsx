@@ -35,7 +35,7 @@ const BlogPage = () => {
     <div className="min-h-screen bg-background pt-20 pb-16">
       <div className="container mx-auto px-6 max-w-4xl">
         <h1 className="text-4xl font-bold text-center mb-4 text-foreground">品牌营销深度解析 - 博客</h1>
-        <p className="text-center text-muted-foreground mb-12">来自 Demand Curve 的精选营销文章</p>
+        <p className="text-center text-muted-foreground mb-12">来自 Start Point 的精选营销文章</p>
         
         <div className="space-y-8">
           {blogPosts.map((post) => {
