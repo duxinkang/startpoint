@@ -7,4 +7,5 @@ export interface PlaybooksPost {
   originalUrl: string;
   fetchTime: string;
   content: string;
+  thumbnail: string;
 }

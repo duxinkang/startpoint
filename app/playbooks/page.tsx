@@ -19,17 +19,28 @@ const PlaybooksPage = () => {
               <Link
                 key={post.slug}
                 href={`/playbooks/${post.slug}`}
-                className="group bg-card border border-border rounded-xl p-6 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 transform hover:-translate-y-1"
+                className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 transform hover:-translate-y-1"
               >
-                <h2 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {post.title}
-                </h2>
-                <p className="text-muted-foreground mb-4 line-clamp-3">
-                  {post.content.replace(/[#*`]/g, '').substring(0, 150)}...
-                </p>
-                <div className="flex items-center text-sm text-primary">
-                  阅读更多
-                  <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                {post.thumbnail && (
+                  <div className="aspect-video overflow-hidden bg-muted">
+                    <img 
+                      src={post.thumbnail} 
+                      alt={post.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                )}
+                <div className="p-6">
+                  <h2 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {post.title}
+                  </h2>
+                  <p className="text-muted-foreground mb-4 line-clamp-3">
+                    {post.content.replace(/[#*`]/g, '').substring(0, 150)}...
+                  </p>
+                  <div className="flex items-center text-sm text-primary">
+                    阅读更多
+                    <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                  </div>
                 </div>
               </Link>
             ))}
