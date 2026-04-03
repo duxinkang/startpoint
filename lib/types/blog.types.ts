@@ -7,4 +7,5 @@ export interface BlogPost {
   originalUrl: string;
   fetchTime: string;
   content: string;
+  thumbnail?: string;
 }

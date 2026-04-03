@@ -9,18 +9,18 @@ import Image from "next/image";
 
 const navItems = [
   { label: "痛点", href: "#problems" },
-  { label: "服务", href: "#promise" },
-  { label: "优势", href: "#advantages" },
+  { label: "我们是谁", href: "#who-we-are" },
+  { label: "服务矩阵", href: "#service-matrix" },
+  { label: "Launch Video", href: "#launch-video" },
+  { label: "增长成果", href: "#growth-proof" },
   { label: "团队", href: "#team" },
   { label: "价格", href: "#pricing" },
+  { label: "联系", href: "#contact" },
   { label: "增长", href: "/growth" },
   { label: "指南", href: "/playbooks" },
   { label: "博客", href: "/blog" },
   { label: "毒舌Agent", href: "/viperVC" },
 ];
-
-
-const externalNavItems = navItems.filter(item => item.href.startsWith('/'));
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);

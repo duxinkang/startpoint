@@ -39,15 +39,14 @@ const BlogPage = () => {
         
         <div className="space-y-8">
           {blogPosts.map((post) => {
-            const firstImage = extractFirstImage(post.content);
             const summary = extractSummary(post.content);
             
             return (
               <div key={post.id} className="bg-card rounded-xl p-6 shadow-sm border border-border hover:shadow-md transition-shadow">
-                {firstImage && (
+                {post.thumbnail && (
                   <div className="mb-4">
                     <img 
-                      src={firstImage} 
+                      src={post.thumbnail} 
                       alt={post.title} 
                       className="w-full h-48 object-cover rounded-lg"
                     />
