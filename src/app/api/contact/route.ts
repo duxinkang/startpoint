@@ -173,35 +173,47 @@ export async function POST(req: Request) {
         ],
       };
 
-      // Optional HMAC-SHA256 signature if FEISHU_WEBHOOK_SECRET is configured.
-      const feishuHeaders: Record<string, string> = {
-        "Content-Type": "application/json",
+      // Feishu custom bot signature (if 签名校验 is enabled).
+      //
+      // Per Feishu docs https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot
+      //   string_to_sign = `${timestamp}\n${secret}`
+      //   sign = base64( HMAC-SHA256(key=string_to_sign, data=EMPTY) )
+      // `timestamp` and `sign` go in the JSON body top-level, NOT in headers.
+      const bodyPayload: Record<string, unknown> = {
+        msg_type: "interactive",
+        card,
       };
       const secret = process.env.FEISHU_WEBHOOK_SECRET;
       if (secret) {
         const timestamp = Math.floor(Date.now() / 1000).toString();
-        const strToSign = `${timestamp}\n${secret}`;
+        const stringToSign = `${timestamp}\n${secret}`;
         const enc = new TextEncoder();
-        const key = await crypto.subtle.importKey(
+        const signingKey = await crypto.subtle.importKey(
           "raw",
-          enc.encode(secret),
+          enc.encode(stringToSign),
           { name: "HMAC", hash: "SHA-256" },
           false,
           ["sign"],
         );
-        const sig = await crypto.subtle.sign(
+        const sigBuf = await crypto.subtle.sign(
           "HMAC",
-          key,
-          enc.encode(strToSign),
+          signingKey,
+          new Uint8Array(0),
         );
-        feishuHeaders["X-Lark-Request-Timestamp"] = timestamp;
-        feishuHeaders["X-Lark-Signature"] = Buffer.from(sig).toString("base64");
+        const sigBytes = new Uint8Array(sigBuf);
+        let binary = "";
+        for (let i = 0; i < sigBytes.length; i++) {
+          binary += String.fromCharCode(sigBytes[i]);
+        }
+        const sign = btoa(binary);
+        bodyPayload.timestamp = timestamp;
+        bodyPayload.sign = sign;
       }
 
       const r = await fetch(feishuUrl, {
         method: "POST",
-        headers: feishuHeaders,
-        body: JSON.stringify({ msg_type: "interactive", card }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(bodyPayload),
       });
 
       if (r.ok) {
