@@ -33,7 +33,7 @@ export const siteSettings = defineType({
       name: "contactEmail",
       type: "string",
       title: "Contact email",
-      initialValue: "contact@startpoint.ai",
+      initialValue: "d541449473@gmail.com",
     }),
     defineField({
       name: "locations",

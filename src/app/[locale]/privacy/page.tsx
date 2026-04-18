@@ -106,12 +106,12 @@ function ZhBody() {
 
       <H2>我们如何与第三方共享</H2>
       <p>
-        为运营必要,我们使用以下可信的第三方服务处理数据,其隐私条款均符合业界主流标准:托管与 CDN(Vercel)、邮件收发(contact@startpoint.ai 自营邮箱与相应 SMTP 提供商)、以及必要时的财务票据处理。我们不会将你的信息共享给上述范围之外的任何第三方。
+        为运营必要,我们使用以下可信的第三方服务处理数据,其隐私条款均符合业界主流标准:托管与 CDN(Vercel)、邮件收发(d541449473@gmail.com 自营邮箱与相应 SMTP 提供商)、以及必要时的财务票据处理。我们不会将你的信息共享给上述范围之外的任何第三方。
       </p>
 
       <H2>你享有的权利(GDPR / CCPA)</H2>
       <p>
-        如果你位于欧盟 / 英国 / 加州等适用隐私法律的地区,你有权:查询我们持有的关于你的信息、要求更正或删除这些信息、撤回此前授予的处理同意、以及就涉嫌违规行为向所在地数据保护机构投诉。要行使任一权利,请发送邮件至 contact@startpoint.ai,我们会在 30 天内回复。
+        如果你位于欧盟 / 英国 / 加州等适用隐私法律的地区,你有权:查询我们持有的关于你的信息、要求更正或删除这些信息、撤回此前授予的处理同意、以及就涉嫌违规行为向所在地数据保护机构投诉。要行使任一权利,请发送邮件至 d541449473@gmail.com,我们会在 30 天内回复。
       </p>
 
       <H2>Cookie 与分析</H2>
@@ -133,10 +133,10 @@ function ZhBody() {
       <p>
         如对本政策或你的个人信息有任何疑问、或希望行使上述权利,请发送邮件至{" "}
         <a
-          href="mailto:contact@startpoint.ai"
+          href="mailto:d541449473@gmail.com"
           className="text-orange-600 hover:text-orange-700 underline"
         >
-          contact@startpoint.ai
+          d541449473@gmail.com
         </a>
         。线下办公地址:杭州 / 上海 / 巴黎。
       </p>
@@ -190,7 +190,7 @@ function EnBody() {
         For operational necessity we rely on these trusted vendors, each of
         which meets industry-standard privacy and security requirements:
         hosting and CDN (Vercel), email delivery
-        (contact@startpoint.ai backed by a compliant SMTP provider), and — when
+        (d541449473@gmail.com backed by a compliant SMTP provider), and — when
         invoiced — our financial records processor. We do not share your
         information with any party outside that scope.
       </p>
@@ -203,10 +203,10 @@ function EnBody() {
         consent you previously gave, and file a complaint with your local data
         protection authority. To exercise any of these rights, email{" "}
         <a
-          href="mailto:contact@startpoint.ai"
+          href="mailto:d541449473@gmail.com"
           className="text-orange-600 hover:text-orange-700 underline"
         >
-          contact@startpoint.ai
+          d541449473@gmail.com
         </a>
         . We will respond within 30 days.
       </p>
@@ -237,10 +237,10 @@ function EnBody() {
       <p>
         Questions about this policy or your data? Email{" "}
         <a
-          href="mailto:contact@startpoint.ai"
+          href="mailto:d541449473@gmail.com"
           className="text-orange-600 hover:text-orange-700 underline"
         >
-          contact@startpoint.ai
+          d541449473@gmail.com
         </a>
         . Offices: Hangzhou / Shanghai / Paris.
       </p>

@@ -82,7 +82,7 @@ export function organizationSchema(locale: string) {
       locale === "zh"
         ? "StartPoint 是专注 AI Agent 与 SaaS 产品 0→1 增长的营销合作伙伴，覆盖 GTM 策略、Product Hunt、Launch Video、海外 KOL、SEO/GEO、广告投放与品牌沉淀。"
         : "StartPoint is a growth partner focused on 0→1 traction for AI Agents and AI SaaS — GTM strategy, Product Hunt, Launch Video, KOL/KOC outreach, SEO/GEO, paid ads, and brand IP.",
-    email: "contact@startpoint.ai",
+    email: "d541449473@gmail.com",
     areaServed: ["CN", "US", "EU", "JP", "SG", "Global"],
     address: [
       { "@type": "PostalAddress", addressLocality: "Hangzhou", addressCountry: "CN" },

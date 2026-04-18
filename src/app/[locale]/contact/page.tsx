@@ -20,8 +20,8 @@ export async function generateMetadata({
         : "Contact StartPoint — Book a free 30-min AI growth consultation",
     description:
       locale === "zh"
-        ? "预约 StartPoint 30 分钟免费咨询，帮你判断 AI Agent 增长策略是否成立。邮箱 contact@startpoint.ai；线下 coffee chat 覆盖杭州 / 上海 / 巴黎；工作日 24 小时内回复。"
-        : "Book a free 30-minute consultation to pressure-test your AI Agent growth plan. Email contact@startpoint.ai — in-person coffee chats in Hangzhou / Shanghai / Paris. Reply within 24 hours on weekdays.",
+        ? "预约 StartPoint 30 分钟免费咨询，帮你判断 AI Agent 增长策略是否成立。邮箱 d541449473@gmail.com；线下 coffee chat 覆盖杭州 / 上海 / 巴黎；工作日 24 小时内回复。"
+        : "Book a free 30-minute consultation to pressure-test your AI Agent growth plan. Email d541449473@gmail.com — in-person coffee chats in Hangzhou / Shanghai / Paris. Reply within 24 hours on weekdays.",
     path: "/contact",
   });
 }
@@ -149,8 +149,8 @@ export default async function ContactPage({
             </h3>
             <p className="leading-relaxed text-white/80">
               {locale === "zh"
-                ? "发邮件到 contact@startpoint.ai，一句话介绍你的产品 + 目前最想解决的增长问题就可以。我们承诺在 24 小时内（工作日）亲自回复一条具体的建议——而不是群发模板。"
-                : "Drop a line to contact@startpoint.ai — one sentence about your product plus the one growth question you most want answered is enough. We'll reply personally within 24 hours on weekdays with a concrete suggestion, not a templated form letter."}
+                ? "发邮件到 d541449473@gmail.com，一句话介绍你的产品 + 目前最想解决的增长问题就可以。我们承诺在 24 小时内（工作日）亲自回复一条具体的建议——而不是群发模板。"
+                : "Drop a line to d541449473@gmail.com — one sentence about your product plus the one growth question you most want answered is enough. We'll reply personally within 24 hours on weekdays with a concrete suggestion, not a templated form letter."}
             </p>
           </div>
         </Container>

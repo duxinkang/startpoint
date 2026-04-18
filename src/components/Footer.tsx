@@ -46,10 +46,10 @@ export function Footer() {
                 Contact
               </div>
               <a
-                href="mailto:contact@startpoint.ai"
+                href="mailto:d541449473@gmail.com"
                 className="block text-sm hover:text-orange-300 transition"
               >
-                contact@startpoint.ai
+                d541449473@gmail.com
               </a>
               <div className="text-sm text-white/60">
                 {t("contact.locations")}

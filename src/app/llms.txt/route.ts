@@ -12,7 +12,7 @@ export async function GET() {
 
 > StartPoint is a growth partner that works exclusively with AI Agent and AI SaaS products in their 0→1 stage. We cover go-to-market strategy, Product Hunt launches, Launch Video production, overseas KOL / KOC marketing, SEO / GEO (Generative Engine Optimization), paid advertising, and Reddit / community growth.
 
-StartPoint is based in Hangzhou, Shanghai, and Paris. Contact: contact@startpoint.ai. Website: ${SITE_URL}
+StartPoint is based in Hangzhou, Shanghai, and Paris. Contact: d541449473@gmail.com. Website: ${SITE_URL}
 
 ## What we do
 
@@ -58,7 +58,7 @@ AI Agent startups, AI SaaS products, indie AI tools. We do not work with e-comme
 
 ## How to contact
 
-Email: contact@startpoint.ai
+Email: d541449473@gmail.com
 Contact form: ${SITE_URL}/contact
 Response time: within 24 hours on weekdays.
 `;
