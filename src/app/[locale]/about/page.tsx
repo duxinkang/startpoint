@@ -17,11 +17,16 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "about" });
   return buildMetadata({
     locale,
-    title: `${t("hero.title")} — StartPoint`,
-    description: t("hero.subtitle"),
+    title:
+      locale === "zh"
+        ? "关于 StartPoint — 只做 AI Agent 0→1 增长的营销合伙人"
+        : "About StartPoint — A growth partner built exclusively for AI Agents",
+    description:
+      locale === "zh"
+        ? "StartPoint 是一支融合工程、增长与投资叙事的团队。我们只做一件事：帮 AI Agent 产品从 0 做到 1。不承接碎片化营销外包，只做与创始人共担风险的增长合伙人。团队覆盖杭州 / 上海 / 巴黎。"
+        : "StartPoint is a hybrid team fluent in engineering, growth, and investor narrative. We do one thing — 0→1 growth for AI Agents. Not fragmented outsourcing; a growth partner that shares the risk. Hangzhou, Shanghai, Paris.",
     path: "/about",
   });
 }

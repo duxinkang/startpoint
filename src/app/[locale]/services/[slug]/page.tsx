@@ -39,6 +39,36 @@ export function generateStaticParams() {
   return params;
 }
 
+// Per-slug title suffixes — ensure every service page clears the 30-char
+// minimum for good SERP rendering, and differentiates each page from its
+// siblings so we don't trip "duplicate title" checks across zh/en.
+const TITLE_SUFFIX: Record<Slug, { zh: string; en: string }> = {
+  "launch-video": {
+    zh: "AI 产品发布视频制作 — 7 天交付",
+    en: "Launch Video production — 60-90s AI product story",
+  },
+  kol: {
+    zh: "海外 KOL / KOC 达人营销 — AI Agent 精准投放",
+    en: "Global KOL & KOC creator marketing for AI Agents",
+  },
+  "paid-ads": {
+    zh: "广告投放 — Google / Meta / X / LinkedIn / Reddit 全渠道",
+    en: "Paid advertising — Google / Meta / X / LinkedIn / Reddit",
+  },
+  "product-hunt": {
+    zh: "Product Hunt 发布陪跑 — 冲击日榜前 3",
+    en: "Product Hunt launch — aim for Product of the Day top 3",
+  },
+  social: {
+    zh: "Reddit 与海外社区运营 — 真实用户口碑沉淀",
+    en: "Reddit & community — earn real AI early-adopter trust",
+  },
+  "seo-geo": {
+    zh: "SEO + GEO 优化 — Google 与 ChatGPT 同时推荐",
+    en: "SEO + GEO optimization — Rank on Google, cited by ChatGPT",
+  },
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -50,9 +80,10 @@ export async function generateMetadata({
     locale,
     namespace: `serviceDetails.${slug}`,
   });
+  const suffix = TITLE_SUFFIX[slug][locale === "zh" ? "zh" : "en"];
   return buildMetadata({
     locale,
-    title: `${t("title")} — StartPoint`,
+    title: `${suffix} — StartPoint`,
     description: t("intro"),
     path: `/services/${slug}`,
   });

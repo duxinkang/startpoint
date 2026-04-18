@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Container, Section } from "@/components/ui/Container";
@@ -20,9 +21,15 @@ type Case = { brand: string; headline: string; metric: string };
  * surfaced names. Keep the map keyed by the public brand name.
  */
 const VIDEO_BY_BRAND: Record<string, { src: string; poster?: string }> = {
-  "Poly.app": { src: "/videos/poly.mp4" },
-  Crunched: { src: "/videos/ava-artisan.mp4" },
-  "Blockit AI": { src: "/videos/miro.mp4" },
+  "Poly.app": { src: "/videos/poly.mp4", poster: "/videos/posters/poly.jpg" },
+  Crunched: {
+    src: "/videos/ava-artisan.mp4",
+    poster: "/videos/posters/ava-artisan.jpg",
+  },
+  "Blockit AI": {
+    src: "/videos/miro.mp4",
+    poster: "/videos/posters/miro.jpg",
+  },
 };
 
 export function LaunchVideoDetail() {
@@ -47,7 +54,7 @@ export function LaunchVideoDetail() {
                 <div className="text-orange-500 font-bold text-xl">
                   0{i + 1}
                 </div>
-                <h3 className="sp-display text-2xl text-ink">{step.title}</h3>
+                <h2 className="sp-display text-2xl text-ink">{step.title}</h2>
                 <p className="text-ink/80 leading-relaxed">{step.text}</p>
               </motion.div>
             ))}
@@ -101,17 +108,32 @@ function CaseCard({ c, index }: { c: Case; index: number }) {
               <button
                 type="button"
                 onClick={() => setPlaying(true)}
-                aria-label={`Play ${c.brand} launch video`}
+                aria-label={`${c.brand} — ${c.headline}`}
                 className="absolute inset-0 flex items-center justify-center group"
                 style={{ background: gradient }}
               >
-                <span className="sp-ball absolute -right-6 -bottom-6 w-28 h-28 opacity-60" />
+                {/* Poster preview — real first frame replaces the flat
+                    gradient so visitors see what they're about to play. */}
+                {video.poster && (
+                  <Image
+                    src={video.poster}
+                    alt=""
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="object-cover"
+                  />
+                )}
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-black/10"
+                />
+                <span className="sp-ball absolute -right-6 -bottom-6 w-28 h-28 opacity-60 z-[1]" />
                 <svg
                   width="56"
                   height="56"
                   viewBox="0 0 48 48"
                   fill="none"
-                  className="drop-shadow-xl transition-transform group-hover:scale-110 relative"
+                  className="drop-shadow-xl transition-transform group-hover:scale-110 relative z-[2]"
                 >
                   <circle cx="24" cy="24" r="24" fill="white" fillOpacity="0.95" />
                   <path d="M20 16l14 8-14 8V16z" fill="#F5551D" />
@@ -122,6 +144,7 @@ function CaseCard({ c, index }: { c: Case; index: number }) {
               <video
                 // eslint-disable-next-line jsx-a11y/media-has-caption
                 src={video.src}
+                poster={video.poster}
                 autoPlay
                 controls
                 playsInline

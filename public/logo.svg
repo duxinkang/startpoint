@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="StartPoint">
+  <title>StartPoint</title>
+  <rect width="512" height="512" rx="112" fill="#F5551D"/>
+  <!-- Upper-left diagonal ball motif -->
+  <circle cx="152" cy="152" r="36" fill="#FFFFFF" opacity="0.92"/>
+  <!-- "S" wordmark, hand-set to feel like the sp-display brand mark -->
+  <path d="M352 168
+           q0 -26 -26 -34
+           q-20 -6 -62 -6
+           q-52 0 -78 22
+           q-22 18 -22 50
+           q0 30 24 46
+           q18 12 62 22
+           q40 10 54 18
+           q14 8 14 22
+           q0 16 -14 24
+           q-14 8 -42 8
+           q-36 0 -56 -12
+           q-18 -10 -22 -32
+           l-48 0
+           q2 40 28 62
+           q30 26 96 26
+           q60 0 92 -22
+           q30 -22 30 -58
+           q0 -32 -22 -50
+           q-20 -16 -68 -28
+           q-46 -12 -58 -18
+           q-14 -6 -14 -20
+           q0 -14 12 -22
+           q14 -8 40 -8
+           q28 0 42 8
+           q14 8 18 26 z"
+        fill="#FFFFFF"/>
+</svg>

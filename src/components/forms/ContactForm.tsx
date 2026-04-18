@@ -15,6 +15,13 @@ export function ContactForm() {
     e.preventDefault();
     setStatus("submitting");
     const fd = new FormData(e.currentTarget);
+    // Honeypot: real humans never fill this hidden field. If it has any value
+    // we silently "succeed" to avoid tipping off bots, but skip the API call.
+    if ((fd.get("website") as string | null)?.trim()) {
+      setStatus("success");
+      (e.target as HTMLFormElement).reset();
+      return;
+    }
     const payload = {
       name: fd.get("name"),
       email: fd.get("email"),
@@ -38,6 +45,7 @@ export function ContactForm() {
 
   const inputCls =
     "w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-ink placeholder-ink/40 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition";
+  const labelCls = "block text-sm font-semibold text-ink/80 mb-2";
 
   return (
     <motion.form
@@ -47,27 +55,32 @@ export function ContactForm() {
       transition={{ duration: 0.5 }}
       onSubmit={onSubmit}
       className="space-y-5 rounded-3xl bg-white border border-ink/8 p-6 md:p-10 shadow-sm"
+      noValidate
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-semibold text-ink/80 mb-2">
+          <label htmlFor="contact-name" className={labelCls}>
             {t("name")} *
           </label>
           <input
+            id="contact-name"
             name="name"
             required
+            autoComplete="name"
             className={inputCls}
             placeholder={t("name")}
           />
         </div>
         <div>
-          <label className="block text-sm font-semibold text-ink/80 mb-2">
+          <label htmlFor="contact-email" className={labelCls}>
             Email *
           </label>
           <input
+            id="contact-email"
             name="email"
             type="email"
             required
+            autoComplete="email"
             className={inputCls}
             placeholder="you@company.com"
           />
@@ -75,22 +88,30 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-semibold text-ink/80 mb-2">
+        <label htmlFor="contact-company" className={labelCls}>
           {t("company")} *
         </label>
         <input
+          id="contact-company"
           name="company"
           required
+          autoComplete="organization"
           className={inputCls}
           placeholder={t("company")}
         />
       </div>
 
       <div>
-        <label className="block text-sm font-semibold text-ink/80 mb-2">
+        <label htmlFor="contact-stage" className={labelCls}>
           {t("stage")} *
         </label>
-        <select name="stage" required className={inputCls} defaultValue="">
+        <select
+          id="contact-stage"
+          name="stage"
+          required
+          className={inputCls}
+          defaultValue=""
+        >
           <option value="" disabled>
             {t("stage")}
           </option>
@@ -103,14 +124,41 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-semibold text-ink/80 mb-2">
+        <label htmlFor="contact-message" className={labelCls}>
           {t("message")}
         </label>
         <textarea
+          id="contact-message"
           name="message"
           rows={5}
           className={inputCls}
           placeholder={t("message")}
+        />
+      </div>
+
+      {/* Honeypot — hidden from humans, tempting to bots. Intentionally given
+          a plausible field name ("website") and standard autocomplete hints
+          off so password managers won't populate it. */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: "-10000px",
+          top: "auto",
+          width: "1px",
+          height: "1px",
+          overflow: "hidden",
+        }}
+      >
+        <label htmlFor="contact-website">
+          Website (leave empty)
+        </label>
+        <input
+          id="contact-website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
         />
       </div>
 

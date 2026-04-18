@@ -415,7 +415,8 @@
   },
   "footer": {
     "rights": "© 2026 StartPoint Agency · 0→1 growth for AI Agents",
-    "language": "Language"
+    "language": "Language",
+    "privacy": "Privacy"
   },
   "faq": {
     "title": "Frequently asked",

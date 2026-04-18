@@ -77,12 +77,16 @@ function MemberPhoto({ name, role }: { name: string; role: string }) {
   return (
     <div className="relative aspect-[4/5] bg-gradient-to-br from-orange-300 via-orange-400 to-amber-500 overflow-hidden">
       {!failed && (
+        // Explicit width/height (instead of `fill`) so Next.js emits concrete
+        // width/height attributes on the <img> — helps CLS and satisfies the
+        // SEO audit that flagged missing intrinsic dimensions on /about.
         <Image
           src={src}
-          alt={name}
-          fill
+          alt={`${name} — ${role}, StartPoint`}
+          width={400}
+          height={500}
           sizes="(min-width: 768px) 33vw, 100vw"
-          className="object-cover transition-transform group-hover:scale-[1.03]"
+          className="absolute inset-0 h-full w-full object-cover transition-transform group-hover:scale-[1.03]"
           onError={() => setFailed(true)}
         />
       )}

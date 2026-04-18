@@ -12,6 +12,7 @@ export function SeoGeoDetail() {
   return (
     <Section bg="paper" className="!pt-4">
       <Container size="full">
+        <h2 className="sr-only">SEO + GEO pillars</h2>
         <div className="flex flex-wrap gap-3 mb-12">
           <Pill variant="orange" size="md">
             SEO (Google)
@@ -34,7 +35,7 @@ export function SeoGeoDetail() {
               <div className="text-orange-500 font-bold text-lg mb-3">
                 0{i + 1}
               </div>
-              <h4 className="sp-display text-2xl text-ink">{step.title}</h4>
+              <h3 className="sp-display text-2xl text-ink">{step.title}</h3>
               <p className="mt-4 text-ink/75 leading-relaxed">{step.text}</p>
             </motion.div>
           ))}

@@ -10,7 +10,8 @@ type BuildMetaArgs = {
   title: string;
   description: string;
   path: string; // e.g. "/" or "/services"
-  image?: string;
+  image?: string; // Optional: when omitted, Next.js auto-populates from the
+  //                 `opengraph-image.tsx` file convention at `src/app/[locale]/`.
 };
 
 export function buildMetadata({
@@ -18,11 +19,33 @@ export function buildMetadata({
   title,
   description,
   path,
-  image = "/og/default.png",
+  image,
 }: BuildMetaArgs): Metadata {
   const canonical = locale === "zh"
     ? `${SITE_URL}${path === "/" ? "" : path}`
     : `${SITE_URL}/${locale}${path === "/" ? "" : path}`;
+
+  const openGraph: Metadata["openGraph"] = {
+    type: "website",
+    siteName: SITE_NAME,
+    url: canonical,
+    title,
+    description,
+    locale: locale === "zh" ? "zh_CN" : "en_US",
+  };
+  const twitter: Metadata["twitter"] = {
+    card: "summary_large_image",
+    title,
+    description,
+  };
+
+  // Only set explicit image URLs when the caller passes one. Otherwise rely on
+  // the Next.js file-convention OG image (`/opengraph-image`) so we never ship
+  // a broken `/og/default.png` again.
+  if (image) {
+    openGraph.images = [{ url: image, width: 1200, height: 630, alt: title }];
+    twitter.images = [image];
+  }
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -36,21 +59,8 @@ export function buildMetadata({
         "x-default": `${SITE_URL}${path === "/" ? "" : path}`,
       },
     },
-    openGraph: {
-      type: "website",
-      siteName: SITE_NAME,
-      url: canonical,
-      title,
-      description,
-      locale: locale === "zh" ? "zh_CN" : "en_US",
-      images: [{ url: image, width: 1200, height: 630, alt: title }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [image],
-    },
+    openGraph,
+    twitter,
     robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   };
 }
@@ -122,6 +132,27 @@ export function faqSchema(items: { q: string; a: string }[]) {
       name: item.q,
       acceptedAnswer: { "@type": "Answer", text: item.a },
     })),
+  };
+}
+
+export function videoObjectSchema(args: {
+  name: string;
+  description: string;
+  thumbnailUrl: string; // Absolute URL preferred
+  contentUrl: string; // Absolute URL preferred
+  uploadDate: string; // ISO 8601, e.g. "2025-06-01"
+  durationIso?: string; // ISO 8601 duration, e.g. "PT45S"
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: args.name,
+    description: args.description,
+    thumbnailUrl: args.thumbnailUrl,
+    contentUrl: args.contentUrl,
+    uploadDate: args.uploadDate,
+    ...(args.durationIso ? { duration: args.durationIso } : {}),
+    publisher: { "@id": `${SITE_URL}#organization` },
   };
 }
 

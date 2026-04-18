@@ -21,9 +21,9 @@ export function SocialDetail() {
             transition={{ duration: 0.6 }}
             className="rounded-3xl bg-ink text-white p-8 md:p-10"
           >
-            <h3 className="font-bold text-xl mb-6 text-orange-300">
+            <h2 className="font-bold text-xl mb-6 text-orange-300">
               WHY REDDIT
-            </h3>
+            </h2>
             <ul className="space-y-4">
               {values.map((v) => (
                 <li
@@ -52,7 +52,7 @@ export function SocialDetail() {
                   0{i + 1}
                 </div>
                 <div>
-                  <h4 className="font-bold text-ink text-lg">{step.title}</h4>
+                  <h3 className="font-bold text-ink text-lg">{step.title}</h3>
                   <p className="mt-2 text-ink/75 leading-relaxed">{step.text}</p>
                 </div>
               </motion.div>

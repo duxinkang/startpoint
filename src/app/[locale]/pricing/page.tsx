@@ -12,14 +12,16 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "pricing" });
   return buildMetadata({
     locale,
-    title: `${t("title")} — StartPoint`,
+    title:
+      locale === "zh"
+        ? "合作模式与价格 — StartPoint 三档 AI Agent 增长方案"
+        : "Engagement tiers & pricing — StartPoint 0→1 growth for AI",
     description:
       locale === "zh"
-        ? "StartPoint 三档合作模式：战略问诊 ¥15,000、轻量陪跑 ¥30k-50k/月、完整陪跑 ¥80k-120k/月 + 增长利润分成。按产品阶段灵活组合。"
-        : "Three StartPoint engagement tiers — Strategy diagnosis, Lite growth sprint, and Full growth partnership with revenue-share. Scoped to your product stage.",
+        ? "StartPoint 提供三档合作方案：战略问诊 ¥15,000（2-3 周）、轻量陪跑 ¥30-50k/月、完整陪跑 ¥80-120k/月 + 10-20% 增长利润分成。按 AI Agent 产品阶段灵活升级组合。"
+        : "Three StartPoint engagement tiers: Strategy Diagnosis (¥15k), Lite Partnership (¥30-50k/mo) and Full Growth with 10-20% revenue share (¥80-120k/mo). Scoped to your AI product stage.",
     path: "/pricing",
   });
 }
@@ -178,6 +180,83 @@ export default async function PricingPage({
             {locale === "zh"
               ? "三档方案可灵活升级 / 组合。战略问诊费用可抵扣后续陪跑首月。完整陪跑的利润分成区间为 10-20%（按 MRR 增量或净利润增量计算），具体比例按产品阶段与增长目标一对一商定。"
               : "Tiers can be combined or upgraded. Strategy diagnosis fee is credited toward the first month of any ongoing engagement. Full-tier profit share ranges from 10-20% of incremental MRR or net profit — the exact figure is negotiated per stage and target KPIs."}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Decision aid — how to pick a tier, plus what the profit-share
+          mechanic actually means. Adds ~200 words of substantive content so
+          /pricing clears the thin-content threshold and answers the real
+          questions a founder has before booking a call. */}
+      <Section bg="paper">
+        <Container size="full">
+          <div className="max-w-3xl">
+            <Pill variant="orange" size="md" className="mb-5">
+              {locale === "zh" ? "怎么选档位" : "How to pick a tier"}
+            </Pill>
+            <h2 className="sp-display text-3xl md:text-4xl lg:text-5xl leading-[1.08] text-ink">
+              {locale === "zh"
+                ? "按风险偏好与增长目标，而不是按预算"
+                : "Pick by risk appetite and growth target, not by budget"}
+            </h2>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {(locale === "zh"
+              ? [
+                  {
+                    t: "先验证方向",
+                    b: "战略问诊最合适。2-3 周内输出 AI Agent 增长诊断报告、目标市场选择、以及前 90 天的执行路线图。适合预算有限但想先搞清楚&quot;该往哪走&quot;的早期团队。",
+                  },
+                  {
+                    t: "要快速出第一个增长动作",
+                    b: "轻量陪跑最合适。我们接管一条核心渠道(Launch Video、Product Hunt 或 KOL),3-4 周内跑出可衡量的第一批增长数据,团队继续保留对其他环节的掌控。",
+                  },
+                  {
+                    t: "希望我们共担风险",
+                    b: "完整陪跑最合适。基础服务费 + 10-20% 增长利润分成,我们把团队编制深度嵌进你的 Slack 与周会。分成比例按 MRR 增量或净利润增量计算,与你的增长结果强绑定。",
+                  },
+                ]
+              : [
+                  {
+                    t: "Validate the direction first",
+                    b: "Strategy Diagnosis is the right starting point. In 2-3 weeks you get an AI Agent growth diagnosis, a target-market call, and a 90-day execution roadmap — ideal for early teams who want the direction question answered before they commit budget.",
+                  },
+                  {
+                    t: "Need a first growth move, fast",
+                    b: "Lite Partnership fits. We own one core channel (Launch Video, Product Hunt or KOL) and ship measurable first-wave results in 3-4 weeks while your team keeps hands on the rest.",
+                  },
+                  {
+                    t: "Want us sharing the risk",
+                    b: "Full Growth Partnership fits. Base retainer + 10-20% share of the growth upside. We embed in your Slack and weekly review — the profit share is calculated against incremental MRR or net profit, so our outcomes are bolted to yours.",
+                  },
+                ]
+            ).map((item) => (
+              <article
+                key={item.t}
+                className="rounded-3xl bg-white border border-ink/10 p-7 shadow-sm"
+              >
+                <h3 className="sp-display text-xl md:text-2xl text-ink leading-snug">
+                  {item.t}
+                </h3>
+                <p className="mt-3 text-ink/75 leading-relaxed text-[15px]">
+                  {item.b}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-12 max-w-3xl rounded-2xl bg-cream border border-ink/10 p-7 md:p-8">
+            <h3 className="sp-display text-xl md:text-2xl text-ink mb-3">
+              {locale === "zh"
+                ? "利润分成到底怎么算？"
+                : "How does the profit share actually work?"}
+            </h3>
+            <p className="text-ink/75 leading-relaxed">
+              {locale === "zh"
+                ? "分成标的在 kickoff 阶段就用书面形式锁定，通常是 MRR 增量（月度订阅收入相对基线的净增长）或产品净利润增量。比例 10-20% 根据产品阶段、预期波动度与 CAC 回收周期一对一协商。战略问诊的一次性费用可在后续升级到轻量 / 完整陪跑时抵扣首月服务费。"
+                : "The share base is locked in writing at kickoff — typically incremental MRR (month-over-month net growth over a baseline) or incremental net profit. The 10-20% figure is negotiated per product stage, expected volatility, and CAC-payback window. The Strategy Diagnosis fee is credited against month one if you upgrade to Lite or Full later."}
+            </p>
           </div>
         </Container>
       </Section>

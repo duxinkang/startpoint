@@ -28,6 +28,7 @@ export function Hero() {
       <video
         // eslint-disable-next-line jsx-a11y/media-has-caption
         src="/videos/poly.mp4"
+        poster="/videos/posters/poly.jpg"
         autoPlay
         muted
         loop

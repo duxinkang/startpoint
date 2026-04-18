@@ -60,12 +60,20 @@ export function Footer() {
 
         <div className="mt-12 pt-6 border-t border-white/10 text-xs text-white/40 flex flex-col sm:flex-row justify-between gap-2">
           <span>{t("footer.rights")}</span>
-          <a
-            href="https://www.startpointagency.com/"
-            className="hover:text-white/70"
-          >
-            www.startpointagency.com
-          </a>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/privacy"
+              className="hover:text-white/70"
+            >
+              {t("footer.privacy")}
+            </Link>
+            <a
+              href="https://www.startpointagency.com/"
+              className="hover:text-white/70"
+            >
+              www.startpointagency.com
+            </a>
+          </div>
         </div>
       </Container>
     </footer>

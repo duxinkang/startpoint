@@ -415,7 +415,8 @@
   },
   "footer": {
     "rights": "© 2026 StartPoint Agency · 只做 AI Agent 的 0→1 增长",
-    "language": "语言"
+    "language": "语言",
+    "privacy": "隐私政策"
   },
   "faq": {
     "title": "常见问题",
