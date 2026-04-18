@@ -6,6 +6,8 @@ import { Pill } from "@/components/ui/Pill";
 import { JsonLd } from "@/components/JsonLd";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 import { CasesGrid } from "@/components/sections/CasesGrid";
+import { FeaturedCaseStudy } from "@/components/sections/FeaturedCaseStudy";
+import { InternationalProjects } from "@/components/sections/InternationalProjects";
 
 export async function generateMetadata({
   params,
@@ -59,7 +61,14 @@ export default async function CasesPage({
         </Container>
       </Section>
 
+      {/* Featured case: anchor 0→1 story from product to fundraising */}
+      <FeaturedCaseStudy />
+
+      {/* Shorter AI-product case cards (Product Hunt / SEO / creators) */}
       <CasesGrid />
+
+      {/* Pre-StartPoint overseas 0→1 work across categories */}
+      <InternationalProjects />
 
       <Section bg="ink" className="!py-20">
         <Container size="lg" className="text-center">

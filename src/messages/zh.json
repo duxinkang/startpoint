@@ -220,6 +220,86 @@
       }
     ]
   },
+  "featuredCase": {
+    "eyebrow": "重点案例",
+    "category": "B2B AI Agent · 用户深访平台",
+    "title": "国内首个 AI 用户深访平台：从产品、市场到融资的 0→1 全路径",
+    "subtitle": "StartPoint 作为核心增长伙伴，协助该 B2B AI Agent 产品完成 0→1 的产品验证、市场启动与融资叙事三线并行。",
+    "workstreamsTitle": "三条并行工作流",
+    "workstreams": [
+      {
+        "n": "01",
+        "title": "市场启动与信任构建",
+        "items": [
+          "0→1 搭建社媒与内容矩阵",
+          "10+ PR 发布，精准触达垂类 KOL",
+          "千万级曝光，互动率 +30%（高于行业均值）",
+          "多场行业峰会 / 闭门沙龙落地"
+        ]
+      },
+      {
+        "n": "02",
+        "title": "产品与商业策略闭环",
+        "items": [
+          "100+ 用户调研 / 深访",
+          "梳理 3 类核心用户画像",
+          "产出 50+ 市场沟通与视觉资产",
+          "覆盖 95%+ 付费场景的定价模型"
+        ]
+      },
+      {
+        "n": "03",
+        "title": "融资叙事赋能",
+        "items": [
+          "市场逻辑系统梳理",
+          "多版融资 Pitch 共创",
+          "创业故事与资本叙事打磨",
+          "支持 10+ 场投资人会议"
+        ]
+      }
+    ],
+    "resultsEyebrow": "0→1 首月验证",
+    "results": [
+      { "n": "300+", "label": "有效销售线索" },
+      { "n": "100%", "label": "渠道覆盖" },
+      { "n": "40%", "label": "互动率超行业均值" },
+      { "n": "20+", "label": "客户转化" }
+    ],
+    "quote": "StartPoint 是我们真正的\"早期增长营销合伙人\"。从产品怎么卖、对谁讲，到如何面对资本市场，她们提供了贯穿始终的战略与执行支持。首周传播带来的线索爆单，是对我们共同工作的最好证明。",
+    "quoteBy": "— 某 B2B AI Agent 产品创始人"
+  },
+  "internationalProjects": {
+    "eyebrow": "海外项目",
+    "title": "不只是 AI —— 我们在海外市场的 0→1 经验",
+    "subtitle": "StartPoint 团队在成立前已有多年跨境 GTM 经验，服务过英国 SaaS、法国 Fintech、西班牙本地服务等多类产品，这些方法论正是我们今天用在 AI Agent 上的底子。",
+    "items": [
+      {
+        "flag": "🇬🇧",
+        "country": "英国",
+        "industry": "SaaS · 短租平台",
+        "outcome": "冷启动 0 → 1",
+        "name": "Clooper",
+        "url": "https://clooper.com/"
+      },
+      {
+        "flag": "🇫🇷",
+        "country": "法国",
+        "industry": "Fintech · B2B SaaS",
+        "outcome": "0 → 1,000+ 企业客户",
+        "name": "OuiTrust",
+        "url": "https://www.ouitrust.com"
+      },
+      {
+        "flag": "🇪🇸",
+        "country": "西班牙",
+        "industry": "线下服务业 · 潜水店",
+        "outcome": "本地获客与增长验证",
+        "name": "Scuba Gran Canaria",
+        "url": "https://www.scuba-grancanaria.com/"
+      }
+    ],
+    "visit": "访问官网"
+  },
   "vs": {
     "title": "为什么选择 StartPoint？",
     "subtitle": "更理性、更敏捷、更确定的增长路径",

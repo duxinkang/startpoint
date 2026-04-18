@@ -220,6 +220,86 @@
       }
     ]
   },
+  "featuredCase": {
+    "eyebrow": "Featured case",
+    "category": "B2B AI Agent · User interview platform",
+    "title": "China's first AI-powered user interview platform: product, market, and funding — 0 to 1",
+    "subtitle": "StartPoint ran three parallel workstreams as this B2B AI Agent's core growth partner — product validation, market launch, and investor narrative.",
+    "workstreamsTitle": "Three parallel workstreams",
+    "workstreams": [
+      {
+        "n": "01",
+        "title": "Market launch & trust building",
+        "items": [
+          "Social + content matrix stood up from 0→1",
+          "10+ PR releases targeting vertical KOLs",
+          "10M+ exposure, engagement rate +30% over industry avg",
+          "Multiple industry summits and closed-door salons"
+        ]
+      },
+      {
+        "n": "02",
+        "title": "Product & commercial strategy",
+        "items": [
+          "100+ user research calls / deep interviews",
+          "3 core user personas defined",
+          "50+ marketing and visual assets shipped",
+          "Pricing model covering 95%+ paid scenarios"
+        ]
+      },
+      {
+        "n": "03",
+        "title": "Fundraising narrative",
+        "items": [
+          "Market logic structured end-to-end",
+          "Multiple fundraising pitch versions co-created",
+          "Founder story and capital-market narrative polished",
+          "Supported 10+ investor meetings"
+        ]
+      }
+    ],
+    "resultsEyebrow": "Month-1 validation",
+    "results": [
+      { "n": "300+", "label": "Qualified sales leads" },
+      { "n": "100%", "label": "Channel coverage" },
+      { "n": "40%", "label": "Engagement above industry avg" },
+      { "n": "20+", "label": "Customer conversions" }
+    ],
+    "quote": "StartPoint is our true early-stage growth partner. From how to sell and who to sell to, all the way to how we handle the capital markets — they delivered strategy and execution from end to end. The lead surge in week one is the clearest proof of what we built together.",
+    "quoteBy": "— Founder of a B2B AI Agent product"
+  },
+  "internationalProjects": {
+    "eyebrow": "International work",
+    "title": "Not just AI — our 0→1 track record overseas",
+    "subtitle": "Before StartPoint, the founding team spent years on cross-border GTM — UK SaaS, French fintech, Spanish local services. That playbook is what we're now running for AI Agents.",
+    "items": [
+      {
+        "flag": "🇬🇧",
+        "country": "United Kingdom",
+        "industry": "SaaS · Short-term rental platform",
+        "outcome": "Cold start to 0 → 1",
+        "name": "Clooper",
+        "url": "https://clooper.com/"
+      },
+      {
+        "flag": "🇫🇷",
+        "country": "France",
+        "industry": "Fintech · B2B SaaS",
+        "outcome": "0 → 1,000+ enterprise customers",
+        "name": "OuiTrust",
+        "url": "https://www.ouitrust.com"
+      },
+      {
+        "flag": "🇪🇸",
+        "country": "Spain",
+        "industry": "Offline services · Scuba shop",
+        "outcome": "Local acquisition & growth validation",
+        "name": "Scuba Gran Canaria",
+        "url": "https://www.scuba-grancanaria.com/"
+      }
+    ],
+    "visit": "Visit site"
+  },
   "vs": {
     "title": "Why StartPoint?",
     "subtitle": "A more rational, agile, and certain path to growth",
