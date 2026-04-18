@@ -293,5 +293,13 @@ export async function POST(req: Request) {
     failures,
   });
 
-  return NextResponse.json({ ok: true, deliveries });
+  // Debug hint: tell callers which channels were *configured* (env var present)
+  // vs not, so we can distinguish "env missing" from "env present but failing".
+  const configured = {
+    feishu: Boolean(process.env.FEISHU_WEBHOOK_URL),
+    resend: Boolean(process.env.RESEND_API_KEY),
+    webhook: Boolean(process.env.CONTACT_FORWARD_URL),
+  };
+
+  return NextResponse.json({ ok: true, deliveries, failures, configured });
 }
