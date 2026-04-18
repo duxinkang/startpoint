@@ -176,8 +176,8 @@ export default async function PricingPage({
           {/* Footnote */}
           <div className="mt-14 max-w-3xl text-center mx-auto text-ink/60 text-sm leading-relaxed">
             {locale === "zh"
-              ? "三档方案可灵活升级 / 组合。战略问诊费用可抵扣后续陪跑首月。完整陪跑包含利润分成条款，细节按产品阶段一对一商定。"
-              : "Tiers can be combined or upgraded. Strategy diagnosis fee is credited toward the first month of any ongoing engagement. Full tier includes revenue-share terms negotiated per product stage."}
+              ? "三档方案可灵活升级 / 组合。战略问诊费用可抵扣后续陪跑首月。完整陪跑的利润分成区间为 10-20%（按 MRR 增量或净利润增量计算），具体比例按产品阶段与增长目标一对一商定。"
+              : "Tiers can be combined or upgraded. Strategy diagnosis fee is credited toward the first month of any ongoing engagement. Full-tier profit share ranges from 10-20% of incremental MRR or net profit — the exact figure is negotiated per stage and target KPIs."}
           </div>
         </Container>
       </Section>

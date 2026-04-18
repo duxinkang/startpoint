@@ -11,14 +11,37 @@ import { GridCircle, ArcLine, DotMatrix } from "@/components/brand/Decor";
 /**
  * P1 — The opening frame of the deck.
  * Layout: eyebrow pill → 起始点 / StartPoint display → tagline.
- * Right side: double gradient ball + grid circle.
- * Bottom-left: curved arc + dot matrix as decor.
+ * Right side: double gradient ball + grid circle, layered OVER a muted
+ * Poly.app launch-video loop that ties the Hero to our actual client proof.
+ * The video is decorative — autoplay + muted + loop + playsInline ensures it
+ * works on iOS Safari and never blocks scroll. Desktop-only to keep mobile
+ * data usage in check.
  */
 export function Hero() {
   const t = useTranslations("hero");
 
   return (
-    <Section bg="paper" className="min-h-[calc(100vh-5rem)] flex items-center">
+    <Section bg="paper" className="min-h-[calc(100vh-5rem)] flex items-center relative overflow-hidden">
+      {/* Decorative Poly video loop — desktop only. Acts as a warm-tinted
+          background behind the Hero; pointer-events-none so it never intercepts
+          clicks. Fades out on the edges via a radial mask for focus on the copy. */}
+      <video
+        // eslint-disable-next-line jsx-a11y/media-has-caption
+        src="/videos/poly.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+        className="hidden lg:block absolute inset-0 w-full h-full object-cover opacity-[0.18] pointer-events-none"
+        style={{
+          maskImage:
+            "radial-gradient(ellipse at center, black 35%, transparent 75%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse at center, black 35%, transparent 75%)",
+        }}
+      />
       <Container size="full" className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left: copy */}

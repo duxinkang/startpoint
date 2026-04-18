@@ -12,14 +12,14 @@ export function Stats() {
   const items = t.raw("items") as { n: string; label: string; text: string }[];
 
   return (
-    <Section bg="paper" className="!py-20">
+    <Section bg="ink" className="!py-20">
       <Container size="full">
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_2fr] gap-12 items-center">
           <div>
-            <h2 className="sp-display text-3xl md:text-4xl leading-tight">
+            <h2 className="sp-display text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-white">
               {t("title")}
             </h2>
-            <p className="mt-4 text-sm md:text-base text-ink/70 leading-relaxed">
+            <p className="mt-5 text-base md:text-lg text-white/70 leading-relaxed">
               {t("subtitle")}
             </p>
           </div>

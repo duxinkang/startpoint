@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Pill } from "@/components/ui/Pill";
 import { JsonLd } from "@/components/JsonLd";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
+import { FounderStory } from "@/components/sections/FounderStory";
 import { Vs } from "@/components/sections/Vs";
 import { Advantages } from "@/components/sections/Advantages";
 import { Team } from "@/components/sections/Team";
@@ -60,6 +61,9 @@ export default async function AboutPage({
           </p>
         </Container>
       </Section>
+
+      {/* Founder story — why we only do AI Agent 0→1 */}
+      <FounderStory />
 
       {/* P12 — VS comparison */}
       <Vs />

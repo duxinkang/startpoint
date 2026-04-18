@@ -35,7 +35,7 @@ export function Partner() {
             <div className="text-lg md:text-xl text-ink/75 font-medium mb-4">
               {t("kicker")}
             </div>
-            <h2 className="sp-display text-6xl md:text-7xl lg:text-8xl">
+            <h2 className="sp-display text-5xl md:text-6xl lg:text-7xl leading-[1.05]">
               {t("headline").split(" ").map((word, i) => (
                 <span key={i} className="block">
                   {word}

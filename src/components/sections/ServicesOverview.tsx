@@ -31,7 +31,7 @@ export function ServicesOverview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="sp-display text-[18vw] sm:text-[14vw] lg:text-[10vw] xl:text-[160px] leading-[0.9] text-ink"
+            className="sp-display text-[14vw] sm:text-[10vw] lg:text-[7vw] xl:text-[120px] leading-[0.9] text-ink"
           >
             {t("title")}
           </motion.h2>

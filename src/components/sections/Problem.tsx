@@ -4,69 +4,59 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Container, Section } from "@/components/ui/Container";
 import { DotMatrix } from "@/components/brand/Decor";
-import { SingleBall } from "@/components/brand/GradientBall";
 
 /**
  * P2 — AI Agent 的问题，不在技术，在 GTM
- * Left: character illustration (placeholder) + warm orb.
- * Right: title + 01/02/03 pain points.
+ * Single-column focused layout: big headline + 3 numbered pain points.
+ * Cream background keeps it warm but distinct from the Hero paper.
  */
 export function Problem() {
   const t = useTranslations("problem");
   const items = t.raw("items") as { n: string; text: string }[];
 
   return (
-    <Section bg="paper">
+    <Section bg="cream" className="relative overflow-hidden">
+      {/* Decorative dot matrix corner */}
+      <DotMatrix
+        cols={6}
+        rows={6}
+        className="absolute top-10 right-10 text-ink/30 hidden md:block"
+      />
       <Container size="full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left: orb + illustration slot */}
-          <div className="relative h-[420px] flex items-center justify-center">
-            <DotMatrix
-              cols={5}
-              rows={5}
-              className="absolute top-8 left-4 text-ink"
-            />
-            <SingleBall
-              variant="warm"
-              size={360}
-              className="relative z-0 opacity-90"
-            />
-            {/* Thinking-character placeholder — will be replaced with real photo via Sanity */}
-            <div
-              className="absolute inset-0 flex items-center justify-center text-7xl"
-              aria-hidden="true"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl"
+        >
+          <h2 className="sp-display text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
+            {t("title")}
+          </h2>
+          <div className="mt-8 h-px bg-ink/30" />
+        </motion.div>
+
+        <motion.ul
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10"
+        >
+          {items.map((it) => (
+            <li
+              key={it.n}
+              className="border-t-2 border-ink/80 pt-6 space-y-4"
             >
-              <span className="drop-shadow-lg">🤔</span>
-            </div>
-          </div>
-
-          {/* Right */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="space-y-10"
-          >
-            <div>
-              <h2 className="sp-display text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
-                {t("title")}
-              </h2>
-              <div className="mt-6 h-px bg-ink/80" />
-            </div>
-
-            <ul className="space-y-8">
-              {items.map((it) => (
-                <li key={it.n} className="flex gap-6">
-                  <div className="text-orange-500 font-bold text-xl min-w-[2.5rem]">
-                    {it.n}
-                  </div>
-                  <p className="text-xl text-ink/90 font-medium">{it.text}</p>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
+              <div className="sp-display text-orange-500 text-5xl md:text-6xl font-bold">
+                {it.n}
+              </div>
+              <p className="text-lg md:text-xl text-ink/90 font-medium leading-relaxed">
+                {it.text}
+              </p>
+            </li>
+          ))}
+        </motion.ul>
       </Container>
     </Section>
   );

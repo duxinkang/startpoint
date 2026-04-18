@@ -20,6 +20,9 @@
     "cta": "Get a free 30-min consult",
     "ctaSecondary": "Watch our work"
   },
+  "clientLogos": {
+    "label": "Shipped 0→1 with these AI products"
+  },
   "problem": {
     "title": "AI Agents don't fail on tech. They fail on GTM.",
     "items": [
@@ -161,6 +164,29 @@
       "title": "About StartPoint",
       "subtitle": "A hybrid team fluent in tech, growth, and investor narrative",
       "body": "We do one thing: take AI Agent products from 0 to 1. Not fragmented marketing outsourcing — a growth partner that shares the risk."
+    },
+    "story": {
+      "eyebrow": "Founder story",
+      "title": "Why we only do 0→1 for AI Agents",
+      "chapters": [
+        {
+          "year": "2022",
+          "title": "A lesson we paid for in person",
+          "text": "Our founding team ran growth on 100+ products at NetEase, ByteDance, and top overseas agencies — and watched too many technically brilliant teams die at GTM. The sharpest one: an AI product that crushed benchmarks, shut down 9 months later because it never found a user."
+        },
+        {
+          "year": "2024",
+          "title": "A gap no one was filling",
+          "text": "When AI Agents started shipping, we noticed something obvious — traditional agencies didn't understand AI products, and AI engineering teams didn't understand global GTM. What was missing wasn't marketing outsourcing; it was a growth partner who sits beside the founder and owns the outcome."
+        },
+        {
+          "year": "2025",
+          "title": "StartPoint",
+          "text": "We only take AI products. We don't do one-off projects — only 3-6 month deep engagements. Using the playbook we've already validated with Poly.app, Blockit AI, and Crunched, we help the next AI team make the jump from 0 to 1."
+        }
+      ],
+      "quote": "We're not a 'marketing team' — we're the first co-founder-in-growth for every AI product we work with.",
+      "signature": "— The StartPoint founding team"
     }
   },
   "engine": {
@@ -219,8 +245,8 @@
       { "n": "30+", "label": "Wins shipped", "text": "Across a wide range of AI products" },
       { "n": "7d", "label": "Fast start", "text": "Fastest time from signed to live" },
       { "n": "100%", "label": "AI-only focus", "text": "Only AI / SaaS / Agent products" },
-      { "n": "15+", "label": "Countries reached", "text": "" },
-      { "n": "100%", "label": "Client satisfaction", "text": "" }
+      { "n": "15+", "label": "Countries reached", "text": "North America, Europe, and key APAC markets" },
+      { "n": "100%", "label": "Client satisfaction", "text": "Every completed engagement renewed or referred us on" }
     ]
   },
   "advantages": {
@@ -285,7 +311,7 @@
         "icon": "🚀",
         "title": "Full-Stack Growth (Complete)",
         "text": "Own the Strategy → Execute → Optimize loop. Base retainer + profit share — our outcomes tied to yours.",
-        "badges": ["<3 months", "¥80,000 – ¥120,000 / mo"],
+        "badges": ["≥ 3 months", "¥80,000 – ¥120,000 / mo", "+ 10-20% of growth upside"],
         "footer": "Long-term partnership, accountable for growth"
       }
     ]
@@ -316,7 +342,7 @@
     "items": [
       { "q": "Do you only serve AI Agents?", "a": "Yes — AI Agent and AI SaaS only. No e-commerce, games, or consumer brands. Vertical focus lets us go deeper on the user decision journey and product perception." },
       { "q": "How fast can you start?", "a": "Strategy Diagnosis: within 3 days. Lite and Complete engagements: fastest 7 days from signing to first execution." },
-      { "q": "How do you price?", "a": "Three tiers: Strategy Diagnosis at ¥15,000 one-off; Lite partnership ¥30-50k / month; Complete ¥80-120k / month + growth profit share. Scope tailored to stage." },
+      { "q": "How do you price?", "a": "Three tiers: Strategy Diagnosis at ¥15,000 one-off; Lite partnership ¥30-50k / month; Complete ¥80-120k / month + 10-20% of growth upside (computed against incremental MRR or profit). The exact share is negotiated based on stage and target KPIs." },
       { "q": "How do you measure growth?", "a": "At kickoff we align on 3 North Star metrics (typically signups, paid conversion, ARR growth). Everything is reviewed against them. Under the Complete plan, our profit share is tied directly to those metrics." },
       { "q": "Can I see more case studies?", "a": "The /cases page lists 3 public ones. More are available 1:1 under NDA — book a 30-min consult via the contact form or email." }
     ]

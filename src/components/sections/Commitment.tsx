@@ -25,7 +25,7 @@ export function Commitment() {
           <div className="space-y-8">
             <Logo size="md" variant="dark" />
             <div>
-              <h2 className="sp-display text-5xl md:text-6xl lg:text-7xl leading-[1.05]">
+              <h2 className="sp-display text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
                 {t("title")}
               </h2>
               <p className="mt-6 text-lg text-ink/75 max-w-md leading-relaxed">
