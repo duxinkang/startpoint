@@ -1,19 +1,47 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
+
+// Maps backend error codes to user-facing messages so submitters know what
+// to fix instead of seeing a generic "submission failed".
+const ERROR_COPY: Record<string, { zh: string; en: string }> = {
+  missing_fields: {
+    zh: "请完整填写姓名、邮箱、公司/产品 和 产品阶段。",
+    en: "Please fill in name, email, company/product, and stage.",
+  },
+  invalid_email: {
+    zh: "邮箱格式不正确，请检查。",
+    en: "That email address looks invalid.",
+  },
+  too_long: {
+    zh: "内容过长（超过 5000 字）。",
+    en: "Message is too long (over 5000 chars).",
+  },
+  spam_detected: {
+    zh: "留言中包含过多链接或可疑内容，为防垃圾信息被拦截。",
+    en: "Too many links or suspicious content in the message.",
+  },
+  invalid_json: {
+    zh: "请求格式错误，请刷新后重试。",
+    en: "Malformed request — please refresh and retry.",
+  },
+};
 
 export function ContactForm() {
   const t = useTranslations("contact.form");
+  const locale = useLocale();
   const [status, setStatus] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
+  const [errorCode, setErrorCode] = useState<string | null>(null);
   const stageOptions = t.raw("stageOptions") as string[];
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
+    setErrorCode(null);
     const fd = new FormData(e.currentTarget);
     // Honeypot: real humans never fill this hidden field. If it has any value
     // we silently "succeed" to avoid tipping off bots, but skip the API call.
@@ -23,11 +51,11 @@ export function ContactForm() {
       return;
     }
     const payload = {
-      name: fd.get("name"),
-      email: fd.get("email"),
-      company: fd.get("company"),
-      stage: fd.get("stage"),
-      message: fd.get("message"),
+      name: (fd.get("name") as string | null)?.trim() || "",
+      email: (fd.get("email") as string | null)?.trim() || "",
+      company: (fd.get("company") as string | null)?.trim() || "",
+      stage: (fd.get("stage") as string | null)?.trim() || "",
+      message: (fd.get("message") as string | null)?.trim() || "",
     };
     try {
       const res = await fetch("/api/contact", {
@@ -35,7 +63,17 @@ export function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      if (!res.ok) throw new Error("fail");
+      if (!res.ok) {
+        let code = "unknown";
+        try {
+          const json = (await res.json()) as { error?: string };
+          if (json?.error) code = json.error;
+        } catch {
+          /* body wasn't JSON — keep code=unknown */
+        }
+        setErrorCode(code);
+        throw new Error(code);
+      }
       setStatus("success");
       (e.target as HTMLFormElement).reset();
     } catch {
@@ -55,7 +93,6 @@ export function ContactForm() {
       transition={{ duration: 0.5 }}
       onSubmit={onSubmit}
       className="space-y-5 rounded-3xl bg-white border border-ink/8 p-6 md:p-10 shadow-sm"
-      noValidate
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
@@ -184,9 +221,16 @@ export function ContactForm() {
       {status === "error" && (
         <div
           role="alert"
-          className="rounded-xl bg-red-50 border border-red-200 text-red-800 px-4 py-3 text-sm"
+          className="rounded-xl bg-red-50 border border-red-200 text-red-800 px-4 py-3 text-sm space-y-1"
         >
-          ✕ {t("error")}
+          <div>✕ {t("error")}</div>
+          {errorCode && ERROR_COPY[errorCode] && (
+            <div className="text-xs text-red-700/90">
+              {locale === "en"
+                ? ERROR_COPY[errorCode].en
+                : ERROR_COPY[errorCode].zh}
+            </div>
+          )}
         </div>
       )}
     </motion.form>
