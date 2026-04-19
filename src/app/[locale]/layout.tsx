@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Noto_Sans_SC } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -13,6 +13,13 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+});
+
+const notoSansSC = Noto_Sans_SC({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700", "900"],
+  display: "swap",
+  variable: "--font-noto-sc",
 });
 
 export const viewport: Viewport = {
@@ -55,7 +62,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${inter.variable} scroll-smooth`}>
+    <html lang={locale} className={`${inter.variable} ${notoSansSC.variable} scroll-smooth`}>
       <body>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <Nav />

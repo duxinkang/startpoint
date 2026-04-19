@@ -30,9 +30,9 @@
   --foreground: var(--sp-ink);
 
   /* Typography */
-  --font-display: "HarmonyOS Sans SC", "PingFang SC", "Inter", -apple-system,
+  --font-display: var(--font-noto-sc, "Noto Sans SC"), "PingFang SC", -apple-system,
                   "Helvetica Neue", "Segoe UI", Arial, sans-serif;
-  --font-body: "Inter", "PingFang SC", "HarmonyOS Sans SC", -apple-system,
+  --font-body: var(--font-inter, "Inter"), "PingFang SC", var(--font-noto-sc, "Noto Sans SC"), -apple-system,
                "Helvetica Neue", "Segoe UI", Arial, sans-serif;
 }
 
@@ -69,7 +69,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-body);
+  font-family: var(--font-inter), var(--font-body);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
