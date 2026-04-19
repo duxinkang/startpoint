@@ -19,7 +19,7 @@ export function Commitment() {
   }[];
 
   return (
-    <Section bg="paper">
+    <Section bg="cream">
       <Container size="full">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-16 items-start">
           <div className="space-y-8">
