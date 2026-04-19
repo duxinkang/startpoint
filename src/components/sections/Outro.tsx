@@ -42,10 +42,10 @@ export function Outro() {
           <h2 className="sp-display text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
             {t("title")}
           </h2>
-          <p className="text-lg md:text-xl text-ink/85 leading-relaxed">
+          <p className="text-lg md:text-xl text-ink/80 leading-relaxed">
             {t("body1")}
           </p>
-          <p className="text-lg md:text-xl text-ink/85 leading-relaxed">
+          <p className="text-lg md:text-xl text-ink/80 leading-relaxed">
             {t("body2")}
           </p>
 

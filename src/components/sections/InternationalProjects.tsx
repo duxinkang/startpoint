@@ -27,7 +27,7 @@ export function InternationalProjects() {
   const items = t.raw("items") as Project[];
 
   return (
-    <Section bg="paper" className="!py-24 md:!py-28">
+    <Section bg="paper" spacing="hero">
       <Container size="full">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -70,7 +70,7 @@ export function InternationalProjects() {
                   viewBox="0 0 20 20"
                   fill="none"
                   aria-hidden="true"
-                  className="text-ink/30 group-hover:text-orange-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
+                  className="text-ink/40 group-hover:text-orange-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
                 >
                   <path
                     d="M5 15L15 5M15 5H7M15 5V13"
@@ -82,7 +82,7 @@ export function InternationalProjects() {
                 </svg>
               </div>
 
-              <div className="text-ink/55 text-xs font-bold tracking-[0.22em] uppercase">
+              <div className="text-ink/60 text-xs font-bold tracking-[0.22em] uppercase">
                 {p.country}
               </div>
               <div className="mt-1 text-ink/70 text-sm">

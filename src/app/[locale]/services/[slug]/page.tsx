@@ -122,7 +122,7 @@ export default async function ServiceDetailPage({
       <JsonLd data={jsonLd} />
 
       {/* Hero */}
-      <Section bg="paper" className="!pt-24 !pb-16">
+      <Section bg="paper" spacing="flush" className="pt-24 pb-16">
         <Container size="full">
           <Pill variant="orange" size="md" className="mb-6">
             {t("kicker")}
@@ -170,7 +170,7 @@ function ServiceDetailCTA({
   const copy = getCtaCopy(slug, locale);
 
   return (
-    <Section bg="ink" className="!py-20 md:!py-24">
+    <Section bg="ink" spacing="cta" className="md:py-24">
       <Container size="full">
         <div className="rounded-3xl bg-gradient-to-br from-[#1f1208] via-ink to-[#1a1a1a] border border-orange-500/20 p-8 md:p-12 lg:p-14 relative overflow-hidden">
           {/* Decorative orange glow */}
@@ -201,7 +201,7 @@ function ServiceDetailCTA({
                 {copy.outcomes.map((o) => (
                   <li
                     key={o}
-                    className="flex items-start gap-3 text-white/85 text-[15px] md:text-base"
+                    className="flex items-start gap-3 text-white/85 text-sm md:text-base"
                   >
                     <span
                       aria-hidden="true"

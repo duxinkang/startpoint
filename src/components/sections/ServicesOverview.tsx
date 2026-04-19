@@ -19,7 +19,7 @@ export function ServicesOverview() {
   const right = items.slice(3);
 
   return (
-    <Section bg="orange" className="!py-24 md:!py-32">
+    <Section bg="orange" spacing="hero">
       <Container size="full">
         <div className="absolute top-8 left-1/2 -translate-x-1/2 opacity-90">
           <Logo variant="dark" size="sm" />
@@ -43,7 +43,7 @@ export function ServicesOverview() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="lg:pt-8"
           >
-            <p className="text-lg md:text-xl text-ink/90 leading-relaxed max-w-md">
+            <p className="text-lg md:text-xl text-ink/80 leading-relaxed max-w-md">
               {t("description")}
             </p>
           </motion.div>

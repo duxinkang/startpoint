@@ -35,10 +35,10 @@ export function KolDetail() {
                 style={{
                   background:
                     i === 0
-                      ? "linear-gradient(135deg, #FFA872, #EA4510)"
+                      ? "linear-gradient(135deg, var(--sp-peach-soft), var(--sp-orange-500))"
                       : i === 1
-                        ? "linear-gradient(135deg, #1A1A1A, #5C4BD1)"
-                        : "linear-gradient(135deg, #FFD9B8, #FFAE78)",
+                        ? "linear-gradient(135deg, var(--sp-ink-soft), var(--sp-indigo-500))"
+                        : "linear-gradient(135deg, var(--sp-cream-mid), var(--sp-peach-warm))",
                 }}
               >
                 <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-70">
@@ -47,7 +47,7 @@ export function KolDetail() {
               </div>
               <div className="p-6 flex-1">
                 <h3 className="font-bold text-ink text-lg">{step.title}</h3>
-                <p className="mt-3 text-sm text-ink/75 leading-relaxed">
+                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
                   {step.text}
                 </p>
               </div>
@@ -97,7 +97,7 @@ export function KolDetail() {
               ).map((line) => (
                 <li
                   key={line}
-                  className="flex gap-3 text-ink/80 text-[15px] leading-relaxed"
+                  className="flex gap-3 text-ink/80 text-sm leading-relaxed"
                 >
                   <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-orange-500" />
                   <span>{line}</span>

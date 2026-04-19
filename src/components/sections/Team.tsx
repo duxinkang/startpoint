@@ -58,7 +58,7 @@ export function Team() {
                   <div className="mt-1 text-sm font-semibold text-orange-600">
                     {m.title}
                   </div>
-                  <p className="mt-4 text-ink/70 leading-relaxed text-[15px]">
+                  <p className="mt-4 text-ink/70 leading-relaxed text-sm">
                     {m.text}
                   </p>
                 </div>
@@ -109,9 +109,9 @@ function MemberPhoto({ name, role }: { name: string; role: string }) {
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
       <div className="absolute bottom-4 left-5">
-        <span className="bg-orange-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">
+        <Pill variant="orange" size="sm">
           {role}
-        </span>
+        </Pill>
       </div>
     </div>
   );

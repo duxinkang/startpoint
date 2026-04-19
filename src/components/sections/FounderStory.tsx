@@ -18,7 +18,7 @@ export function FounderStory() {
   const chapters = t.raw("chapters") as Chapter[];
 
   return (
-    <Section bg="cream" className="!py-24 md:!py-32">
+    <Section bg="cream" spacing="hero">
       <Container size="full">
         <div className="max-w-4xl mb-14 md:mb-20">
           <Pill variant="orange" size="md" className="mb-6">
@@ -51,7 +51,7 @@ export function FounderStory() {
               <h3 className="sp-display text-xl md:text-2xl text-ink leading-snug mb-3">
                 {c.title}
               </h3>
-              <p className="text-ink/75 text-base leading-relaxed">
+              <p className="text-ink/70 text-base leading-relaxed">
                 {c.text}
               </p>
             </motion.div>

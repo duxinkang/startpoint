@@ -64,7 +64,7 @@ export default async function PricingPage({
           <h1 className="sp-display text-[15vw] sm:text-[11vw] lg:text-[7.5vw] xl:text-[120px] leading-[1.05] max-w-4xl text-ink">
             {t("title")}
           </h1>
-          <p className="mt-6 max-w-3xl text-lg md:text-xl text-ink/75 leading-relaxed">
+          <p className="mt-6 max-w-3xl text-lg md:text-xl text-ink/70 leading-relaxed">
             {locale === "zh"
               ? "按阶段、按深度灵活组合。从一次性战略问诊到深度绑定的增长陪跑，三档方案覆盖 AI 产品 0→1 的全路径。"
               : "Flexible by stage and depth. From a single strategy workshop to deep revenue-share growth partnership — three tiers scoped to your 0→1 journey."}
@@ -73,7 +73,7 @@ export default async function PricingPage({
       </Section>
 
       {/* Plans grid */}
-      <Section bg="cream" className="!pt-8">
+      <Section bg="cream" spacing="tight">
         <Container size="full">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {plans.map((plan, i) => {
@@ -123,7 +123,7 @@ export default async function PricingPage({
                   </h3>
 
                   <p
-                    className={`mt-4 leading-relaxed text-[15px] ${isFeatured ? "text-white/80" : "text-ink/70"}`}
+                    className={`mt-4 leading-relaxed text-sm ${isFeatured ? "text-white/80" : "text-ink/70"}`}
                   >
                     {plan.text}
                   </p>
@@ -240,7 +240,7 @@ export default async function PricingPage({
                 <h3 className="sp-display text-xl md:text-2xl text-ink leading-snug">
                   {item.t}
                 </h3>
-                <p className="mt-3 text-ink/75 leading-relaxed text-[15px]">
+                <p className="mt-3 text-ink/70 leading-relaxed text-sm">
                   {item.b}
                 </p>
               </article>
@@ -253,7 +253,7 @@ export default async function PricingPage({
                 ? "利润分成到底怎么算？"
                 : "How does the profit share actually work?"}
             </h3>
-            <p className="text-ink/75 leading-relaxed">
+            <p className="text-ink/70 leading-relaxed">
               {locale === "zh"
                 ? "分成标的在 kickoff 阶段就用书面形式锁定，通常是 MRR 增量（月度订阅收入相对基线的净增长）或产品净利润增量。比例 10-20% 根据产品阶段、预期波动度与 CAC 回收周期一对一协商。战略问诊的一次性费用可在后续升级到轻量 / 完整陪跑时抵扣首月服务费。"
                 : "The share base is locked in writing at kickoff — typically incremental MRR (month-over-month net growth over a baseline) or incremental net profit. The 10-20% figure is negotiated per product stage, expected volatility, and CAC-payback window. The Strategy Diagnosis fee is credited against month one if you upgrade to Lite or Full later."}
@@ -263,7 +263,7 @@ export default async function PricingPage({
       </Section>
 
       {/* Bottom CTA */}
-      <Section bg="ink" className="!py-20">
+      <Section bg="ink" spacing="cta">
         <Container size="lg" className="text-center">
           <h2 className="sp-display text-3xl md:text-4xl text-white">
             {locale === "zh"

@@ -54,7 +54,8 @@ export function Showcase() {
     <Section
       bg="ink"
       id="showcase"
-      className="!py-24 md:!py-32 scroll-mt-20"
+      spacing="hero"
+      className="scroll-mt-20"
     >
       {/* Subtle grid overlay for texture */}
       <div
@@ -255,7 +256,7 @@ function ShowcaseCard({ c, index }: { c: Case; index: number }) {
         <span className="text-orange-500 font-bold text-lg tabular-nums">
           0{index + 1}
         </span>
-        <p className="text-white/80 text-sm md:text-[15px] leading-relaxed">
+        <p className="text-white/80 text-sm md:text-sm leading-relaxed">
           {c.metric}
         </p>
       </div>

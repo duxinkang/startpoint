@@ -54,7 +54,7 @@ export function ProductHuntDetail() {
                 </div>
                 <div>
                   <h3 className="font-bold text-ink text-lg">{step.title}</h3>
-                  <p className="mt-2 text-ink/75 leading-relaxed">{step.text}</p>
+                  <p className="mt-2 text-ink/70 leading-relaxed">{step.text}</p>
                 </div>
               </motion.div>
             ))}

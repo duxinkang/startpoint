@@ -63,7 +63,7 @@ export default async function ContactPage({
               {/* Contact meta */}
               <div className="mt-10 space-y-5">
                 <div>
-                  <div className="text-xs font-bold tracking-[0.2em] text-ink/50 mb-2">
+                  <div className="text-xs font-bold tracking-[0.2em] text-ink/60 mb-2">
                     EMAIL
                   </div>
                   <a
@@ -75,19 +75,19 @@ export default async function ContactPage({
                 </div>
 
                 <div>
-                  <div className="text-xs font-bold tracking-[0.2em] text-ink/50 mb-2">
+                  <div className="text-xs font-bold tracking-[0.2em] text-ink/60 mb-2">
                     {locale === "zh" ? "线下" : "IN-PERSON"}
                   </div>
-                  <div className="text-ink/75 leading-relaxed">
+                  <div className="text-ink/70 leading-relaxed">
                     {t("locations")}
                   </div>
                 </div>
 
                 <div>
-                  <div className="text-xs font-bold tracking-[0.2em] text-ink/50 mb-2">
+                  <div className="text-xs font-bold tracking-[0.2em] text-ink/60 mb-2">
                     {locale === "zh" ? "响应时间" : "RESPONSE TIME"}
                   </div>
-                  <div className="text-ink/75 leading-relaxed">
+                  <div className="text-ink/70 leading-relaxed">
                     {locale === "zh"
                       ? "通常在 24 小时内回复（工作日）"
                       : "Usually within 24 hours on weekdays"}
@@ -118,7 +118,7 @@ export default async function ContactPage({
                 ? "这 30 分钟我们会聊什么？"
                 : "What we'll cover in 30 minutes"}
             </h2>
-            <p className="mt-5 text-ink/75 leading-relaxed text-lg">
+            <p className="mt-5 text-ink/70 leading-relaxed text-lg">
               {locale === "zh"
                 ? "免费咨询不是销售电话，而是对你当前 AI Agent 产品增长路径的一次快速压力测试。提前把下面几个问题想清楚，我们聊起来会更有效率。"
                 : "The free consultation isn't a sales call — it's a fast pressure-test of your AI Agent product's growth plan. Give the questions below a quick think and we'll move faster."}
@@ -134,7 +134,7 @@ export default async function ContactPage({
                 <h3 className="sp-display text-xl md:text-2xl text-ink leading-snug">
                   {item.q}
                 </h3>
-                <p className="mt-3 text-ink/75 leading-relaxed text-[15px]">
+                <p className="mt-3 text-ink/70 leading-relaxed text-sm">
                   {item.a}
                 </p>
               </article>

@@ -36,7 +36,7 @@ export function SeoGeoDetail() {
                 0{i + 1}
               </div>
               <h3 className="sp-display text-2xl text-ink">{step.title}</h3>
-              <p className="mt-4 text-ink/75 leading-relaxed">{step.text}</p>
+              <p className="mt-4 text-ink/70 leading-relaxed">{step.text}</p>
             </motion.div>
           ))}
         </div>

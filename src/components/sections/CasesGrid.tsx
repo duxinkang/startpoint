@@ -20,29 +20,35 @@ export function CasesGrid() {
   }[];
 
   // Gradient themes per card — alternates through the three brand moods
-  const themes = [
+  const themes: {
+    gradient: string;
+    accent: string;
+    chipVariant: "orange" | "ink";
+    chipClass?: string;
+  }[] = [
     {
       // orange / warm
       gradient: "from-orange-500 via-orange-400 to-amber-300",
       accent: "text-orange-600",
-      chipBg: "bg-orange-500",
+      chipVariant: "orange",
     },
     {
       // ink / deep
       gradient: "from-ink via-ink/90 to-orange-500/80",
       accent: "text-ink",
-      chipBg: "bg-ink",
+      chipVariant: "ink",
     },
     {
-      // cream / editorial
+      // cream / editorial (deeper orange chip for contrast on lighter header)
       gradient: "from-amber-200 via-orange-200 to-orange-400",
       accent: "text-orange-700",
-      chipBg: "bg-orange-600",
+      chipVariant: "orange",
+      chipClass: "bg-orange-600",
     },
   ];
 
   return (
-    <Section bg="cream" className="!pt-8">
+    <Section bg="cream" spacing="tight">
       <Container size="full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {items.map((item, i) => {
@@ -74,22 +80,24 @@ export function CasesGrid() {
 
                     {/* Category tag */}
                     <div className="absolute bottom-5 left-6">
-                      <span
-                        className={`${theme.chipBg} text-white text-xs font-bold px-3 py-1.5 rounded-full`}
+                      <Pill
+                        variant={theme.chipVariant}
+                        size="sm"
+                        className={theme.chipClass}
                       >
                         {item.tag}
-                      </span>
+                      </Pill>
                     </div>
                   </div>
 
                   {/* Body */}
                   <div className="p-7 md:p-8 flex-1">
                   <h3
-                    className={`sp-display text-2xl md:text-[26px] leading-tight ${theme.accent}`}
+                    className={`sp-display text-2xl leading-tight ${theme.accent}`}
                   >
                     {item.title}
                   </h3>
-                  <p className="mt-4 text-ink/75 leading-relaxed text-[15px]">
+                  <p className="mt-4 text-ink/70 leading-relaxed text-sm">
                     {item.text}
                   </p>
 

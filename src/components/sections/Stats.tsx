@@ -12,7 +12,7 @@ export function Stats() {
   const items = t.raw("items") as { n: string; label: string; text: string }[];
 
   return (
-    <Section bg="ink" className="!py-20">
+    <Section bg="ink" spacing="cta">
       <Container size="full">
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_2fr] gap-12 items-center">
           <div>

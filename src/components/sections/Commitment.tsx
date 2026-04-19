@@ -28,7 +28,7 @@ export function Commitment() {
               <h2 className="sp-display text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
                 {t("title")}
               </h2>
-              <p className="mt-6 text-lg text-ink/75 max-w-md leading-relaxed">
+              <p className="mt-6 text-lg text-ink/70 max-w-md leading-relaxed">
                 {t("subtitle")}
               </p>
             </div>

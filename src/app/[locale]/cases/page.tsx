@@ -70,7 +70,7 @@ export default async function CasesPage({
       {/* Pre-StartPoint overseas 0→1 work across categories */}
       <InternationalProjects />
 
-      <Section bg="ink" className="!py-20">
+      <Section bg="ink" spacing="cta">
         <Container size="lg" className="text-center">
           <h2 className="sp-display text-3xl md:text-4xl text-white">
             {locale === "zh"

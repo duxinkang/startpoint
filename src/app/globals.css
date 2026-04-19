@@ -18,6 +18,16 @@
   --sp-indigo-500: #5C4BD1;   /* gradient ball cool side */
   --sp-indigo-600: #3E2FA6;
 
+  /* Warm accents used inside gradient balls + card headers.
+     These are not on the main orange scale (which tops out at #FFD9C2 / #FFB38A),
+     but are softer peach / cream values used only inside radial gradients. */
+  --sp-peach:      #FFA66B;   /* sp-ball-warm mid stop; KolDetail gradients */
+  --sp-peach-soft: #FFA872;   /* KolDetail step-1 gradient start */
+  --sp-peach-warm: #FFAE78;   /* KolDetail step-3 gradient end */
+  --sp-cream-hi:   #FFD7BF;   /* sp-ball inner highlight */
+  --sp-cream-mid:  #FFD9B8;   /* KolDetail step-3 gradient start */
+  --sp-cream-low:  #FFE3CC;   /* sp-ball-warm inner highlight */
+
   --sp-cream:      #F6EFE0;   /* reddit / ph section bg */
   --sp-bone:       #EFEBE3;
   --sp-paper:      #F0EFEB;   /* hero bg */
@@ -99,7 +109,7 @@ body {
 .sp-ball {
   background: radial-gradient(
     circle at 30% 30%,
-    #FFD7BF 0%,
+    var(--sp-cream-hi) 0%,
     var(--sp-orange-400) 35%,
     var(--sp-orange-600) 70%,
     var(--sp-indigo-600) 100%
@@ -111,8 +121,8 @@ body {
 .sp-ball-warm {
   background: radial-gradient(
     circle at 35% 30%,
-    #FFE3CC 0%,
-    #FFA66B 40%,
+    var(--sp-cream-low) 0%,
+    var(--sp-peach) 40%,
     var(--sp-orange-500) 80%
   );
   border-radius: 9999px;
@@ -139,7 +149,11 @@ body {
 .sp-snap { scroll-snap-type: y mandatory; }
 .sp-snap-child { scroll-snap-align: start; }
 
-/* Focus visible */
+/* Focus visible — default fallback for any element that doesn't supply its
+   own focus ring via Tailwind (e.g. raw <input>, <select>). Component-level
+   primitives (Button, Pill) pass `outline-none` + `focus-visible:ring-*`
+   so their ring hugs the actual shape instead of getting clipped by
+   `rounded-full`. */
 :focus-visible {
   outline: 2px solid var(--sp-orange-500);
   outline-offset: 2px;

@@ -41,7 +41,7 @@ export function Engine() {
             className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 items-center justify-center z-0 pointer-events-none"
           >
             <DoubleBall size={280} offset={40} />
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-ink/90 text-center z-10">
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-ink/80 text-center z-10">
               <div className="sp-display text-3xl leading-tight">
                 {t("title").split(" ").slice(0, 2).join(" ")}
               </div>
@@ -74,7 +74,7 @@ export function Engine() {
                   <span className="h-px w-6 bg-orange-500" />
                   <span>{step.title}</span>
                 </div>
-                <p className="text-ink/85 text-base leading-relaxed">
+                <p className="text-ink/80 text-base leading-relaxed">
                   {step.text}
                 </p>
               </div>

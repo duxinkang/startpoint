@@ -54,7 +54,7 @@ export function Vs() {
                     </div>
                     <div>
                       <div className="font-bold text-ink">{item.title}</div>
-                      <div className="mt-1 text-sm text-ink/65 leading-relaxed">
+                      <div className="mt-1 text-sm text-ink/70 leading-relaxed">
                         {item.text}
                       </div>
                     </div>

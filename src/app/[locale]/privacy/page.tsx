@@ -65,7 +65,7 @@ export default async function PrivacyPage({
 
 function Prose({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-10 max-w-3xl space-y-8 text-ink/80 leading-relaxed text-[17px]">
+    <div className="mt-10 max-w-3xl space-y-8 text-ink/80 leading-relaxed text-base">
       {children}
     </div>
   );

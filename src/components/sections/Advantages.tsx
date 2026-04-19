@@ -46,7 +46,7 @@ export function Advantages() {
                 <h3 className="font-bold text-ink text-lg md:text-xl leading-snug">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-ink/70 leading-relaxed text-[15px]">
+                <p className="mt-4 text-ink/70 leading-relaxed text-sm">
                   {item.text}
                 </p>
               </Card>

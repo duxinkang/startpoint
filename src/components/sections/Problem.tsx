@@ -20,7 +20,7 @@ export function Problem() {
       <DotMatrix
         cols={6}
         rows={6}
-        className="absolute top-10 right-10 text-ink/30 hidden md:block"
+        className="absolute top-10 right-10 text-ink/40 hidden md:block"
       />
       <Container size="full">
         <motion.div
@@ -51,7 +51,7 @@ export function Problem() {
               <div className="sp-display text-orange-500 text-5xl md:text-6xl font-bold">
                 {it.n}
               </div>
-              <p className="text-lg md:text-xl text-ink/90 font-medium leading-relaxed">
+              <p className="text-lg md:text-xl text-ink/80 font-medium leading-relaxed">
                 {it.text}
               </p>
             </li>

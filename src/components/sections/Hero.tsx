@@ -60,12 +60,12 @@ export function Hero() {
               <h1 className="sp-display text-[15vw] sm:text-[11vw] lg:text-[7.5vw] xl:text-[120px]">
                 {t("titleZh")}
               </h1>
-              <h2 className="sp-display text-[10vw] sm:text-[7vw] lg:text-[5vw] xl:text-[80px] text-ink/95">
+              <h2 className="sp-display text-[10vw] sm:text-[7vw] lg:text-[5vw] xl:text-[80px] text-ink/80">
                 {t("titleEn")}
               </h2>
             </div>
 
-            <div className="flex items-start gap-3 text-ink/85 pt-2">
+            <div className="flex items-start gap-3 text-ink/80 pt-2">
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
                 <circle
                   cx="14"

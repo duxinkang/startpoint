@@ -24,7 +24,7 @@ export function FeaturedCaseStudy() {
   const results = t.raw("results") as Result[];
 
   return (
-    <Section bg="ink" className="!py-24 md:!py-32 relative overflow-hidden">
+    <Section bg="ink" spacing="hero" className="relative overflow-hidden">
       {/* Decorative corner glow */}
       <div
         aria-hidden="true"
@@ -85,7 +85,7 @@ export function FeaturedCaseStudy() {
                   {ws.items.map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-3 text-white/80 text-[15px] leading-relaxed"
+                      className="flex items-start gap-3 text-white/80 text-sm leading-relaxed"
                     >
                       <span
                         aria-hidden="true"

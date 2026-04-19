@@ -61,7 +61,7 @@ export default async function AboutPage({
           <p className="mt-6 max-w-3xl text-xl md:text-2xl text-ink/80 leading-relaxed">
             {t("hero.subtitle")}
           </p>
-          <p className="mt-4 max-w-3xl text-lg text-ink/65 leading-relaxed">
+          <p className="mt-4 max-w-3xl text-lg text-ink/70 leading-relaxed">
             {t("hero.body")}
           </p>
         </Container>
@@ -83,7 +83,7 @@ export default async function AboutPage({
       <Team />
 
       {/* Bottom CTA */}
-      <Section bg="ink" className="!py-20">
+      <Section bg="ink" spacing="cta">
         <Container size="lg" className="text-center">
           <h2 className="sp-display text-3xl md:text-4xl text-white">
             {locale === "zh"

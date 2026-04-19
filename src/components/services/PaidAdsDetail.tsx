@@ -60,7 +60,7 @@ export function PaidAdsDetail() {
                   0{i + 1}
                 </div>
                 <h3 className="font-bold text-ink text-lg">{m.title}</h3>
-                <p className="mt-3 text-sm text-ink/75 leading-relaxed">
+                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
                   {m.text}
                 </p>
               </motion.div>
@@ -142,7 +142,7 @@ export function PaidAdsDetail() {
                     "No locked-away accounts or creative — the ad accounts, audiences, and creative all belong to you",
                   ]
               ).map((line) => (
-                <li key={line} className="flex gap-3 text-white/85 text-[15px] leading-relaxed">
+                <li key={line} className="flex gap-3 text-white/85 text-sm leading-relaxed">
                   <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-orange-400" />
                   <span>{line}</span>
                 </li>
