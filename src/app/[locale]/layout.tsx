@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { MotionProviders } from "@/components/MotionProviders";
 import { buildMetadata } from "@/lib/seo";
 import "../globals.css";
 
@@ -65,9 +66,11 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${inter.variable} ${notoSansSC.variable} scroll-smooth`}>
       <body>
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <Nav />
-          <main className="pt-16 md:pt-20">{children}</main>
-          <Footer />
+          <MotionProviders>
+            <Nav />
+            <main className="pt-16 md:pt-20">{children}</main>
+            <Footer />
+          </MotionProviders>
         </NextIntlClientProvider>
       </body>
     </html>
