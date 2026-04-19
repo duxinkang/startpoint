@@ -53,7 +53,7 @@ export default async function ContactPage({
               <Pill variant="orange" size="md" className="mb-6">
                 {nav("contact")}
               </Pill>
-              <h1 className="sp-display text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-ink">
+              <h1 className="sp-display text-[15vw] sm:text-[11vw] lg:text-[7.5vw] xl:text-[120px] leading-[1.05] text-ink">
                 {t("title")}
               </h1>
               <p className="mt-6 text-xl md:text-2xl text-ink/80 leading-relaxed">

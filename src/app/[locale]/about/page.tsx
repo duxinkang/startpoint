@@ -55,7 +55,7 @@ export default async function AboutPage({
           <Pill variant="orange" size="md" className="mb-6">
             {nav("about")}
           </Pill>
-          <h1 className="sp-display text-5xl md:text-6xl lg:text-7xl leading-[1.05] max-w-4xl text-ink">
+          <h1 className="sp-display text-[15vw] sm:text-[11vw] lg:text-[7.5vw] xl:text-[120px] leading-[1.05] max-w-4xl text-ink">
             {t("hero.title")}
           </h1>
           <p className="mt-6 max-w-3xl text-xl md:text-2xl text-ink/80 leading-relaxed">
