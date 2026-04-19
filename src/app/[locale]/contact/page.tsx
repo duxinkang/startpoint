@@ -2,6 +2,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Container, Section } from "@/components/ui/Container";
 import { Pill } from "@/components/ui/Pill";
+import { cardClasses } from "@/components/ui/Card";
 import { JsonLd } from "@/components/JsonLd";
 import { buildMetadata, breadcrumbSchema, contactPointSchema, faqSchema } from "@/lib/seo";
 import { ContactForm } from "@/components/forms/ContactForm";
@@ -131,10 +132,7 @@ export default async function ContactPage({
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {PRE_CALL_FAQ[locale === "zh" ? "zh" : "en"].map((item) => (
-              <article
-                key={item.q}
-                className="rounded-2xl bg-white border border-ink/10 p-7 shadow-sm"
-              >
+              <article key={item.q} className={cardClasses("subtle")}>
                 <h3 className="sp-display text-xl md:text-2xl text-ink leading-snug">
                   {item.q}
                 </h3>

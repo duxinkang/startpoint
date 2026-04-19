@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Container, Section } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Pill } from "@/components/ui/Pill";
-import { Card } from "@/components/ui/Card";
+import { Card, cardClasses } from "@/components/ui/Card";
 import { JsonLd } from "@/components/JsonLd";
 import { buildMetadata, breadcrumbSchema, offerCatalogSchema } from "@/lib/seo";
 
@@ -93,8 +93,10 @@ export default async function PricingPage({
                   key={plan.key}
                   className={
                     isFeatured
+                      // Featured card is intentionally a one-off: dark bg,
+                      // scale lift, 2px orange ring. Keeps Card.feature clean.
                       ? "relative rounded-3xl bg-ink text-white p-8 md:p-10 shadow-2xl md:scale-[1.03] border-2 border-orange-500"
-                      : "relative rounded-3xl bg-white text-ink p-8 md:p-10 border border-ink/10 shadow-sm"
+                      : cardClasses("feature", "relative text-ink")
                   }
                 >
                   {isFeatured && (
@@ -243,10 +245,7 @@ export default async function PricingPage({
                   },
                 ]
             ).map((item) => (
-              <article
-                key={item.t}
-                className="rounded-3xl bg-white border border-ink/10 p-7 shadow-sm"
-              >
+              <article key={item.t} className={cardClasses("subtle")}>
                 <h3 className="sp-display text-xl md:text-2xl text-ink leading-snug">
                   {item.t}
                 </h3>

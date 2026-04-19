@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Container, Section } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Pill } from "@/components/ui/Pill";
-import { Card } from "@/components/ui/Card";
+import { Card, cardClasses } from "@/components/ui/Card";
 import { Link } from "@/i18n/navigation";
 import { buildMetadata, breadcrumbSchema, serviceSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
@@ -89,7 +89,10 @@ export default async function ServicesPage({
               <Link
                 key={item.slug}
                 href={`/services/${item.slug}` as const}
-                className="group rounded-2xl border border-ink/10 bg-white p-8 hover:border-orange-500 hover:-translate-y-1 transition-all shadow-sm"
+                className={cardClasses(
+                  "feature",
+                  "group block hover:border-orange-500 hover:-translate-y-1 transition-all",
+                )}
               >
                 <div className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-4">
                   {item.slug.replace("-", " / ")}
