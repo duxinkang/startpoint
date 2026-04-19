@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Pill } from "@/components/ui/Pill";
@@ -20,29 +21,49 @@ import { GridCircle, ArcLine, DotMatrix } from "@/components/brand/Decor";
 export function Hero() {
   const t = useTranslations("hero");
 
+  // Gate the decorative video behind matchMedia so it never even *fetches*
+  // on mobile / data-conscious users. `hidden lg:block` alone still triggered
+  // some browsers to start the MP4 download despite `preload="none"`; removing
+  // the element from the tree entirely is the only reliable way.
+  const [showVideo, setShowVideo] = useState(false);
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return;
+    const wide = window.matchMedia("(min-width: 1024px)");
+    const update = () => {
+      const reducedData = window.matchMedia("(prefers-reduced-data: reduce)")
+        .matches;
+      setShowVideo(wide.matches && !reducedData);
+    };
+    update();
+    wide.addEventListener("change", update);
+    return () => wide.removeEventListener("change", update);
+  }, []);
+
   return (
     <Section bg="paper" className="min-h-[calc(100vh-5rem)] flex items-center relative overflow-hidden">
-      {/* Decorative Poly video loop — desktop only. Acts as a warm-tinted
-          background behind the Hero; pointer-events-none so it never intercepts
-          clicks. Fades out on the edges via a radial mask for focus on the copy. */}
-      <video
-        // eslint-disable-next-line jsx-a11y/media-has-caption
-        src="/videos/poly.mp4"
-        poster="/videos/posters/poly.jpg"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="none"
-        aria-hidden="true"
-        className="hidden lg:block absolute inset-0 w-full h-full object-cover opacity-[0.18] pointer-events-none"
-        style={{
-          maskImage:
-            "radial-gradient(ellipse at center, black 35%, transparent 75%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse at center, black 35%, transparent 75%)",
-        }}
-      />
+      {/* Decorative Poly video loop — desktop only, matchMedia-gated so the
+          5.8 MB MP4 is never fetched on phones. Pointer-events-none so it
+          never intercepts clicks; radial mask fades it at the edges. */}
+      {showVideo && (
+        <video
+          // eslint-disable-next-line jsx-a11y/media-has-caption
+          src="/videos/poly.mp4"
+          poster="/videos/posters/poly.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.18] pointer-events-none"
+          style={{
+            maskImage:
+              "radial-gradient(ellipse at center, black 35%, transparent 75%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse at center, black 35%, transparent 75%)",
+          }}
+        />
+      )}
       <Container size="full" className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left: copy */}

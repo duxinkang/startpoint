@@ -47,7 +47,11 @@ export function Nav() {
     >
       <Container>
         <div className="flex h-16 md:h-20 items-center justify-between">
-          <Link href="/" className="focus:outline-none">
+          <Link
+            href="/"
+            className="focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm"
+            aria-label={t("home") /* fallback handled in i18n */}
+          >
             <Logo size="md" />
           </Link>
 

@@ -4,7 +4,12 @@ import { Container, Section } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Pill } from "@/components/ui/Pill";
 import { JsonLd } from "@/components/JsonLd";
-import { buildMetadata, breadcrumbSchema, organizationSchema } from "@/lib/seo";
+import {
+  buildMetadata,
+  breadcrumbSchema,
+  organizationSchema,
+  personSchema,
+} from "@/lib/seo";
 import { FounderStory } from "@/components/sections/FounderStory";
 import { Vs } from "@/components/sections/Vs";
 import { Advantages } from "@/components/sections/Advantages";
@@ -40,6 +45,13 @@ export default async function AboutPage({
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "about" });
   const nav = await getTranslations({ locale, namespace: "nav" });
+  const teamT = await getTranslations({ locale, namespace: "team" });
+  const members = teamT.raw("members") as Array<{
+    name: string;
+    role: string;
+    title: string;
+    text: string;
+  }>;
 
   return (
     <>
@@ -49,6 +61,18 @@ export default async function AboutPage({
             { name: nav("about"), path: "/about" },
           ]),
           organizationSchema(locale),
+          // Emit each founder as its own Person entity. Lets Knowledge Graph
+          // link the three of us back to the Organization via worksFor and
+          // (once sameAs handles are filled in) consolidate across LinkedIn.
+          ...members.map((m) =>
+            personSchema({
+              locale,
+              slug: m.name.toLowerCase().replace(/\s+/g, "-"),
+              name: m.name,
+              jobTitle: m.title,
+              description: m.text,
+            }),
+          ),
         ]}
       />
 

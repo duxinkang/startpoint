@@ -67,12 +67,10 @@ export function Footer() {
             >
               {t("footer.privacy")}
             </Link>
-            <a
-              href="https://www.startpointagency.com/"
-              className="hover:text-white/70"
-            >
-              www.startpointagency.com
-            </a>
+            {/* Self-referential link dropped — site linking to its own root
+                footer offered zero internal-link value and inflated the
+                canonical signal. Kept as plain text. */}
+            <span>www.startpointagency.com</span>
           </div>
         </div>
       </Container>

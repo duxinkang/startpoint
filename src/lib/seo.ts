@@ -82,6 +82,13 @@ export function buildMetadata({
 // JSON-LD builders
 // -----------------------------------------------------------------
 
+// Public social / presence URLs used for `sameAs` entity consolidation in
+// Google Knowledge Graph. Keep this list truthful — only add handles StartPoint
+// actually operates. Empty array is fine; empty strings would mislead Google.
+// TODO: once LinkedIn / X / YouTube / 小红书 / 即刻 handles are live, push them
+// here so the brand entity can be merged across crawlers.
+export const ORG_SAME_AS: string[] = [];
+
 export function organizationSchema(locale: string) {
   return {
     "@context": "https://schema.org",
@@ -102,6 +109,21 @@ export function organizationSchema(locale: string) {
       { "@type": "PostalAddress", addressLocality: "Shanghai", addressCountry: "CN" },
       { "@type": "PostalAddress", addressLocality: "Paris", addressCountry: "FR" },
     ],
+    // Structured contactPoint — Google's recommended shape. The top-level
+    // `email` above stays for backwards compat; this adds the nested object
+    // Knowledge Graph actually consumes.
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        email: "d541449473@gmail.com",
+        availableLanguage: ["zh-CN", "en"],
+        areaServed: ["CN", "US", "EU", "JP", "SG", "Global"],
+      },
+    ],
+    // Only emit `sameAs` when we actually have real handles to point at —
+    // shipping an empty array or placeholder URLs is worse than omitting it.
+    ...(ORG_SAME_AS.length > 0 ? { sameAs: ORG_SAME_AS } : {}),
     knowsAbout: [
       "AI Agent marketing",
       "AI SaaS growth",
@@ -113,6 +135,52 @@ export function organizationSchema(locale: string) {
       "Paid advertising",
       "Product-led growth",
     ],
+  };
+}
+
+// -----------------------------------------------------------------
+// WebSite — homepage-level schema, lets Google consolidate the domain
+// as a single entity and (when a search endpoint exists) surface a
+// sitelinks search box. We ship it without SearchAction for now since
+// there's no /search endpoint; adding one later is a one-line change.
+// -----------------------------------------------------------------
+
+export function websiteSchema(locale: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}#website`,
+    url: SITE_URL,
+    name: SITE_NAME,
+    inLanguage: locale === "zh" ? "zh-CN" : "en",
+    publisher: { "@id": `${SITE_URL}#organization` },
+  };
+}
+
+// -----------------------------------------------------------------
+// Person — used for /about team cards so each founder becomes its own
+// entity that Google can link back to the Organization via `worksFor`.
+// -----------------------------------------------------------------
+
+export function personSchema(args: {
+  locale: string;
+  slug: string; // lowercase firstname, used for @id + image path
+  name: string;
+  jobTitle: string;
+  description?: string;
+  sameAs?: string[]; // e.g. LinkedIn URL — only pass if real
+}) {
+  const path = args.locale === "zh" ? "/about" : `/${args.locale}/about`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${SITE_URL}${path}#person-${args.slug}`,
+    name: args.name,
+    jobTitle: args.jobTitle,
+    image: `${SITE_URL}/team/${args.slug}.jpg`,
+    worksFor: { "@id": `${SITE_URL}#organization` },
+    ...(args.description ? { description: args.description } : {}),
+    ...(args.sameAs && args.sameAs.length > 0 ? { sameAs: args.sameAs } : {}),
   };
 }
 
@@ -129,7 +197,10 @@ export function serviceSchema(args: {
     name: args.name,
     description: args.description,
     provider: { "@id": `${SITE_URL}#organization` },
-    areaServed: "Global",
+    // Keep in sync with `organizationSchema.areaServed` — an AI Agent
+    // growth partner claiming "Global" on the Service but "CN/US/EU/JP/SG"
+    // on the Org reads as inconsistent to entity-extraction pipelines.
+    areaServed: ["CN", "US", "EU", "JP", "SG", "Global"],
     url: args.locale === "zh"
       ? `${SITE_URL}/services/${args.slug}`
       : `${SITE_URL}/${args.locale}/services/${args.slug}`,

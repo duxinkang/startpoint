@@ -47,16 +47,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...SERVICE_SLUGS.map((slug) => `/services/${slug}`),
   ];
 
-  return paths.map((path) => ({
-    url: `${SITE_URL}${path === "/" ? "" : path}`,
-    lastModified: LAST_MODIFIED[path] || "2026-04-19",
-    changeFrequency: path === "/" ? "weekly" : "monthly",
-    priority: path === "/" ? 1 : path.startsWith("/services") ? 0.8 : 0.7,
-    alternates: {
-      languages: {
-        "zh-CN": `${SITE_URL}${path === "/" ? "" : path}`,
-        en: `${SITE_URL}/en${path === "/" ? "" : path}`,
+  return paths.map((path) => {
+    const zhUrl = `${SITE_URL}${path === "/" ? "" : path}`;
+    const enUrl = `${SITE_URL}/en${path === "/" ? "" : path}`;
+    return {
+      url: zhUrl,
+      lastModified: LAST_MODIFIED[path] || "2026-04-19",
+      changeFrequency: path === "/" ? ("weekly" as const) : ("monthly" as const),
+      priority: path === "/" ? 1 : path.startsWith("/services") ? 0.8 : 0.7,
+      alternates: {
+        languages: {
+          "zh-CN": zhUrl,
+          en: enUrl,
+          // `x-default` keeps Google's hreflang machinery happy when none of
+          // the user's language preferences match. Points at zh root since
+          // that's our canonical primary-locale surface.
+          "x-default": zhUrl,
+        },
       },
-    },
-  }));
+    };
+  });
 }
