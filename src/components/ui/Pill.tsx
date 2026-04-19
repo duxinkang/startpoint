@@ -27,7 +27,7 @@ export function Pill({
   return (
     <span
       className={clsx(
-        "inline-flex items-center gap-1.5 rounded-full font-semibold tracking-wide",
+        "inline-flex items-center gap-1.5 rounded-full font-semibold tracking-wide outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-paper",
         variants[variant],
         sizes[size],
         className,
