@@ -28,11 +28,21 @@ export function Section({
   className,
   id,
   bg = "paper",
+  spacing = "default",
 }: {
   children: ReactNode;
   className?: string;
   id?: string;
   bg?: "paper" | "cream" | "orange" | "ink" | "white" | "bone";
+  /**
+   * Vertical padding profile.
+   * - `default` — full rhythm (main content sections)
+   * - `tight`   — half top padding, for sections visually continuing the one above
+   * - `flush`   — no padding, caller controls spacing entirely
+   * - `hero`    — extra breathing room for orange / hero bands
+   * - `cta`     — compact band used for bottom CTAs
+   */
+  spacing?: "default" | "tight" | "flush" | "hero" | "cta";
 }) {
   const backgrounds = {
     paper: "bg-paper text-ink",
@@ -42,11 +52,19 @@ export function Section({
     ink: "bg-ink text-white",
     white: "bg-white text-ink",
   };
+  const spacings = {
+    default: "py-20 md:py-28 lg:py-32",
+    tight: "pt-8 pb-20 md:pb-28 lg:pb-32",
+    flush: "",
+    hero: "py-24 md:py-32",
+    cta: "py-20",
+  };
   return (
     <section
       id={id}
       className={clsx(
-        "relative overflow-hidden py-20 md:py-28 lg:py-32",
+        "relative overflow-hidden",
+        spacings[spacing],
         backgrounds[bg],
         className,
       )}
