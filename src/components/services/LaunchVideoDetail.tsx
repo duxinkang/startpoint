@@ -117,7 +117,7 @@ function CaseCard({ c, index }: { c: Case; index: number }) {
                 {video.poster && (
                   <Image
                     src={video.poster}
-                    alt=""
+                    alt={`${c.brand} — ${c.headline}`}
                     fill
                     sizes="(min-width: 768px) 33vw, 100vw"
                     className="object-cover"
@@ -148,6 +148,7 @@ function CaseCard({ c, index }: { c: Case; index: number }) {
                 autoPlay
                 controls
                 playsInline
+                preload="metadata"
                 className="w-full h-full object-cover bg-black"
               />
             )}
@@ -171,9 +172,9 @@ function CaseCard({ c, index }: { c: Case; index: number }) {
         <Pill variant="soft" size="sm" className="self-start mb-3">
           {c.brand}
         </Pill>
-        <h4 className="font-bold text-ink text-base leading-snug">
+        <h3 className="font-bold text-ink text-base leading-snug">
           {c.headline}
-        </h4>
+        </h3>
         <p className="mt-3 text-sm text-ink/70 leading-relaxed">{c.metric}</p>
       </div>
     </motion.div>

@@ -4,7 +4,7 @@ import { Container, Section } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Pill } from "@/components/ui/Pill";
 import { JsonLd } from "@/components/JsonLd";
-import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
+import { buildMetadata, breadcrumbSchema, caseStudiesSchema } from "@/lib/seo";
 import { CasesGrid } from "@/components/sections/CasesGrid";
 import { FeaturedCaseStudy } from "@/components/sections/FeaturedCaseStudy";
 import { InternationalProjects } from "@/components/sections/InternationalProjects";
@@ -15,14 +15,15 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "cases" });
   return buildMetadata({
     locale,
-    title: `${t("title")} — StartPoint`,
+    title: locale === "zh"
+      ? "AI Agent 增长案例 — Product Hunt、SEO 与达人营销实战"
+      : "AI Agent growth case studies — Product Hunt, SEO, and creator campaigns",
     description:
       locale === "zh"
-        ? "StartPoint 合作过的 AI 产品真实增长数据：Product Hunt 冲榜、SEO 有机增长、达人营销案例。"
-        : "Real AI product growth outcomes StartPoint has delivered — Product Hunt launches, SEO growth, and creator marketing campaigns.",
+        ? "查看 StartPoint 为 AI Agent 与 AI SaaS 做过的真实增长案例，包括 Product Hunt 冲榜、SEO 有机增长、达人合作获客与融资叙事支持。"
+        : "Real growth outcomes StartPoint has delivered for AI Agents and AI SaaS: Product Hunt wins, SEO growth, creator acquisition, and investor-facing traction stories.",
     path: "/cases",
   });
 }
@@ -36,13 +37,28 @@ export default async function CasesPage({
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "cases" });
   const nav = await getTranslations({ locale, namespace: "nav" });
+  const items = t.raw("items") as Array<{
+    title: string;
+    text: string;
+    tag: string;
+  }>;
 
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema(locale, [
-          { name: nav("cases"), path: "/cases" },
-        ])}
+        data={[
+          breadcrumbSchema(locale, [
+            { name: nav("cases"), path: "/cases" },
+          ]),
+          caseStudiesSchema(
+            locale,
+            items.map((item) => ({
+              title: item.title,
+              summary: item.text,
+              category: item.tag,
+            })),
+          ),
+        ]}
       />
 
       <Section bg="paper">

@@ -33,7 +33,7 @@ export function Hero() {
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         aria-hidden="true"
         className="hidden lg:block absolute inset-0 w-full h-full object-cover opacity-[0.18] pointer-events-none"
         style={{

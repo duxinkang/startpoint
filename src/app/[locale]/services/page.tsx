@@ -15,11 +15,14 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "services" });
   return buildMetadata({
     locale,
-    title: `${t("indexTitle")} — StartPoint`,
-    description: t("indexDescription"),
+    title: locale === "zh"
+      ? "AI Agent 增长服务矩阵 — SEO、GEO、Launch Video、KOL、投放"
+      : "AI Agent growth services — SEO, GEO, Launch Video, KOL, Paid Ads",
+    description: locale === "zh"
+      ? "六条围绕 AI Agent 0→1 的增长服务线：Launch Video、Product Hunt、海外 KOL/KOC、SEO/GEO、Paid Ads 与 Reddit 社区运营，按产品阶段自由组合。"
+      : "Six service lines for AI Agent 0→1 growth: Launch Video, Product Hunt, global creators, SEO/GEO, paid acquisition, and Reddit/community growth.",
     path: "/services",
   });
 }

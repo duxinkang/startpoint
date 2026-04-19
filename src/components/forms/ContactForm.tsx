@@ -177,7 +177,6 @@ export function ContactForm() {
           a plausible field name ("website") and standard autocomplete hints
           off so password managers won't populate it. */}
       <div
-        aria-hidden="true"
         style={{
           position: "absolute",
           left: "-10000px",

@@ -2,7 +2,7 @@
   "site": {
     "name": "StartPoint",
     "tagline": "0→1 Growth, built exclusively for AI Agents",
-    "description": "StartPoint is a growth partner focused on 0→1 traction for AI Agents and AI SaaS — GTM strategy, Product Hunt, Launch Video, KOL/KOC outreach, SEO/GEO, paid ads, and brand IP."
+    "description": "StartPoint is a growth partner for AI Agents and AI SaaS, covering GTM strategy, Product Hunt launches, launch videos, creator partnerships, SEO/GEO, paid acquisition, and long-term brand compounding."
   },
   "nav": {
     "services": "Services",
@@ -56,7 +56,7 @@
     "description": "Six growth services covering the full AI product lifecycle — from brand awareness to precision conversion — built into one compounding flywheel.",
     "center": "GTM Strategy",
     "indexTitle": "Six core growth services",
-    "indexDescription": "Covering the full AI product lifecycle — from awareness to precision conversion — as one compounding flywheel.",
+    "indexDescription": "Six growth services for AI Agents, spanning launch, creator distribution, SEO/GEO, paid acquisition, and community trust-building across the full product lifecycle.",
     "items": [
       { "slug": "kol", "title": "Global KOL & KOC", "short": "Matched creators whose audience overlaps your ICP — real word-of-mouth, viral lift." },
       { "slug": "product-hunt", "title": "Product Hunt launch", "short": "End-to-end PH run — top-3 Product of the Day, thousands of early users." },

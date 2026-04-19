@@ -4,7 +4,7 @@ import { Container, Section } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Pill } from "@/components/ui/Pill";
 import { JsonLd } from "@/components/JsonLd";
-import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
+import { buildMetadata, breadcrumbSchema, organizationSchema } from "@/lib/seo";
 import { FounderStory } from "@/components/sections/FounderStory";
 import { Vs } from "@/components/sections/Vs";
 import { Advantages } from "@/components/sections/Advantages";
@@ -25,8 +25,8 @@ export async function generateMetadata({
         : "About StartPoint — A growth partner built exclusively for AI Agents",
     description:
       locale === "zh"
-        ? "StartPoint 是一支融合工程、增长与投资叙事的团队。我们只做一件事：帮 AI Agent 产品从 0 做到 1。不承接碎片化营销外包，只做与创始人共担风险的增长合伙人。团队覆盖杭州 / 上海 / 巴黎。"
-        : "StartPoint is a hybrid team fluent in engineering, growth, and investor narrative. We do one thing — 0→1 growth for AI Agents. Not fragmented outsourcing; a growth partner that shares the risk. Hangzhou, Shanghai, Paris.",
+        ? "了解 StartPoint 的团队背景、方法论和市场立场：一支同时懂技术、增长与资本叙事的 AI Agent 0→1 增长合伙人团队，覆盖杭州、上海与巴黎。"
+        : "Meet StartPoint: a team fluent in engineering, growth, and investor narrative, built to help AI Agents reach 0→1 across Hangzhou, Shanghai, and Paris.",
     path: "/about",
   });
 }
@@ -44,9 +44,12 @@ export default async function AboutPage({
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema(locale, [
-          { name: nav("about"), path: "/about" },
-        ])}
+        data={[
+          breadcrumbSchema(locale, [
+            { name: nav("about"), path: "/about" },
+          ]),
+          organizationSchema(locale),
+        ]}
       />
 
       {/* Hero */}

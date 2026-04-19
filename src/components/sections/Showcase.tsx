@@ -166,7 +166,7 @@ function ShowcaseCard({ c, index }: { c: Case; index: number }) {
                 image loads and to absorb any letterboxing). */}
             <Image
               src={video.poster}
-              alt=""
+              alt={`${c.brand} — ${c.headline}`}
               fill
               sizes="(min-width: 768px) 33vw, 100vw"
               className="object-cover"
@@ -234,6 +234,7 @@ function ShowcaseCard({ c, index }: { c: Case; index: number }) {
             autoPlay
             controls
             playsInline
+            preload="metadata"
             className="w-full h-full object-cover bg-black"
           />
         )}

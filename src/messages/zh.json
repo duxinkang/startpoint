@@ -2,7 +2,7 @@
   "site": {
     "name": "StartPoint 起始点",
     "tagline": "只做 AI Agent 的 0→1 增长",
-    "description": "StartPoint 是专注 AI Agent 与 SaaS 产品 0→1 增长的营销合作伙伴，覆盖 GTM 策略、Product Hunt、Launch Video、海外 KOL、SEO/GEO、广告投放与品牌沉淀。"
+    "description": "StartPoint 是专注 AI Agent 与 AI SaaS 产品 0→1 增长的营销合伙人，覆盖 GTM 策略、Product Hunt、Launch Video、海外 KOL/KOC、SEO/GEO、广告投放与长期品牌沉淀。"
   },
   "nav": {
     "services": "业务",
@@ -56,7 +56,7 @@
     "description": "StartPoint 提供覆盖 AI 产品全生命周期的六大核心营销服务，从品牌曝光到精准转化，构建完整的增长飞轮",
     "center": "市场策略",
     "indexTitle": "六大核心营销服务",
-    "indexDescription": "覆盖 AI 产品全生命周期，从品牌曝光到精准转化，构建完整的增长飞轮",
+    "indexDescription": "六条围绕 AI Agent 冷启动与规模增长设计的服务线，覆盖 Launch Video、Product Hunt、达人合作、SEO/GEO、广告投放与社区口碑沉淀",
     "items": [
       { "slug": "kol", "title": "海外 KOL & KOC 营销", "short": "精准匹配目标用户高度重合的达人，构建真实口碑与病毒式扩散" },
       { "slug": "product-hunt", "title": "Product Hunt 冲榜", "short": "从预热到冲刺全程陪跑，冲击日榜前三、带来数千早期用户" },

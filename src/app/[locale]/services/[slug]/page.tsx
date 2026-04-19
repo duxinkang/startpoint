@@ -5,7 +5,13 @@ import { Container, Section } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Pill } from "@/components/ui/Pill";
 import { JsonLd } from "@/components/JsonLd";
-import { buildMetadata, breadcrumbSchema, serviceSchema } from "@/lib/seo";
+import {
+  buildMetadata,
+  breadcrumbSchema,
+  faqSchema,
+  getSeoGeoFaq,
+  serviceSchema,
+} from "@/lib/seo";
 import { routing } from "@/i18n/routing";
 import { LaunchVideoDetail } from "@/components/services/LaunchVideoDetail";
 import { KolDetail } from "@/components/services/KolDetail";
@@ -52,8 +58,8 @@ const TITLE_SUFFIX: Record<Slug, { zh: string; en: string }> = {
     en: "Global KOL & KOC creator marketing for AI Agents",
   },
   "paid-ads": {
-    zh: "广告投放 — Google / Meta / X / LinkedIn / Reddit 全渠道",
-    en: "Paid advertising — Google / Meta / X / LinkedIn / Reddit",
+    zh: "AI 产品广告投放增长 — Google / Meta / Reddit 全渠道",
+    en: "AI paid acquisition — Google, Meta, LinkedIn, X, Reddit",
   },
   "product-hunt": {
     zh: "Product Hunt 发布陪跑 — 冲击日榜前 3",
@@ -104,7 +110,7 @@ export default async function ServiceDetailPage({
   });
   const nav = await getTranslations({ locale, namespace: "nav" });
 
-  const jsonLd = [
+  const jsonLd: object[] = [
     breadcrumbSchema(locale, [
       { name: nav("services"), path: "/services" },
       { name: t("title"), path: `/services/${slug}` },
@@ -116,6 +122,9 @@ export default async function ServiceDetailPage({
       description: t("intro"),
     }),
   ];
+  if (slug === "seo-geo") {
+    jsonLd.push(faqSchema(getSeoGeoFaq(locale)));
+  }
 
   return (
     <>

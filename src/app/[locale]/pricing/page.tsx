@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Pill } from "@/components/ui/Pill";
 import { Card } from "@/components/ui/Card";
 import { JsonLd } from "@/components/JsonLd";
-import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
+import { buildMetadata, breadcrumbSchema, offerCatalogSchema } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -21,8 +21,8 @@ export async function generateMetadata({
         : "Engagement tiers & pricing — StartPoint 0→1 growth for AI",
     description:
       locale === "zh"
-        ? "StartPoint 提供三档合作方案：战略问诊 ¥15,000（2-3 周）、轻量陪跑 ¥30-50k/月、完整陪跑 ¥80-120k/月 + 10-20% 增长利润分成。按 AI Agent 产品阶段灵活升级组合。"
-        : "Three StartPoint engagement tiers: Strategy Diagnosis (¥15k), Lite Partnership (¥30-50k/mo) and Full Growth with 10-20% revenue share (¥80-120k/mo). Scoped to your AI product stage.",
+        ? "StartPoint 三档 AI Agent 增长合作模式：战略问诊、轻量陪跑与完整版增长合伙。查看服务边界、启动周期、月费区间与利润分成方式。"
+        : "StartPoint's three AI Agent growth engagement tiers: strategy diagnosis, lite partnership, and full-stack growth partnership with pricing, timelines, and profit-share structure.",
     path: "/pricing",
   });
 }
@@ -50,9 +50,19 @@ export default async function PricingPage({
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema(locale, [
-          { name: nav("pricing"), path: "/pricing" },
-        ])}
+        data={[
+          breadcrumbSchema(locale, [
+            { name: nav("pricing"), path: "/pricing" },
+          ]),
+          offerCatalogSchema(
+            locale,
+            plans.map((plan) => ({
+              name: plan.title,
+              description: `${plan.text} ${plan.footer}`,
+              price: plan.badges.find((badge) => badge.includes("¥")) || undefined,
+            })),
+          ),
+        ]}
       />
 
       {/* Hero */}
@@ -116,11 +126,11 @@ export default async function PricingPage({
                     </div>
                   </div>
 
-                  <h3
+                  <h2
                     className={`sp-display text-3xl leading-tight ${isFeatured ? "text-white" : "text-ink"}`}
                   >
                     {plan.title}
-                  </h3>
+                  </h2>
 
                   <p
                     className={`mt-4 leading-relaxed text-sm ${isFeatured ? "text-white/80" : "text-ink/70"}`}

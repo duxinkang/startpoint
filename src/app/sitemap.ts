@@ -20,14 +20,28 @@ const STATIC_PATHS = [
   "/privacy",
 ];
 
+const LAST_MODIFIED: Record<string, string> = {
+  "/": "2026-04-19",
+  "/services": "2026-04-19",
+  "/cases": "2026-04-19",
+  "/about": "2026-04-19",
+  "/pricing": "2026-04-19",
+  "/contact": "2026-04-19",
+  "/privacy": "2026-04-18",
+  "/services/launch-video": "2026-04-19",
+  "/services/kol": "2026-04-19",
+  "/services/paid-ads": "2026-04-19",
+  "/services/product-hunt": "2026-04-19",
+  "/services/social": "2026-04-19",
+  "/services/seo-geo": "2026-04-19",
+};
+
 /**
  * Generates sitemap covering every public URL in both locales with hreflang alternates.
  * Chinese is at the root (zh is default with localePrefix: "as-needed"),
  * English lives under /en/*.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
   const paths = [
     ...STATIC_PATHS,
     ...SERVICE_SLUGS.map((slug) => `/services/${slug}`),
@@ -35,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return paths.map((path) => ({
     url: `${SITE_URL}${path === "/" ? "" : path}`,
-    lastModified: now,
+    lastModified: LAST_MODIFIED[path] || "2026-04-19",
     changeFrequency: path === "/" ? "weekly" : "monthly",
     priority: path === "/" ? 1 : path.startsWith("/services") ? 0.8 : 0.7,
     alternates: {

@@ -67,7 +67,7 @@ export function Nav() {
             <button
               onClick={toggleLocale}
               className="hidden md:inline-flex items-center rounded-full border border-ink/15 px-3 py-1 text-xs font-medium text-ink/70 hover:text-ink hover:border-ink/40 transition"
-              aria-label="Toggle language"
+              aria-label={locale === "zh" ? "EN - switch language to English" : "中 - 切换到中文"}
             >
               {locale === "zh" ? "EN" : "中"}
             </button>

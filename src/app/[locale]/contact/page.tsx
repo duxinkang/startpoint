@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Container, Section } from "@/components/ui/Container";
 import { Pill } from "@/components/ui/Pill";
 import { JsonLd } from "@/components/JsonLd";
-import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
+import { buildMetadata, breadcrumbSchema, contactPointSchema, faqSchema } from "@/lib/seo";
 import { ContactForm } from "@/components/forms/ContactForm";
 
 export async function generateMetadata({
@@ -20,8 +20,8 @@ export async function generateMetadata({
         : "Contact StartPoint — Book a free 30-min AI growth consultation",
     description:
       locale === "zh"
-        ? "预约 StartPoint 30 分钟免费咨询，帮你判断 AI Agent 增长策略是否成立。邮箱 d541449473@gmail.com；线下 coffee chat 覆盖杭州 / 上海 / 巴黎；工作日 24 小时内回复。"
-        : "Book a free 30-minute consultation to pressure-test your AI Agent growth plan. Email d541449473@gmail.com — in-person coffee chats in Hangzhou / Shanghai / Paris. Reply within 24 hours on weekdays.",
+        ? "联系 StartPoint，预约 30 分钟 AI Agent 增长咨询。了解我们服务的产品阶段、启动时间、保密原则与杭州 / 上海 / 巴黎线下沟通方式。"
+        : "Contact StartPoint to book a 30-minute AI Agent growth consultation. See who we work with, how fast we start, our confidentiality approach, and in-person options in Hangzhou, Shanghai, and Paris.",
     path: "/contact",
   });
 }
@@ -39,9 +39,13 @@ export default async function ContactPage({
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema(locale, [
-          { name: nav("contact"), path: "/contact" },
-        ])}
+        data={[
+          breadcrumbSchema(locale, [
+            { name: nav("contact"), path: "/contact" },
+          ]),
+          contactPointSchema(locale),
+          faqSchema(PRE_CALL_FAQ[locale === "zh" ? "zh" : "en"]),
+        ]}
       />
 
       {/* Hero */}
