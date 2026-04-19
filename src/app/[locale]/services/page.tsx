@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Container, Section } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Pill } from "@/components/ui/Pill";
+import { Card } from "@/components/ui/Card";
 import { Link } from "@/i18n/navigation";
 import { buildMetadata, breadcrumbSchema, serviceSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
@@ -139,7 +140,7 @@ export default async function ServicesPage({
               </div>
             </div>
 
-            <div className="rounded-3xl bg-white border border-ink/10 p-8 md:p-10 shadow-sm">
+            <Card variant="feature">
               <h3 className="sp-display text-2xl md:text-3xl text-ink leading-tight">
                 {locale === "zh"
                   ? "适合哪些产品阶段？"
@@ -174,7 +175,7 @@ export default async function ServicesPage({
                   ? "不确定该先启动哪一条？30 分钟免费咨询帮你判断。"
                   : "Not sure which line to start with? A free 30-min call will tell you."}
               </p>
-            </div>
+            </Card>
           </div>
         </Container>
       </Section>

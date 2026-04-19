@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Container, Section } from "@/components/ui/Container";
 import { Pill } from "@/components/ui/Pill";
+import { Card } from "@/components/ui/Card";
 
 /**
  * P12 — 自建市场团队 vs StartPoint (VS comparison)
@@ -36,30 +37,31 @@ export function Vs() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="rounded-3xl bg-white border border-ink/10 p-8 md:p-10 shadow-sm"
           >
-            <div className="flex items-center gap-3 mb-8">
-              <span className="w-3 h-3 rounded-full bg-red-500" />
-              <h3 className="font-bold text-xl text-ink">
-                {/* "自建市场团队" / "Building an in-house team" */}
-                {t("headline").split("vs")[0].trim()}
-              </h3>
-            </div>
-            <ul className="space-y-5">
-              {left.map((item) => (
-                <li key={item.title} className="flex gap-4">
-                  <div className="shrink-0 w-8 h-8 rounded-full bg-red-50 text-red-500 flex items-center justify-center text-lg font-bold">
-                    ✕
-                  </div>
-                  <div>
-                    <div className="font-bold text-ink">{item.title}</div>
-                    <div className="mt-1 text-sm text-ink/65 leading-relaxed">
-                      {item.text}
+            <Card variant="feature">
+              <div className="flex items-center gap-3 mb-8">
+                <span className="w-3 h-3 rounded-full bg-red-500" />
+                <h3 className="font-bold text-xl text-ink">
+                  {/* "自建市场团队" / "Building an in-house team" */}
+                  {t("headline").split("vs")[0].trim()}
+                </h3>
+              </div>
+              <ul className="space-y-5">
+                {left.map((item) => (
+                  <li key={item.title} className="flex gap-4">
+                    <div className="shrink-0 w-8 h-8 rounded-full bg-red-50 text-red-500 flex items-center justify-center text-lg font-bold">
+                      ✕
                     </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
+                    <div>
+                      <div className="font-bold text-ink">{item.title}</div>
+                      <div className="mt-1 text-sm text-ink/65 leading-relaxed">
+                        {item.text}
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </Card>
           </motion.div>
 
           {/* Right: StartPoint */}

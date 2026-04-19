@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Container, Section } from "@/components/ui/Container";
 import { Pill } from "@/components/ui/Pill";
+import { Card } from "@/components/ui/Card";
 
 /**
  * P15 — 团队 (Team)
@@ -47,20 +48,21 @@ export function Team() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group rounded-3xl bg-white border border-ink/8 overflow-hidden shadow-sm hover:shadow-xl transition-shadow"
             >
-              <MemberPhoto name={m.name} role={m.role} />
+              <Card variant="feature" className="group overflow-hidden flex flex-col h-full">
+                <MemberPhoto name={m.name} role={m.role} />
 
-              {/* Info */}
-              <div className="p-6 md:p-7">
-                <h3 className="sp-display text-2xl text-ink">{m.name}</h3>
-                <div className="mt-1 text-sm font-semibold text-orange-600">
-                  {m.title}
+                {/* Info */}
+                <div className="p-6 md:p-7 flex-1">
+                  <h3 className="sp-display text-2xl text-ink">{m.name}</h3>
+                  <div className="mt-1 text-sm font-semibold text-orange-600">
+                    {m.title}
+                  </div>
+                  <p className="mt-4 text-ink/70 leading-relaxed text-[15px]">
+                    {m.text}
+                  </p>
                 </div>
-                <p className="mt-4 text-ink/70 leading-relaxed text-[15px]">
-                  {m.text}
-                </p>
-              </div>
+              </Card>
             </motion.div>
           ))}
         </div>

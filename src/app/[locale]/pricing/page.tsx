@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Container, Section } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Pill } from "@/components/ui/Pill";
+import { Card } from "@/components/ui/Card";
 import { JsonLd } from "@/components/JsonLd";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 
@@ -246,7 +247,7 @@ export default async function PricingPage({
             ))}
           </div>
 
-          <div className="mt-12 max-w-3xl rounded-2xl bg-cream border border-ink/10 p-7 md:p-8">
+          <Card variant="subtle" className="mt-12 max-w-3xl bg-cream">
             <h3 className="sp-display text-xl md:text-2xl text-ink mb-3">
               {locale === "zh"
                 ? "利润分成到底怎么算？"
@@ -257,7 +258,7 @@ export default async function PricingPage({
                 ? "分成标的在 kickoff 阶段就用书面形式锁定，通常是 MRR 增量（月度订阅收入相对基线的净增长）或产品净利润增量。比例 10-20% 根据产品阶段、预期波动度与 CAC 回收周期一对一协商。战略问诊的一次性费用可在后续升级到轻量 / 完整陪跑时抵扣首月服务费。"
                 : "The share base is locked in writing at kickoff — typically incremental MRR (month-over-month net growth over a baseline) or incremental net profit. The 10-20% figure is negotiated per product stage, expected volatility, and CAC-payback window. The Strategy Diagnosis fee is credited against month one if you upgrade to Lite or Full later."}
             </p>
-          </div>
+          </Card>
         </Container>
       </Section>
 

@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Container, Section } from "@/components/ui/Container";
 import { Pill } from "@/components/ui/Pill";
+import { Card } from "@/components/ui/Card";
 
 /**
  * P14 — 核心优势 (Advantages)
@@ -37,17 +38,18 @@ export function Advantages() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
-              className="group rounded-2xl bg-white p-7 md:p-8 border border-ink/8 hover:border-orange-500/40 hover:shadow-lg transition-all"
             >
-              <div className="text-orange-500 font-bold text-sm mb-3 tracking-wider">
-                0{i + 1}
-              </div>
-              <h3 className="font-bold text-ink text-lg md:text-xl leading-snug">
-                {item.title}
-              </h3>
-              <p className="mt-4 text-ink/70 leading-relaxed text-[15px]">
-                {item.text}
-              </p>
+              <Card variant="subtle" className="group h-full hover:border-orange-500/40">
+                <div className="text-orange-500 font-bold text-sm mb-3 tracking-wider">
+                  0{i + 1}
+                </div>
+                <h3 className="font-bold text-ink text-lg md:text-xl leading-snug">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-ink/70 leading-relaxed text-[15px]">
+                  {item.text}
+                </p>
+              </Card>
             </motion.div>
           ))}
         </div>
