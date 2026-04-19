@@ -85,10 +85,10 @@ export default async function AboutPage({
           <h1 className="sp-display text-[15vw] sm:text-[11vw] lg:text-[7.5vw] xl:text-[120px] leading-[1.05] max-w-4xl text-ink">
             {t("hero.title")}
           </h1>
-          <p className="mt-6 max-w-3xl text-xl md:text-2xl text-ink/80 leading-relaxed">
+          <p className="mt-6 max-w-3xl text-xl md:text-2xl text-ink/75 leading-relaxed">
             {t("hero.subtitle")}
           </p>
-          <p className="mt-4 max-w-3xl text-lg text-ink/70 leading-relaxed">
+          <p className="mt-4 max-w-3xl text-lg text-ink/75 leading-relaxed">
             {t("hero.body")}
           </p>
         </Container>
@@ -117,7 +117,7 @@ export default async function AboutPage({
               ? "想聊聊你的 AI 产品？"
               : "Want to talk about your AI product?"}
           </h2>
-          <p className="mt-4 text-white/70 max-w-xl mx-auto">
+          <p className="mt-4 text-white/75 max-w-xl mx-auto">
             {locale === "zh"
               ? "30 分钟免费咨询，帮你判断增长策略是否成立。"
               : "A free 30-minute consultation to pressure-test your growth plan."}

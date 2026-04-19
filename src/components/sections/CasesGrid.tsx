@@ -1,10 +1,16 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Container, Section } from "@/components/ui/Container";
 import { Pill } from "@/components/ui/Pill";
 import { Card } from "@/components/ui/Card";
+import { Link } from "@/i18n/navigation";
+
+// Index-mapped back-links from each case card to the service line that
+// drove that outcome — keeps the internal link graph between /cases and
+// /services dense, which matters for both discovery and search crawling.
+const RELATED_SERVICE_BY_INDEX = ["product-hunt", "seo-geo", "kol"] as const;
 
 /**
  * Cases grid — bilingual, reads cases.items from translations.
@@ -13,6 +19,8 @@ import { Card } from "@/components/ui/Card";
  */
 export function CasesGrid() {
   const t = useTranslations("cases");
+  const locale = useLocale();
+  const isZh = locale === "zh";
   const items = t.raw("items") as {
     tag: string;
     title: string;
@@ -71,8 +79,8 @@ export function CasesGrid() {
                     <div className="sp-dot-matrix absolute inset-0 opacity-20" />
 
                     {/* Case number */}
-                    <div className="absolute top-5 left-6 text-white/90 text-xs font-bold tracking-[0.2em]">
-                      CASE 0{i + 1}
+                    <div className="absolute top-5 left-6 text-white text-xs font-bold tracking-[0.2em]">
+                      {t("caseLabel")} 0{i + 1}
                     </div>
 
                     {/* Big sp-ball accent */}
@@ -97,31 +105,38 @@ export function CasesGrid() {
                   >
                     {item.title}
                   </h3>
-                  <p className="mt-4 text-ink/70 leading-relaxed text-sm">
+                  <p className="mt-4 text-ink/75 leading-relaxed text-sm">
                     {item.text}
                   </p>
 
-                    {/* Bottom bar with "read more" arrow */}
+                    {/* Bottom bar: tag + link to the service that drove this outcome */}
                     <div className="mt-6 pt-5 border-t border-ink/10 flex items-center justify-between">
                       <Pill variant="outline" size="sm">
                         {item.tag}
                       </Pill>
-                      <svg
-                        width="28"
-                        height="18"
-                        viewBox="0 0 32 20"
-                        fill="none"
-                        aria-hidden="true"
-                        className="text-ink/60 group-hover:text-orange-500 transition-colors"
+                      <Link
+                        href={`/services/${RELATED_SERVICE_BY_INDEX[i % RELATED_SERVICE_BY_INDEX.length]}`}
+                        className="text-ink/55 hover:text-orange-500 flex items-center gap-2 text-sm font-semibold transition-colors group/link"
+                        aria-label={`${item.title} — ${isZh ? "查看相关服务" : "see related service"}`}
                       >
-                        <path
-                          d="M2 10H28M28 10L20 2M28 10L20 18"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                        <span>{isZh ? "相关服务" : "Related"}</span>
+                        <svg
+                          width="22"
+                          height="14"
+                          viewBox="0 0 32 20"
+                          fill="none"
+                          aria-hidden="true"
+                          className="transition-transform group-hover/link:translate-x-1"
+                        >
+                          <path
+                            d="M2 10H28M28 10L20 2M28 10L20 18"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </Link>
                     </div>
                   </div>
                 </Card>

@@ -25,7 +25,7 @@ export function Engine() {
           <Chevrons className="text-ink mt-2" count={5} />
           <div className="flex items-start gap-3">
             <div className="w-5 h-5 rounded-full bg-ink mt-1.5 shrink-0" />
-            <p className="text-sm md:text-base text-ink/80 max-w-3xl leading-relaxed">
+            <p className="text-sm md:text-base text-ink/75 max-w-3xl leading-relaxed">
               {t("description")}
             </p>
           </div>
@@ -41,11 +41,11 @@ export function Engine() {
             className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 items-center justify-center z-0 pointer-events-none"
           >
             <DoubleBall size={280} offset={40} />
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-ink/80 text-center z-10">
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-ink/75 text-center z-10">
               <div className="sp-display text-3xl leading-tight">
                 {t("title").split(" ").slice(0, 2).join(" ")}
               </div>
-              <div className="text-sm mt-2 max-w-[180px] text-ink/80">
+              <div className="text-sm mt-2 max-w-[180px] text-ink/75">
                 {t("subtitle")}
               </div>
             </div>
@@ -74,7 +74,7 @@ export function Engine() {
                   <span className="h-px w-6 bg-orange-500" />
                   <span>{step.title}</span>
                 </div>
-                <p className="text-ink/80 text-base leading-relaxed">
+                <p className="text-ink/75 text-base leading-relaxed">
                   {step.text}
                 </p>
               </div>
@@ -84,7 +84,7 @@ export function Engine() {
           {/* Mobile center title */}
           <div className="md:hidden text-center py-6">
             <div className="sp-display text-2xl text-ink">{t("title")}</div>
-            <div className="text-sm mt-2 text-ink/70">{t("subtitle")}</div>
+            <div className="text-sm mt-2 text-ink/75">{t("subtitle")}</div>
           </div>
         </div>
       </Container>

@@ -60,7 +60,7 @@ export function Nav() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-sm font-medium text-ink/80 hover:text-orange-500 transition-colors"
+                className="text-sm font-medium text-ink/75 hover:text-orange-500 transition-colors"
               >
                 {l.label}
               </Link>
@@ -70,7 +70,7 @@ export function Nav() {
           <div className="flex items-center gap-3">
             <button
               onClick={toggleLocale}
-              className="hidden md:inline-flex items-center rounded-full border border-ink/15 px-3 py-1 text-xs font-medium text-ink/70 hover:text-ink hover:border-ink/40 transition"
+              className="hidden md:inline-flex items-center rounded-full border border-ink/15 px-3 py-1 text-xs font-medium text-ink/75 hover:text-ink hover:border-ink/40 transition"
               aria-label={locale === "zh" ? "EN - switch language to English" : "中 - 切换到中文"}
             >
               {locale === "zh" ? "EN" : "中"}
@@ -102,7 +102,7 @@ export function Nav() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block py-2 text-base font-medium text-ink/80 hover:text-orange-500"
+                className="block py-2 text-base font-medium text-ink/75 hover:text-orange-500"
               >
                 {l.label}
               </Link>
@@ -112,7 +112,7 @@ export function Nav() {
                 toggleLocale();
                 setOpen(false);
               }}
-              className="block py-2 text-sm text-ink/60"
+              className="block py-2 text-sm text-ink/55"
             >
               {locale === "zh" ? "English" : "中文"}
             </button>

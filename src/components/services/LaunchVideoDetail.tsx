@@ -55,7 +55,7 @@ export function LaunchVideoDetail() {
                   0{i + 1}
                 </div>
                 <h2 className="sp-display text-2xl text-ink">{step.title}</h2>
-                <p className="text-ink/80 leading-relaxed">{step.text}</p>
+                <p className="text-ink/75 leading-relaxed">{step.text}</p>
               </motion.div>
             ))}
           </div>
@@ -84,10 +84,10 @@ function CaseCard({ c, index }: { c: Case; index: number }) {
 
   const gradient =
     index === 0
-      ? "linear-gradient(135deg, #FFD9B8, #F5551D)"
+      ? "linear-gradient(135deg, var(--sp-cream-mid), var(--sp-orange-400))"
       : index === 1
-        ? "linear-gradient(135deg, #1A1A1A, #5C4BD1)"
-        : "linear-gradient(135deg, #FFB88A, #C2380B)";
+        ? "linear-gradient(135deg, var(--sp-ink-soft), var(--sp-indigo-500))"
+        : "linear-gradient(135deg, var(--sp-apricot), var(--sp-orange-600))";
 
   return (
     <motion.div
@@ -136,7 +136,7 @@ function CaseCard({ c, index }: { c: Case; index: number }) {
                   className="drop-shadow-xl transition-transform group-hover:scale-110 relative z-[2]"
                 >
                   <circle cx="24" cy="24" r="24" fill="white" fillOpacity="0.95" />
-                  <path d="M20 16l14 8-14 8V16z" fill="#F5551D" />
+                  <path d="M20 16l14 8-14 8V16z" fill="var(--sp-orange-400)" />
                 </svg>
               </button>
             )}
@@ -163,7 +163,7 @@ function CaseCard({ c, index }: { c: Case; index: number }) {
             aria-hidden="true"
           >
             <circle cx="24" cy="24" r="24" fill="white" fillOpacity="0.9" />
-            <path d="M20 16l14 8-14 8V16z" fill="#F5551D" />
+            <path d="M20 16l14 8-14 8V16z" fill="var(--sp-orange-400)" />
           </svg>
         )}
       </div>
@@ -175,7 +175,7 @@ function CaseCard({ c, index }: { c: Case; index: number }) {
         <h3 className="font-bold text-ink text-base leading-snug">
           {c.headline}
         </h3>
-        <p className="mt-3 text-sm text-ink/70 leading-relaxed">{c.metric}</p>
+        <p className="mt-3 text-sm text-ink/75 leading-relaxed">{c.metric}</p>
       </div>
     </motion.div>
   );

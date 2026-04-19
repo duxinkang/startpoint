@@ -332,6 +332,90 @@ export function caseStudiesSchema(
   };
 }
 
+export function getProductHuntFaq(locale: string) {
+  if (locale === "zh") {
+    return [
+      {
+        q: "提前 4-6 周启动是不是太早？",
+        a: "不早。真正拉开差距的是预热期——Hunter 网络激活、社区口碑铺垫、素材打磨都需要时间。临时起步的团队往往只能靠朋友圈凑前 50 票，后续曲线乏力。稳定冲进日榜前三的团队，差不多都是在发布前 4-6 周开始准备的。",
+      },
+      {
+        q: "Product Hunt 日榜前三对我们有什么实际价值？",
+        a: "1,500-4,000 个定向早期采用者访问、一批愿意付费的种子用户、媒体和投资人在发布后几周内的持续关注，以及 PH 页面本身在 Google 上数月的长尾 SEO 流量。",
+      },
+      {
+        q: "发布失败会怎么办？",
+        a: "所谓失败通常是节奏偏移——例如撞上 OpenAI 或 Google 的大发布。我们会在发布前一周评估竞争状况，必要时建议推迟。如果坚持发布，我们会把重心转向注册转化，而不是死磕名次。",
+      },
+      {
+        q: "可以只做发布日的冲刺吗？",
+        a: "不建议。没有预热的纯冲刺项目，结果大多落在日榜 5-10 名。如果预算有限，更稳的做法是先做 Reddit 或 Launch Video 把信任基础打好，下一次发布再启动 PH 陪跑，确定性会高很多。",
+      },
+    ];
+  }
+
+  return [
+    {
+      q: "Is 4-6 weeks of runway really necessary?",
+      a: "Yes. The gap between teams that land top-3 and teams that stall around #8 is the runway — Hunter network activation, community seeding, and asset polish all take weeks. Teams that start late usually scrape together 50 friend-upvotes and fade by hour 6.",
+    },
+    {
+      q: "What does landing top-3 actually get me?",
+      a: "1,500-4,000 targeted early-adopter visits, a cohort of seed users who convert to paid, press and investor interest for the weeks following, and the PH page itself ranking in Google for months.",
+    },
+    {
+      q: "What happens if the launch underperforms?",
+      a: "Underperformance usually means bad timing (colliding with an OpenAI or Google launch). We assess the launch-day competitive set the week prior and recommend delaying if it's bad. If you still ship, we pivot focus to signup capture instead of chasing a rank.",
+    },
+    {
+      q: "Can we just hire you for launch day itself?",
+      a: "We don't recommend it. Cold-launch engagements without runway mostly land #5-10. If budget is tight, run Reddit or Launch Video first to build the trust base, then engage for the next launch — the outcome is far more predictable.",
+    },
+  ];
+}
+
+export function getSocialFaq(locale: string) {
+  if (locale === "zh") {
+    return [
+      {
+        q: "为什么最短合作周期是 3 个月？",
+        a: "Reddit 账号权重需要时间沉淀，强行在一个月内冲热帖会触发算法检测。我们见过太多账号在第三周被限流——最稳的节奏是 3-5 个月只做贡献式内容，之后才自然引入产品讨论。",
+      },
+      {
+        q: "除了 Reddit，你们还覆盖哪些社区？",
+        a: "核心聚焦 Reddit，因为它是 AI 早期用户密度最高的开放社区。如果你的产品垂直度高，我们也会延伸到 Hacker News、Indie Hackers、以及对应的 Discord / Slack 社区，但主战场仍然是 Reddit。",
+      },
+      {
+        q: "这些社区内容会被 Google 收录吗？",
+        a: "会。Reddit 帖子在 Google 搜索结果里的排名极高，一条被顶到高位的技术帖通常能带来数月甚至一整年的免费搜索流量。这也是为什么 Reddit 投入的长期 ROI 比大多数付费渠道都高。",
+      },
+      {
+        q: "账号是我们的还是你们的？",
+        a: "都是你们的。我们只用你的团队成员或你招募的社区经理的账号发内容，所有账号所有权始终归你。这一点和我们做广告投放的原则一致——不运营黑盒账号。",
+      },
+    ];
+  }
+
+  return [
+    {
+      q: "Why is the minimum engagement three months?",
+      a: "Reddit karma builds slowly. Pushing hard in the first month triggers algorithmic damping — we've watched accounts get shadow-throttled in week three. The reliable cadence is 3-5 months of contribution-first posting before you introduce product discussions.",
+    },
+    {
+      q: "Beyond Reddit, which communities do you cover?",
+      a: "Reddit is the core because it has the highest density of open-web AI early adopters. For vertical products we also extend into Hacker News, Indie Hackers, and the relevant Discord / Slack communities — but Reddit stays the main theater.",
+    },
+    {
+      q: "Do these posts get indexed by Google?",
+      a: "Yes. Reddit threads rank very well in Google. An upvoted technical post typically earns months — often a year — of free search traffic. That's why the long-run ROI on a Reddit investment beats most paid channels.",
+    },
+    {
+      q: "Who owns the accounts we use?",
+      a: "You do. We only post under your team members or community managers you hire — all account ownership stays with you. Same principle as our paid-ads work: we don't run black-box accounts on your behalf.",
+    },
+  ];
+}
+
 export function getSeoGeoFaq(locale: string) {
   if (locale === "zh") {
     return [

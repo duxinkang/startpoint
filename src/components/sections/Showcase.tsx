@@ -28,19 +28,19 @@ const VIDEO_BY_BRAND: Record<
   "Poly.app": {
     src: "/videos/poly.mp4",
     poster: "/videos/posters/poly.jpg",
-    gradient: "linear-gradient(135deg, #FFD9B8 0%, #F5551D 60%, #C2380B 100%)",
+    gradient: "linear-gradient(135deg, var(--sp-cream-mid) 0%, var(--sp-orange-400) 60%, var(--sp-orange-600) 100%)",
     accent: "300万+ 播放",
   },
   "Blockit AI": {
     src: "/videos/miro.mp4",
     poster: "/videos/posters/miro.jpg",
-    gradient: "linear-gradient(135deg, #2A1F4A 0%, #5C4BD1 60%, #F5551D 100%)",
+    gradient: "linear-gradient(135deg, #2A1F4A 0%, var(--sp-indigo-500) 60%, var(--sp-orange-400) 100%)",
     accent: "6小时破 100万",
   },
   Crunched: {
     src: "/videos/ava-artisan.mp4",
     poster: "/videos/posters/ava-artisan.jpg",
-    gradient: "linear-gradient(135deg, #FFB88A 0%, #F5551D 50%, #1A1A1A 100%)",
+    gradient: "linear-gradient(135deg, var(--sp-apricot) 0%, var(--sp-orange-400) 50%, var(--sp-ink-soft) 100%)",
     accent: "400万+ 播放",
   },
 };
@@ -87,7 +87,7 @@ export function Showcase() {
                 ),
               })}
             </h2>
-            <p className="mt-6 text-lg md:text-xl text-white/70 leading-relaxed max-w-3xl">
+            <p className="mt-6 text-lg md:text-xl text-white/75 leading-relaxed max-w-3xl">
               {t("subtitle")}
             </p>
           </motion.div>
@@ -209,14 +209,14 @@ function ShowcaseCard({ c, index }: { c: Case; index: number }) {
                   fill="none"
                   className="translate-x-0.5"
                 >
-                  <path d="M16 12l22 12-22 12V12z" fill="#F5551D" />
+                  <path d="M16 12l22 12-22 12V12z" fill="var(--sp-orange-400)" />
                 </svg>
               </span>
             </span>
 
             {/* Brand + headline overlay bottom */}
             <span className="relative z-10 w-full p-6 md:p-7 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
-              <span className="block text-white/80 text-xs font-bold tracking-[0.2em] uppercase mb-2">
+              <span className="block text-white/75 text-xs font-bold tracking-[0.2em] uppercase mb-2">
                 {c.brand}
               </span>
               <span className="block sp-display text-xl md:text-2xl text-white leading-tight">
@@ -244,7 +244,7 @@ function ShowcaseCard({ c, index }: { c: Case; index: number }) {
             className="absolute inset-0 flex items-center justify-center"
             style={{
               background:
-                "linear-gradient(135deg, #2A2A2A 0%, #1A1A1A 100%)",
+                "linear-gradient(135deg, #2A2A2A 0%, var(--sp-ink-soft) 100%)",
             }}
           >
             <span className="text-white/40 text-sm">Coming soon</span>
@@ -257,7 +257,7 @@ function ShowcaseCard({ c, index }: { c: Case; index: number }) {
         <span className="text-orange-500 font-bold text-lg tabular-nums">
           0{index + 1}
         </span>
-        <p className="text-white/80 text-sm md:text-sm leading-relaxed">
+        <p className="text-white/75 text-sm md:text-sm leading-relaxed">
           {c.metric}
         </p>
       </div>

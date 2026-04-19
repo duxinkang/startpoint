@@ -28,7 +28,7 @@ export function Commitment() {
               <h2 className="sp-display text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
                 {t("title")}
               </h2>
-              <p className="mt-6 text-lg text-ink/70 max-w-md leading-relaxed">
+              <p className="mt-6 text-lg text-ink/75 max-w-md leading-relaxed">
                 {t("subtitle")}
               </p>
             </div>
@@ -41,7 +41,7 @@ export function Commitment() {
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 md:w-40 md:h-40 rounded-full z-10 flex items-center justify-center text-center text-white p-4"
               style={{
                 background:
-                  "radial-gradient(circle, #FFB483 0%, #F5551D 80%)",
+                  "radial-gradient(circle, #FFB483 0%, var(--sp-orange-400) 80%)",
               }}
             >
               <span className="text-sm md:text-base font-bold leading-tight">
@@ -60,9 +60,9 @@ export function Commitment() {
                 style={{
                   background:
                     i % 2 === 0
-                      ? "linear-gradient(140deg, #FFD9B8 0%, #FFAE78 100%)"
-                      : "linear-gradient(140deg, #FFB88A 0%, #F5551D 100%)",
-                  color: i % 2 === 0 ? "#0A0A0A" : "#fff",
+                      ? "linear-gradient(140deg, var(--sp-cream-mid) 0%, var(--sp-peach-warm) 100%)"
+                      : "linear-gradient(140deg, var(--sp-apricot) 0%, var(--sp-orange-400) 100%)",
+                  color: i % 2 === 0 ? "var(--sp-ink)" : "#fff",
                 }}
               >
                 <div className="font-bold text-2xl mb-2 flex items-baseline gap-2">

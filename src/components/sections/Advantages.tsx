@@ -19,13 +19,12 @@ export function Advantages() {
       <Container size="full">
         <div className="max-w-3xl mb-14">
           <Pill variant="orange" size="md" className="mb-5">
-            {/* localized kicker — can fall back to "CORE ADVANTAGES" */}
-            CORE ADVANTAGES
+            {t("kicker")}
           </Pill>
           <h2 className="sp-display text-4xl md:text-5xl lg:text-6xl text-ink leading-tight">
             {t("title")}
           </h2>
-          <p className="mt-5 text-lg text-ink/70 leading-relaxed">
+          <p className="mt-5 text-lg text-ink/75 leading-relaxed">
             {t("subtitle")}
           </p>
         </div>
@@ -46,7 +45,7 @@ export function Advantages() {
                 <h3 className="font-bold text-ink text-lg md:text-xl leading-snug">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-ink/70 leading-relaxed text-sm">
+                <p className="mt-4 text-ink/75 leading-relaxed text-sm">
                   {item.text}
                 </p>
               </Card>

@@ -71,7 +71,7 @@ export default async function ServicesPage({
             <h1 className="sp-display text-[15vw] sm:text-[11vw] lg:text-[7.5vw] xl:text-[120px] leading-[1.05]">
               {idx("title")}
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-ink/80 leading-relaxed">
+            <p className="mt-6 text-lg md:text-xl text-ink/75 leading-relaxed">
               {idx("subtitle")}
             </p>
           </div>
@@ -100,7 +100,7 @@ export default async function ServicesPage({
                 <h3 className="sp-display text-2xl leading-tight text-ink group-hover:text-orange-500 transition-colors">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-sm text-ink/70 leading-relaxed">
+                <p className="mt-4 text-sm text-ink/75 leading-relaxed">
                   {item.short}
                 </p>
                 <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-orange-500">
@@ -132,7 +132,7 @@ export default async function ServicesPage({
                   ? "六条产品线，同一套增长飞轮"
                   : "Six service lines, one growth flywheel"}
               </h2>
-              <div className="mt-6 space-y-5 text-ink/80 leading-relaxed text-base">
+              <div className="mt-6 space-y-5 text-ink/75 leading-relaxed text-base">
                 <p>
                   {locale === "zh"
                     ? "StartPoint 不做碎片化的营销外包。六条服务线是同一套 0→1 增长飞轮上的不同支点:Launch Video 负责在 15 秒内把价值主张讲清楚，Product Hunt 和 KOL 负责把首批种子用户拉进来，Reddit 与 GEO 负责让真实用户留下可被搜索到的长尾信任资产，SEO 和 Paid Ads 负责把流量飞轮踩起来。"
@@ -169,14 +169,14 @@ export default async function ServicesPage({
                 ).map((line) => (
                   <li
                     key={line}
-                    className="flex gap-3 text-ink/80 leading-relaxed"
+                    className="flex gap-3 text-ink/75 leading-relaxed"
                   >
                     <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-orange-500" />
                     <span>{line}</span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 text-sm text-ink/60 leading-relaxed">
+              <p className="mt-6 text-sm text-ink/55 leading-relaxed">
                 {locale === "zh"
                   ? "不确定该先启动哪一条？30 分钟免费咨询帮你判断。"
                   : "Not sure which line to start with? A free 30-min call will tell you."}

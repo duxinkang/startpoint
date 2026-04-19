@@ -9,7 +9,9 @@ import {
   buildMetadata,
   breadcrumbSchema,
   faqSchema,
+  getProductHuntFaq,
   getSeoGeoFaq,
+  getSocialFaq,
   serviceSchema,
 } from "@/lib/seo";
 import { routing } from "@/i18n/routing";
@@ -19,6 +21,7 @@ import { PaidAdsDetail } from "@/components/services/PaidAdsDetail";
 import { ProductHuntDetail } from "@/components/services/ProductHuntDetail";
 import { SocialDetail } from "@/components/services/SocialDetail";
 import { SeoGeoDetail } from "@/components/services/SeoGeoDetail";
+import { RelatedServices } from "@/components/services/RelatedServices";
 
 const VALID_SLUGS = [
   "launch-video",
@@ -125,6 +128,12 @@ export default async function ServiceDetailPage({
   if (slug === "seo-geo") {
     jsonLd.push(faqSchema(getSeoGeoFaq(locale)));
   }
+  if (slug === "product-hunt") {
+    jsonLd.push(faqSchema(getProductHuntFaq(locale)));
+  }
+  if (slug === "social") {
+    jsonLd.push(faqSchema(getSocialFaq(locale)));
+  }
 
   return (
     <>
@@ -139,7 +148,7 @@ export default async function ServiceDetailPage({
           <h1 className="sp-display text-[15vw] sm:text-[11vw] lg:text-[7.5vw] xl:text-[120px] leading-[1.05] max-w-4xl">
             {t("title")}
           </h1>
-          <p className="mt-8 max-w-3xl text-lg md:text-xl text-ink/80 leading-relaxed">
+          <p className="mt-8 max-w-3xl text-lg md:text-xl text-ink/75 leading-relaxed">
             {t("intro")}
           </p>
         </Container>
@@ -152,6 +161,9 @@ export default async function ServiceDetailPage({
       {slug === "product-hunt" && <ProductHuntDetail />}
       {slug === "social" && <SocialDetail />}
       {slug === "seo-geo" && <SeoGeoDetail />}
+
+      {/* Sibling services — cross-links to the 2-3 most compounding peers */}
+      <RelatedServices currentSlug={slug} />
 
       {/* Rich CTA card — outcome, timeline, pricing, two actions */}
       <ServiceDetailCTA slug={slug} locale={locale} cta={nav("cta")} />
@@ -181,14 +193,14 @@ function ServiceDetailCTA({
   return (
     <Section bg="ink" spacing="cta" className="md:py-24">
       <Container size="full">
-        <div className="rounded-3xl bg-gradient-to-br from-[#1f1208] via-ink to-[#1a1a1a] border border-orange-500/20 p-8 md:p-12 lg:p-14 relative overflow-hidden">
+        <div className="rounded-3xl bg-gradient-to-br from-[#1f1208] via-ink to-[var(--sp-ink-soft)] border border-orange-500/20 p-8 md:p-12 lg:p-14 relative overflow-hidden">
           {/* Decorative orange glow */}
           <div
             aria-hidden="true"
             className="absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-30 blur-3xl pointer-events-none"
             style={{
               background:
-                "radial-gradient(circle, #F5551D 0%, transparent 70%)",
+                "radial-gradient(circle, var(--sp-orange-400) 0%, transparent 70%)",
             }}
           />
 
@@ -201,7 +213,7 @@ function ServiceDetailCTA({
               <h3 className="sp-display text-3xl md:text-4xl lg:text-5xl text-white leading-[1.1]">
                 {copy.title}
               </h3>
-              <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed max-w-xl">
+              <p className="mt-5 text-white/75 text-base md:text-lg leading-relaxed max-w-xl">
                 {copy.subtitle}
               </p>
 
@@ -210,7 +222,7 @@ function ServiceDetailCTA({
                 {copy.outcomes.map((o) => (
                   <li
                     key={o}
-                    className="flex items-start gap-3 text-white/85 text-sm md:text-base"
+                    className="flex items-start gap-3 text-white/75 text-sm md:text-base"
                   >
                     <span
                       aria-hidden="true"

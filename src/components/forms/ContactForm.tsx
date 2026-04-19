@@ -83,7 +83,7 @@ export function ContactForm() {
 
   const inputCls =
     "w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-ink placeholder-ink/40 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition";
-  const labelCls = "block text-sm font-semibold text-ink/80 mb-2";
+  const labelCls = "block text-sm font-semibold text-ink/75 mb-2";
 
   return (
     <motion.form

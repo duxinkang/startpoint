@@ -95,6 +95,9 @@
       ]
     },
     "paid-ads": {
+      "channelsLabel": "CHANNELS",
+      "methodologyLabel": "METHODOLOGY",
+      "outcomesLabel": "OUTCOMES",
       "title": "Paid advertising",
       "kicker": "PAID ADS",
       "intro": "Full coverage across major global ad ecosystems. An outcome-driven, multi-channel methodology — every dollar trackable, every dollar optimizable.",
@@ -112,6 +115,8 @@
       ]
     },
     "product-hunt": {
+      "targetsKicker": "KEY OUTCOMES",
+      "faqKicker": "FAQ",
       "title": "Product Hunt launch",
       "kicker": "PRODUCT HUNT",
       "intro": "Product Hunt is the most influential product-discovery platform on the planet. A successful launch means thousands of early users, press coverage, and investor attention. We run the full playbook — pre-hype to sprint day.",
@@ -129,6 +134,8 @@
       ]
     },
     "social": {
+      "whyKicker": "WHY REDDIT",
+      "faqKicker": "FAQ",
       "title": "Reddit & community",
       "kicker": "REDDIT & COMMUNITY",
       "intro": "Reddit is one of the densest gatherings of AI early adopters anywhere. Building real brand presence in r/artificial, r/SaaS, r/MachineLearning and adjacent communities is the most reliable way to acquire high-quality seed users.",
@@ -156,6 +163,8 @@
     }
   },
   "servicesIndex": {
+    "relatedKicker": "Keep exploring",
+    "relatedTitle": "Pairs well with",
     "title": "What we offer",
     "subtitle": "Six differentiated service lines, each built around a real bottleneck on the 0→1 journey. Pick one, or combine them into a full growth engagement.",
     "cta": "Let's talk about the right mix"
@@ -202,6 +211,7 @@
     ]
   },
   "cases": {
+    "caseLabel": "CASE",
     "title": "Client outcomes",
     "items": [
       {
@@ -331,6 +341,7 @@
     ]
   },
   "advantages": {
+    "kicker": "CORE ADVANTAGES",
     "title": "Why we win",
     "subtitle": "Six differentiators that make StartPoint the right growth partner for AI products",
     "items": [
@@ -343,6 +354,7 @@
     ]
   },
   "team": {
+    "kicker": "TEAM",
     "title": "Who walks 0→1 with you",
     "subtitle": "A hybrid team fluent in tech, growth, and investor narrative",
     "description": "Long-term partnerships with dozens of international AI SaaS marketers and top agencies — shared, validated playbooks that give you global vision with local execution.",
@@ -369,6 +381,7 @@
     "body2": "The DIY market-team route is full of uncertainty and hidden cost. Choosing StartPoint means choosing a validated path where our upside is tied to yours."
   },
   "pricing": {
+    "mostPopular": "MOST POPULAR",
     "title": "How we work",
     "plans": [
       {
@@ -398,6 +411,10 @@
     ]
   },
   "contact": {
+    "emailLabel": "EMAIL",
+    "inPersonLabel": "IN-PERSON",
+    "responseLabel": "RESPONSE TIME",
+    "responseText": "Usually within 24 hours on weekdays",
     "title": "Talk to us",
     "subtitle": "Book a free 30-minute consult",
     "locations": "Hangzhou / Shanghai / Paris — happy to coffee chat in person",
@@ -415,6 +432,8 @@
     }
   },
   "footer": {
+    "menu": "Menu",
+    "contact": "Contact",
     "rights": "© 2026 StartPoint Agency · 0→1 growth for AI Agents",
     "language": "Language",
     "privacy": "Privacy"

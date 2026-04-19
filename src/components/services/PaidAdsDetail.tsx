@@ -18,10 +18,10 @@ export function PaidAdsDetail() {
       <Container size="full">
         {/* Channels */}
         <div className="mb-16">
-          <h2 className="sr-only">{t("kicker")} · Channels</h2>
+          <h2 className="sr-only">{t("kicker")} · {t("channelsLabel")}</h2>
           <div className="flex items-center gap-3 mb-6">
             <Pill variant="orange" size="md">
-              {t("kicker")} · CHANNELS
+              {t("kicker")} · {t("channelsLabel")}
             </Pill>
             <div className="h-px flex-1 bg-ink/15" />
           </div>
@@ -39,10 +39,10 @@ export function PaidAdsDetail() {
 
         {/* Methodology */}
         <div className="mb-16">
-          <h2 className="sr-only">Methodology</h2>
+          <h2 className="sr-only">{t("methodologyLabel")}</h2>
           <div className="flex items-center gap-3 mb-6">
             <Pill variant="ink" size="md">
-              METHODOLOGY
+              {t("methodologyLabel")}
             </Pill>
             <div className="h-px flex-1 bg-ink/15" />
           </div>
@@ -60,7 +60,7 @@ export function PaidAdsDetail() {
                   0{i + 1}
                 </div>
                 <h3 className="font-bold text-ink text-lg">{m.title}</h3>
-                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
+                <p className="mt-3 text-sm text-ink/75 leading-relaxed">
                   {m.text}
                 </p>
               </motion.div>
@@ -70,10 +70,10 @@ export function PaidAdsDetail() {
 
         {/* Goals */}
         <div>
-          <h2 className="sr-only">Outcomes</h2>
+          <h2 className="sr-only">{t("outcomesLabel")}</h2>
           <div className="flex items-center gap-3 mb-6">
             <Pill variant="orange" size="md">
-              OUTCOMES
+              {t("outcomesLabel")}
             </Pill>
             <div className="h-px flex-1 bg-ink/15" />
           </div>
@@ -92,7 +92,7 @@ export function PaidAdsDetail() {
                 </div>
                 <div>
                   <div className="font-bold text-ink">{g.title}</div>
-                  <div className="text-sm text-ink/70 mt-1">{g.text}</div>
+                  <div className="text-sm text-ink/75 mt-1">{g.text}</div>
                 </div>
               </motion.div>
             ))}
@@ -109,7 +109,7 @@ export function PaidAdsDetail() {
                 ? "为什么 AI Agent 的广告投放不能照搬 SaaS 打法"
                 : "Why AI Agent paid playbooks differ from standard SaaS"}
             </h2>
-            <div className="mt-5 space-y-4 text-ink/80 leading-relaxed">
+            <div className="mt-5 space-y-4 text-ink/75 leading-relaxed">
               <p>
                 {isZh
                   ? "AI Agent 的用户决策路径比传统 SaaS 长。用户既要理解「这个 Agent 能替我做什么」，也要建立「它会不会把我的数据搞乱」的信任。这意味着冷人群几乎不可能在一次点击内转化，必须通过冷 / 温 / 热三层分层把信任一点点累积起来。我们的每一条素材都针对某一层的心智障碍，而不是对所有人讲同一句话。"
@@ -123,7 +123,7 @@ export function PaidAdsDetail() {
             </div>
           </div>
 
-          <div className="rounded-2xl bg-ink text-white/90 p-7 md:p-8">
+          <div className="rounded-2xl bg-ink text-white p-7 md:p-8">
             <h3 className="sp-display text-xl md:text-2xl text-orange-300">
               {isZh ? "我们拒绝做什么" : "What we won\u2019t do"}
             </h3>
@@ -142,7 +142,7 @@ export function PaidAdsDetail() {
                     "No locked-away accounts or creative — the ad accounts, audiences, and creative all belong to you",
                   ]
               ).map((line) => (
-                <li key={line} className="flex gap-3 text-white/85 text-sm leading-relaxed">
+                <li key={line} className="flex gap-3 text-white/75 text-sm leading-relaxed">
                   <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-orange-400" />
                   <span>{line}</span>
                 </li>

@@ -27,7 +27,7 @@ export function ClientLogos() {
     <section className="bg-paper border-t border-b border-ink/10 py-10 md:py-12">
       <Container size="full">
         <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
-          <div className="shrink-0 text-ink/60 text-xs md:text-xs tracking-[0.22em] uppercase font-bold">
+          <div className="shrink-0 text-ink/55 text-xs md:text-xs tracking-[0.22em] uppercase font-bold">
             {t("label")}
           </div>
 

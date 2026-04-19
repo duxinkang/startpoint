@@ -81,12 +81,12 @@ export function Hero() {
               <h1 className="sp-display text-[15vw] sm:text-[11vw] lg:text-[7.5vw] xl:text-[120px]">
                 {t("titleZh")}
               </h1>
-              <h2 className="sp-display text-[10vw] sm:text-[7vw] lg:text-[5vw] xl:text-[80px] text-ink/80">
+              <h2 className="sp-display text-[10vw] sm:text-[7vw] lg:text-[5vw] xl:text-[80px] text-ink/75">
                 {t("titleEn")}
               </h2>
             </div>
 
-            <div className="flex items-start gap-3 text-ink/80 pt-2">
+            <div className="flex items-start gap-3 text-ink/75 pt-2">
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
                 <circle
                   cx="14"
@@ -155,7 +155,7 @@ export function Hero() {
         </div>
 
         {/* Decorative arc bottom-left corner */}
-        <div className="hidden md:block absolute -bottom-24 -left-20 text-ink/70 pointer-events-none">
+        <div className="hidden md:block absolute -bottom-24 -left-20 text-ink/75 pointer-events-none">
           <ArcLine size={260} />
         </div>
       </Container>

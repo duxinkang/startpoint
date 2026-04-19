@@ -69,7 +69,7 @@ export default async function CasesPage({
           <h1 className="sp-display text-[15vw] sm:text-[11vw] lg:text-[7.5vw] xl:text-[120px] leading-[1.05] max-w-4xl">
             {t("title")}
           </h1>
-          <p className="mt-6 max-w-3xl text-lg md:text-xl text-ink/80 leading-relaxed">
+          <p className="mt-6 max-w-3xl text-lg md:text-xl text-ink/75 leading-relaxed">
             {locale === "zh"
               ? "以下是 StartPoint 合作过的部分 AI 产品真实增长结果。更多在 NDA 下可以一对一分享。"
               : "Selected public case studies from StartPoint engagements. More available 1:1 under NDA."}
@@ -93,7 +93,7 @@ export default async function CasesPage({
               ? "想看更多同行业的深度数据？"
               : "Want deeper data from your category?"}
           </h2>
-          <p className="mt-4 text-white/70 max-w-xl mx-auto">
+          <p className="mt-4 text-white/75 max-w-xl mx-auto">
             {locale === "zh"
               ? "在 NDA 下可以一对一分享 20+ 同类 AI 产品的真实增长数据与方法论细节。"
               : "Under NDA we can share 20+ more case studies with full methodology detail — 1:1."}

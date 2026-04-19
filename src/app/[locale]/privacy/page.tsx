@@ -50,7 +50,7 @@ export default async function PrivacyPage({
           <h1 className="sp-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-ink">
             {isZh ? "隐私政策" : "Privacy Policy"}
           </h1>
-          <p className="mt-6 text-sm text-ink/60">
+          <p className="mt-6 text-sm text-ink/55">
             {isZh
               ? "最近更新:2026 年 4 月 18 日"
               : "Last updated: April 18, 2026"}
@@ -65,7 +65,7 @@ export default async function PrivacyPage({
 
 function Prose({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-10 max-w-3xl space-y-8 text-ink/80 leading-relaxed text-base">
+    <div className="mt-10 max-w-3xl space-y-8 text-ink/75 leading-relaxed text-base">
       {children}
     </div>
   );

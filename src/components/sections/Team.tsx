@@ -27,15 +27,15 @@ export function Team() {
       <Container size="full">
         <div className="max-w-3xl mb-14">
           <Pill variant="orange" size="md" className="mb-5">
-            TEAM
+            {t("kicker")}
           </Pill>
           <h2 className="sp-display text-4xl md:text-5xl lg:text-6xl text-ink leading-tight">
             {t("title")}
           </h2>
-          <p className="mt-5 text-lg text-ink/70 leading-relaxed">
+          <p className="mt-5 text-lg text-ink/75 leading-relaxed">
             {t("subtitle")}
           </p>
-          <p className="mt-3 text-ink/60 leading-relaxed">
+          <p className="mt-3 text-ink/55 leading-relaxed">
             {t("description")}
           </p>
         </div>
@@ -58,7 +58,7 @@ export function Team() {
                   <div className="mt-1 text-sm font-semibold text-orange-600">
                     {m.title}
                   </div>
-                  <p className="mt-4 text-ink/70 leading-relaxed text-sm">
+                  <p className="mt-4 text-ink/75 leading-relaxed text-sm">
                     {m.text}
                   </p>
                 </div>
@@ -100,7 +100,7 @@ function MemberPhoto({ name, role }: { name: string; role: string }) {
           <div className="sp-ball absolute -right-10 -bottom-10 w-48 h-48 opacity-50 mix-blend-overlay" />
           {/* Big initial */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="sp-display text-[180px] leading-none text-white/90 drop-shadow-xl">
+            <span className="sp-display text-[180px] leading-none text-white drop-shadow-xl">
               {initial}
             </span>
           </div>

@@ -19,7 +19,7 @@ export function Stats() {
             <h2 className="sp-display text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-white">
               {t("title")}
             </h2>
-            <p className="mt-5 text-base md:text-lg text-white/70 leading-relaxed">
+            <p className="mt-5 text-base md:text-lg text-white/75 leading-relaxed">
               {t("subtitle")}
             </p>
           </div>
@@ -38,7 +38,7 @@ export function Stats() {
                 </div>
                 <div className="font-bold text-ink mt-1">{it.label}</div>
                 {it.text && (
-                  <div className="text-xs text-ink/60 mt-1 leading-relaxed">
+                  <div className="text-xs text-ink/55 mt-1 leading-relaxed">
                     {it.text}
                   </div>
                 )}

@@ -15,12 +15,12 @@ export function Footer() {
   ] as const;
 
   return (
-    <footer className="bg-ink text-white/80 py-16">
+    <footer className="bg-ink text-white/75 py-16">
       <Container>
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-10">
           <div className="max-w-sm space-y-4">
             <Logo variant="light" size="md" />
-            <p className="text-sm text-white/60 leading-relaxed">
+            <p className="text-sm text-white/55 leading-relaxed">
               {t("site.description")}
             </p>
           </div>
@@ -28,7 +28,7 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row gap-10">
             <div className="space-y-3">
               <div className="text-xs uppercase tracking-widest text-white/40">
-                Menu
+                {t("footer.menu")}
               </div>
               {links.map((l) => (
                 <Link
@@ -43,7 +43,7 @@ export function Footer() {
 
             <div className="space-y-3">
               <div className="text-xs uppercase tracking-widest text-white/40">
-                Contact
+                {t("footer.contact")}
               </div>
               <a
                 href="mailto:d541449473@gmail.com"
@@ -51,7 +51,7 @@ export function Footer() {
               >
                 d541449473@gmail.com
               </a>
-              <div className="text-sm text-white/60">
+              <div className="text-sm text-white/55">
                 {t("contact.locations")}
               </div>
             </div>
@@ -63,7 +63,7 @@ export function Footer() {
           <div className="flex items-center gap-4">
             <Link
               href="/privacy"
-              className="hover:text-white/70"
+              className="hover:text-white/75"
             >
               {t("footer.privacy")}
             </Link>

@@ -43,7 +43,7 @@ export function ServicesOverview() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="lg:pt-8"
           >
-            <p className="text-lg md:text-xl text-ink/80 leading-relaxed max-w-md">
+            <p className="text-lg md:text-xl text-ink/75 leading-relaxed max-w-md">
               {t("description")}
             </p>
           </motion.div>

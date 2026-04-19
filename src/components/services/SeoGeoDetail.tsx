@@ -96,7 +96,7 @@ export function SeoGeoDetail() {
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
             {geoFacts.map((item) => (
               <Card key={item} variant="subtle" className="bg-cream">
-                <p className="text-ink/80 leading-relaxed">{item}</p>
+                <p className="text-ink/75 leading-relaxed">{item}</p>
               </Card>
             ))}
           </div>
@@ -128,7 +128,7 @@ export function SeoGeoDetail() {
                   0{i + 1}
                 </div>
                 <h2 className="sp-display text-2xl text-ink">{step.title}</h2>
-                <p className="mt-4 text-ink/70 leading-relaxed">{step.text}</p>
+                <p className="mt-4 text-ink/75 leading-relaxed">{step.text}</p>
               </motion.div>
             ))}
           </div>
@@ -149,7 +149,7 @@ export function SeoGeoDetail() {
               </h2>
               <ul className="mt-8 space-y-4">
                 {fitStages.map((item) => (
-                  <li key={item} className="flex gap-3 text-ink/80 leading-relaxed">
+                  <li key={item} className="flex gap-3 text-ink/75 leading-relaxed">
                     <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-orange-500" />
                     <span>{item}</span>
                   </li>
@@ -163,7 +163,7 @@ export function SeoGeoDetail() {
               </h2>
               <ul className="mt-6 space-y-4">
                 {deliverables.map((item) => (
-                  <li key={item} className="flex gap-3 text-ink/80 leading-relaxed">
+                  <li key={item} className="flex gap-3 text-ink/75 leading-relaxed">
                     <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-orange-500" />
                     <span>{item}</span>
                   </li>
@@ -191,7 +191,7 @@ export function SeoGeoDetail() {
             {proofPoints.map((item) => (
               <div
                 key={item}
-                className="rounded-2xl border border-white/10 bg-white/5 p-6 text-white/80 leading-relaxed"
+                className="rounded-2xl border border-white/10 bg-white/5 p-6 text-white/75 leading-relaxed"
               >
                 {item}
               </div>
@@ -222,7 +222,7 @@ export function SeoGeoDetail() {
                 <h3 className="sp-display text-xl md:text-2xl text-ink leading-snug">
                   {item.q}
                 </h3>
-                <p className="mt-3 text-ink/70 leading-relaxed text-sm">
+                <p className="mt-3 text-ink/75 leading-relaxed text-sm">
                   {item.a}
                 </p>
               </article>

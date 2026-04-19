@@ -47,7 +47,7 @@ export function KolDetail() {
               </div>
               <div className="p-6 flex-1">
                 <h3 className="font-bold text-ink text-lg">{step.title}</h3>
-                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
+                <p className="mt-3 text-sm text-ink/75 leading-relaxed">
                   {step.text}
                 </p>
               </div>
@@ -64,7 +64,7 @@ export function KolDetail() {
                 ? "AI Agent 为什么比 SaaS 更依赖真人口碑"
                 : "Why AI Agents depend on real-user word-of-mouth more than SaaS"}
             </h2>
-            <div className="mt-5 space-y-4 text-ink/80 leading-relaxed">
+            <div className="mt-5 space-y-4 text-ink/75 leading-relaxed">
               <p>
                 {isZh
                   ? "AI Agent 的核心价值是代替人完成任务，但「它真的能搞定我的活吗」这句话，产品自己说没有说服力——只有另一个真人展示完整工作流才能。这就是为什么同等预算下，KOL / KOC 内容对 AI Agent 的转化贡献，通常是投信息流广告的 2-4 倍。"
@@ -97,7 +97,7 @@ export function KolDetail() {
               ).map((line) => (
                 <li
                   key={line}
-                  className="flex gap-3 text-ink/80 text-sm leading-relaxed"
+                  className="flex gap-3 text-ink/75 text-sm leading-relaxed"
                 >
                   <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-orange-500" />
                   <span>{line}</span>

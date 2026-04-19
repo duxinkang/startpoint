@@ -1,9 +1,17 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Container, Section } from "@/components/ui/Container";
 import { Pill } from "@/components/ui/Pill";
+import { Link } from "@/i18n/navigation";
+
+// Which service lines actually shipped inside this featured engagement —
+// editorial mapping curated to the workstreams above. Adding them as
+// footer chip links densifies the internal-link graph between /cases and
+// /services so both readers and search crawlers see the product-service
+// connection rather than treating the case study as a dead-end page.
+const SERVICES_ENGAGED = ["kol", "social", "paid-ads"] as const;
 
 /**
  * FeaturedCaseStudy — anchor case on /cases.
@@ -20,8 +28,18 @@ type Result = { n: string; label: string };
 
 export function FeaturedCaseStudy() {
   const t = useTranslations("featuredCase");
+  const servicesT = useTranslations("services");
+  const locale = useLocale();
+  const isZh = locale === "zh";
   const workstreams = t.raw("workstreams") as Workstream[];
   const results = t.raw("results") as Result[];
+  const serviceItems = servicesT.raw("items") as {
+    slug: string;
+    title: string;
+  }[];
+  const engagedServices = SERVICES_ENGAGED.map((slug) =>
+    serviceItems.find((s) => s.slug === slug),
+  ).filter((s): s is { slug: string; title: string } => Boolean(s));
 
   return (
     <Section bg="ink" spacing="hero" className="relative overflow-hidden">
@@ -31,7 +49,7 @@ export function FeaturedCaseStudy() {
         className="absolute -top-40 -right-40 w-[32rem] h-[32rem] rounded-full opacity-20 blur-3xl pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, #F5551D 0%, transparent 70%)",
+            "radial-gradient(circle, var(--sp-orange-400) 0%, transparent 70%)",
         }}
       />
 
@@ -85,7 +103,7 @@ export function FeaturedCaseStudy() {
                   {ws.items.map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-3 text-white/80 text-sm leading-relaxed"
+                      className="flex items-start gap-3 text-white/75 text-sm leading-relaxed"
                     >
                       <span
                         aria-hidden="true"
@@ -123,13 +141,42 @@ export function FeaturedCaseStudy() {
                 <div className="sp-display text-orange-500 text-5xl md:text-6xl leading-none tabular-nums">
                   {r.n}
                 </div>
-                <div className="mt-3 text-white/80 text-sm md:text-base leading-snug">
+                <div className="mt-3 text-white/75 text-sm md:text-base leading-snug">
                   {r.label}
                 </div>
               </motion.div>
             ))}
           </div>
         </motion.div>
+
+        {/* Services engaged — internal link back to /services pages */}
+        {engagedServices.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5 }}
+            className="mt-14 md:mt-16"
+          >
+            <div className="text-white/55 text-xs font-bold tracking-[0.25em] uppercase mb-5">
+              {isZh ? "本次合作用到的服务" : "Services engaged in this work"}
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {engagedServices.map((svc) => (
+                <Link
+                  key={svc.slug}
+                  href={`/services/${svc.slug}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white hover:text-white hover:border-orange-500/60 hover:bg-orange-500/10 transition-colors"
+                >
+                  <span>{svc.title}</span>
+                  <span aria-hidden="true" className="text-orange-400">
+                    →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
 
         {/* Quote */}
         <motion.figure

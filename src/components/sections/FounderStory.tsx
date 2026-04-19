@@ -51,7 +51,7 @@ export function FounderStory() {
               <h3 className="sp-display text-xl md:text-2xl text-ink leading-snug mb-3">
                 {c.title}
               </h3>
-              <p className="text-ink/70 text-base leading-relaxed">
+              <p className="text-ink/75 text-base leading-relaxed">
                 {c.text}
               </p>
             </motion.div>
@@ -75,7 +75,7 @@ export function FounderStory() {
             </span>
             {t("quote")}
           </blockquote>
-          <figcaption className="mt-6 text-ink/60 text-sm tracking-wide">
+          <figcaption className="mt-6 text-ink/55 text-sm tracking-wide">
             {t("signature")}
           </figcaption>
         </motion.figure>

@@ -51,7 +51,7 @@ export function Problem() {
               <div className="sp-display text-orange-500 text-5xl md:text-6xl font-bold">
                 {it.n}
               </div>
-              <p className="text-lg md:text-xl text-ink/80 font-medium leading-relaxed">
+              <p className="text-lg md:text-xl text-ink/75 font-medium leading-relaxed">
                 {it.text}
               </p>
             </li>

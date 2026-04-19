@@ -22,13 +22,13 @@ export function Outro() {
         className="absolute right-0 top-0 bottom-0 w-1/2 md:w-2/5 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 110% 50%, #F5551D 0%, #FFB88A 60%, transparent 75%)",
+            "radial-gradient(ellipse at 110% 50%, var(--sp-orange-400) 0%, var(--sp-apricot) 60%, transparent 75%)",
         }}
       />
       <DotMatrix
         cols={5}
         rows={5}
-        className="absolute top-24 right-24 text-ink/80"
+        className="absolute top-24 right-24 text-ink/75"
       />
 
       <Container size="full" className="relative z-10">
@@ -42,10 +42,10 @@ export function Outro() {
           <h2 className="sp-display text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
             {t("title")}
           </h2>
-          <p className="text-lg md:text-xl text-ink/80 leading-relaxed">
+          <p className="text-lg md:text-xl text-ink/75 leading-relaxed">
             {t("body1")}
           </p>
-          <p className="text-lg md:text-xl text-ink/80 leading-relaxed">
+          <p className="text-lg md:text-xl text-ink/75 leading-relaxed">
             {t("body2")}
           </p>
 

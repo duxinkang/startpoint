@@ -25,7 +25,7 @@ export function Vs() {
           <h2 className="sp-display text-4xl md:text-5xl lg:text-6xl text-ink leading-tight">
             {t("headline")}
           </h2>
-          <p className="mt-5 text-lg text-ink/70 max-w-2xl mx-auto">
+          <p className="mt-5 text-lg text-ink/75 max-w-2xl mx-auto">
             {t("subtitle")}
           </p>
         </div>
@@ -54,7 +54,7 @@ export function Vs() {
                     </div>
                     <div>
                       <div className="font-bold text-ink">{item.title}</div>
-                      <div className="mt-1 text-sm text-ink/70 leading-relaxed">
+                      <div className="mt-1 text-sm text-ink/75 leading-relaxed">
                         {item.text}
                       </div>
                     </div>

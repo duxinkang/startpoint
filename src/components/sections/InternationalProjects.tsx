@@ -42,7 +42,7 @@ export function InternationalProjects() {
           <h2 className="sp-display text-3xl md:text-4xl lg:text-5xl leading-[1.1] text-ink">
             {t("title")}
           </h2>
-          <p className="mt-5 text-base md:text-lg text-ink/70 leading-relaxed">
+          <p className="mt-5 text-base md:text-lg text-ink/75 leading-relaxed">
             {t("subtitle")}
           </p>
         </motion.div>
@@ -82,10 +82,10 @@ export function InternationalProjects() {
                 </svg>
               </div>
 
-              <div className="text-ink/60 text-xs font-bold tracking-[0.22em] uppercase">
+              <div className="text-ink/55 text-xs font-bold tracking-[0.22em] uppercase">
                 {p.country}
               </div>
-              <div className="mt-1 text-ink/70 text-sm">
+              <div className="mt-1 text-ink/75 text-sm">
                 {p.industry}
               </div>
 
@@ -94,7 +94,7 @@ export function InternationalProjects() {
               </h3>
 
               <div className="mt-auto pt-6 flex items-center justify-between border-t border-ink/10">
-                <span className="text-ink/80 font-bold text-sm">
+                <span className="text-ink/75 font-bold text-sm">
                   {p.name}
                 </span>
                 <span className="text-ink/40 group-hover:text-orange-500 text-xs font-semibold tracking-wide transition-colors">

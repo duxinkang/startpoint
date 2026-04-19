@@ -32,7 +32,7 @@ export function Partner() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="text-lg md:text-xl text-ink/70 font-medium mb-4">
+            <div className="text-lg md:text-xl text-ink/75 font-medium mb-4">
               {t("kicker")}
             </div>
             <h2 className="sp-display text-5xl md:text-6xl lg:text-7xl leading-[1.05]">
@@ -69,7 +69,7 @@ export function Partner() {
                   >
                     {p.label}
                   </Pill>
-                  <span className="text-base md:text-lg font-medium text-ink/80">
+                  <span className="text-base md:text-lg font-medium text-ink/75">
                     {p.text}
                   </span>
                 </li>
@@ -77,7 +77,7 @@ export function Partner() {
             </ul>
 
             <div className="pt-6 border-t border-ink/20">
-              <p className="text-sm text-ink/70 text-center md:text-right">
+              <p className="text-sm text-ink/75 text-center md:text-right">
                 {t("footnote")}
               </p>
             </div>

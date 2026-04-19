@@ -95,6 +95,9 @@
       ]
     },
     "paid-ads": {
+      "channelsLabel": "投放渠道",
+      "methodologyLabel": "方法论",
+      "outcomesLabel": "目标指标",
       "title": "广告投流",
       "kicker": "PAID ADS",
       "intro": "覆盖主流全球广告生态，以结果为导向的多渠道投放方法论，让每一分预算都可被追踪、被优化。",
@@ -112,6 +115,8 @@
       ]
     },
     "product-hunt": {
+      "targetsKicker": "关键指标",
+      "faqKicker": "常见问题",
       "title": "Product Hunt 冲榜",
       "kicker": "PRODUCT HUNT",
       "intro": "Product Hunt 是全球最具影响力的产品发现平台，单次成功冲榜可带来数千名早期用户、媒体报道与投资人关注。我们提供从预热到冲刺的全程专业陪跑服务。",
@@ -129,6 +134,8 @@
       ]
     },
     "social": {
+      "whyKicker": "为什么是 Reddit",
+      "faqKicker": "常见问题",
       "title": "Reddit 与社区口碑",
       "kicker": "REDDIT & COMMUNITY",
       "intro": "Reddit 是全球 AI 产品早期用户密度最高的平台之一。在 r/artificial、r/SaaS、r/MachineLearning 等核心社区中建立真实的品牌存在，是获取高质量种子用户的关键路径。",
@@ -156,6 +163,8 @@
     }
   },
   "servicesIndex": {
+    "relatedKicker": "继续探索",
+    "relatedTitle": "配合这条服务的还有",
     "title": "我们提供什么",
     "subtitle": "六条差异化服务线，围绕 AI 产品 0→1 的真实瓶颈设计。每一条都可以单独买，也可以组合成完整的增长陪跑。",
     "cta": "聊聊最适合你的组合"
@@ -202,6 +211,7 @@
     ]
   },
   "cases": {
+    "caseLabel": "案例",
     "title": "用户案例",
     "items": [
       {
@@ -331,6 +341,7 @@
     ]
   },
   "advantages": {
+    "kicker": "核心优势",
     "title": "我们的核心优势",
     "subtitle": "六大差异化能力，让 StartPoint 成为 AI 产品营销增长的最优合作伙伴",
     "items": [
@@ -343,6 +354,7 @@
     ]
   },
   "team": {
+    "kicker": "团队",
     "title": "是谁在陪你走 0→1",
     "subtitle": "一支同时懂技术、懂增长、懂资本叙事的复合型团队",
     "description": "与国外数十位 AI SaaS 营销专家及顶级 Agency 建立长期战略合作关系，共享经过市场验证的方法论与成功案例经验，为客户带来全球视野与本地执行力的双重优势",
@@ -369,6 +381,7 @@
     "body2": "传统自建市场的路径充满不确定性与高昂的隐性成本。选择起始点 StartPoint，意味着选择一条被验证过、且与您利益深度绑定的高效路径"
   },
   "pricing": {
+    "mostPopular": "最受欢迎",
     "title": "我们的合作模式",
     "plans": [
       {
@@ -398,6 +411,10 @@
     ]
   },
   "contact": {
+    "emailLabel": "邮箱",
+    "inPersonLabel": "线下",
+    "responseLabel": "响应时间",
+    "responseText": "通常在 24 小时内回复（工作日）",
     "title": "联系我们",
     "subtitle": "获得免费 30 分钟咨询",
     "locations": "杭州 / 上海 / 巴黎 可线下 coffee chat",
@@ -415,6 +432,8 @@
     }
   },
   "footer": {
+    "menu": "菜单",
+    "contact": "联系方式",
     "rights": "© 2026 StartPoint Agency · 只做 AI Agent 的 0→1 增长",
     "language": "语言",
     "privacy": "隐私政策"
