@@ -71,6 +71,7 @@
     "launch-video": {
       "title": "Launch Video 制作",
       "kicker": "LAUNCH VIDEO",
+      "metaDescription": "AI 产品发布视频制作 — 60-90 秒短片，专为 Product Hunt、官网首页与付费社媒打造。累计 800 万+播放，三支爆款视频。",
       "intro": "一支高质量的产品发布视频是 AI 产品冷启动阶段最高 ROI 的营销资产。它不仅能在 Product Hunt、官网首页与社交媒体上驱动转化，更能精准传递产品的核心价值主张。",
       "steps": [
         { "title": "脚本策划", "text": "深度挖掘产品核心差异化价值，用听得懂的语言构建打动人心的产品故事。" },
@@ -86,6 +87,7 @@
     "kol": {
       "title": "海外达人合作",
       "kicker": "KOL & KOC",
+      "metaDescription": "AI Agent 海外 KOL / KOC 精准达人营销 — 覆盖全球 AI、科技、生产力垂类的达人数据库，按受众重合度匹配，按单人 ROI 动态调整。",
       "intro": "精准的达人营销是 AI 产品获取高质量早期用户最高效的路径之一。我们拥有覆盖全球 AI、科技、生产力垂类的达人资源网络，为您匹配最具商业转化力的合作伙伴。",
       "subtitle": "专注 AI Agent 和 SaaS 的达人数据库",
       "steps": [
@@ -100,6 +102,7 @@
       "outcomesLabel": "目标指标",
       "title": "广告投流",
       "kicker": "PAID ADS",
+      "metaDescription": "AI 产品海外广告投流 — Google、Meta、LinkedIn、X、Reddit 全渠道覆盖。受众分层建模、创意素材工厂、多触点归因。",
       "intro": "覆盖主流全球广告生态，以结果为导向的多渠道投放方法论，让每一分预算都可被追踪、被优化。",
       "channels": ["Google 生态", "Meta 生态", "X Ads", "LinkedIn", "Reddit"],
       "methodology": [
@@ -119,6 +122,7 @@
       "faqKicker": "常见问题",
       "title": "Product Hunt 冲榜",
       "kicker": "PRODUCT HUNT",
+      "metaDescription": "Product Hunt 冲榜陪跑 — 产品页优化、Hunter 网络预热、发布日执行。目标：Product of the Day 日榜前 3。",
       "intro": "Product Hunt 是全球最具影响力的产品发现平台，单次成功冲榜可带来数千名早期用户、媒体报道与投资人关注。我们提供从预热到冲刺的全程专业陪跑服务。",
       "targets": [
         "冲击 Product of the Day 日榜前三",
@@ -138,6 +142,7 @@
       "faqKicker": "常见问题",
       "title": "Reddit 与社区口碑",
       "kicker": "REDDIT & COMMUNITY",
+      "metaDescription": "AI 产品 Reddit 与海外社区运营 — 在 r/artificial、r/SaaS、r/MachineLearning 建立真实账号权重。种子用户，不刷票。",
       "intro": "Reddit 是全球 AI 产品早期用户密度最高的平台之一。在 r/artificial、r/SaaS、r/MachineLearning 等核心社区中建立真实的品牌存在，是获取高质量种子用户的关键路径。",
       "values": [
         "Reddit 帖子在 Google 的搜索排名极高，优质内容可带来持续数月的免费 SEO 流量",
@@ -153,6 +158,7 @@
     "seo-geo": {
       "title": "SEO / GEO",
       "kicker": "SEO · GEO",
+      "metaDescription": "AI 产品 SEO + GEO（Generative Engine Optimization）优化 — Google 上排名，ChatGPT、Perplexity、Gemini、Claude 回答中被引用。",
       "intro": "传统 SEO 让你在 Google 上被搜到；GEO（Generative Engine Optimization）让你在 ChatGPT、Perplexity、Gemini、Claude 的回答中被引用。我们两条线一起做。",
       "steps": [
         { "title": "关键词与意图建模", "text": "围绕产品场景+用户意图画地图，锁定高商业价值关键词" },

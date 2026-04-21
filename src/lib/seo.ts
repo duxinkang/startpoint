@@ -259,6 +259,26 @@ export function breadcrumbSchema(
   };
 }
 
+// -----------------------------------------------------------------
+// AboutPage — wraps /about semantically so Google and LLMs recognize
+// the page type directly (rather than inferring from the URL). The
+// Organization is the main entity of the page; Persons ship alongside
+// as their own top-level entities so Knowledge Graph can merge them
+// with the org via worksFor.
+// -----------------------------------------------------------------
+
+export function aboutPageSchema(locale: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: locale === "zh" ? "关于 StartPoint" : "About StartPoint",
+    url: withLocalePath(locale, "/about"),
+    inLanguage: locale === "zh" ? "zh-CN" : "en",
+    mainEntity: { "@id": `${SITE_URL}#organization` },
+    isPartOf: { "@id": `${SITE_URL}#website` },
+  };
+}
+
 export function contactPointSchema(locale: string) {
   return {
     "@context": "https://schema.org",

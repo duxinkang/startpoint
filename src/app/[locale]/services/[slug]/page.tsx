@@ -90,10 +90,19 @@ export async function generateMetadata({
     namespace: `serviceDetails.${slug}`,
   });
   const suffix = TITLE_SUFFIX[slug][locale === "zh" ? "zh" : "en"];
+  // Prefer the short metaDescription (≤160 chars, tuned for SERPs) when
+  // present; fall back to the longer on-page intro paragraph so pages
+  // without a dedicated meta still get something meaningful.
+  let description: string;
+  try {
+    description = t("metaDescription");
+  } catch {
+    description = t("intro");
+  }
   return buildMetadata({
     locale,
     title: `${suffix} — StartPoint`,
-    description: t("intro"),
+    description,
     path: `/services/${slug}`,
   });
 }

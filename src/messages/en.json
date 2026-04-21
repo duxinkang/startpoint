@@ -2,7 +2,7 @@
   "site": {
     "name": "StartPoint",
     "tagline": "0→1 Growth, built exclusively for AI Agents",
-    "description": "StartPoint is a growth partner for AI Agents and AI SaaS, covering GTM strategy, Product Hunt launches, launch videos, creator partnerships, SEO/GEO, paid acquisition, and long-term brand compounding."
+    "description": "Growth partner for AI Agents & AI SaaS — GTM strategy, Product Hunt launches, Launch Video, global KOL/KOC, SEO/GEO, and paid acquisition."
   },
   "nav": {
     "services": "Services",
@@ -71,6 +71,7 @@
     "launch-video": {
       "title": "Launch Video",
       "kicker": "LAUNCH VIDEO",
+      "metaDescription": "AI product launch video production — 60-90s films engineered for Product Hunt, homepage hero, and paid social. 8M+ views across 3 launches.",
       "intro": "A high-quality launch video is the highest-ROI asset in the cold-start phase of an AI product. It drives conversion on Product Hunt, on your homepage, and across social — and, done right, it nails the core value proposition.",
       "steps": [
         { "title": "Script & story", "text": "Dig out the sharpest differentiation and wrap it in a story that actually lands — in language users speak." },
@@ -86,6 +87,7 @@
     "kol": {
       "title": "Creator partnerships",
       "kicker": "KOL & KOC",
+      "metaDescription": "Global KOL & KOC creator marketing for AI Agents. Verified AI / tech / productivity creators, audience-overlap vetted, per-partner ROI tracking.",
       "intro": "Precision creator marketing is the fastest route to high-quality early users for AI products. We've built a network across global AI, tech, and productivity verticals — matching you with the creators who actually convert.",
       "subtitle": "A creator database focused on AI Agent and SaaS",
       "steps": [
@@ -100,6 +102,7 @@
       "outcomesLabel": "OUTCOMES",
       "title": "Paid advertising",
       "kicker": "PAID ADS",
+      "metaDescription": "Paid acquisition for AI products across Google, Meta, LinkedIn, X, and Reddit. Audience layering, creative factory, multi-touch attribution.",
       "intro": "Full coverage across major global ad ecosystems. An outcome-driven, multi-channel methodology — every dollar trackable, every dollar optimizable.",
       "channels": ["Google ecosystem", "Meta ecosystem", "X Ads", "LinkedIn", "Reddit"],
       "methodology": [
@@ -119,6 +122,7 @@
       "faqKicker": "FAQ",
       "title": "Product Hunt launch",
       "kicker": "PRODUCT HUNT",
+      "metaDescription": "Product Hunt launch coaching — page optimization, hunter network warm-up, launch-day execution. Target: top 3 Product of the Day.",
       "intro": "Product Hunt is the most influential product-discovery platform on the planet. A successful launch means thousands of early users, press coverage, and investor attention. We run the full playbook — pre-hype to sprint day.",
       "targets": [
         "Top 3 Product of the Day",
@@ -138,6 +142,7 @@
       "faqKicker": "FAQ",
       "title": "Reddit & community",
       "kicker": "REDDIT & COMMUNITY",
+      "metaDescription": "Reddit & community building for AI products — authentic presence in r/artificial, r/SaaS, r/MachineLearning. Seed users, not fake upvotes.",
       "intro": "Reddit is one of the densest gatherings of AI early adopters anywhere. Building real brand presence in r/artificial, r/SaaS, r/MachineLearning and adjacent communities is the most reliable way to acquire high-quality seed users.",
       "values": [
         "Reddit threads rank extremely well in Google — great content delivers SEO tailwind for months",
@@ -153,6 +158,7 @@
     "seo-geo": {
       "title": "SEO / GEO",
       "kicker": "SEO · GEO",
+      "metaDescription": "SEO + GEO (Generative Engine Optimization) for AI products — rank on Google and get cited inside ChatGPT, Perplexity, Gemini, and Claude.",
       "intro": "Classic SEO gets you found on Google. GEO (Generative Engine Optimization) gets you cited inside ChatGPT, Perplexity, Gemini, and Claude answers. We run both — in parallel.",
       "steps": [
         { "title": "Keyword + intent modeling", "text": "Map product scenarios × user intent; lock in commercially valuable keywords" },

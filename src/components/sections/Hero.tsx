@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Pill } from "@/components/ui/Pill";
 import { Button } from "@/components/ui/Button";
@@ -20,6 +20,13 @@ import { GridCircle, ArcLine, DotMatrix } from "@/components/brand/Decor";
  */
 export function Hero() {
   const t = useTranslations("hero");
+  const locale = useLocale();
+  const isZh = locale === "zh";
+  // H1 should carry the page's primary language signal. On /zh we lead with
+  // 起始点; on /en we lead with StartPoint. The other one becomes a visual
+  // sub-mark (H2) so search engines and LLMs read the right brand token first.
+  const primaryTitle = isZh ? t("titleZh") : t("titleEn");
+  const secondaryTitle = isZh ? t("titleEn") : t("titleZh");
 
   // Gate the decorative video behind matchMedia so it never even *fetches*
   // on mobile / data-conscious users. `hidden lg:block` alone still triggered
@@ -78,11 +85,17 @@ export function Hero() {
             </Pill>
 
             <div className="space-y-2">
-              <h1 className="sp-display text-[15vw] sm:text-[11vw] lg:text-[7.5vw] xl:text-[120px]">
-                {t("titleZh")}
+              <h1
+                lang={isZh ? "zh-CN" : "en"}
+                className="sp-display text-[15vw] sm:text-[11vw] lg:text-[7.5vw] xl:text-[120px]"
+              >
+                {primaryTitle}
               </h1>
-              <h2 className="sp-display text-[10vw] sm:text-[7vw] lg:text-[5vw] xl:text-[80px] text-ink/75">
-                {t("titleEn")}
+              <h2
+                lang={isZh ? "en" : "zh-CN"}
+                className="sp-display text-[10vw] sm:text-[7vw] lg:text-[5vw] xl:text-[80px] text-ink/75"
+              >
+                {secondaryTitle}
               </h2>
             </div>
 

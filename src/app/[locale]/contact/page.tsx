@@ -21,8 +21,8 @@ export async function generateMetadata({
         : "Contact StartPoint — Book a free 30-min AI growth consultation",
     description:
       locale === "zh"
-        ? "联系 StartPoint，预约 30 分钟 AI Agent 增长咨询。了解我们服务的产品阶段、启动时间、保密原则与杭州 / 上海 / 巴黎线下沟通方式。"
-        : "Contact StartPoint to book a 30-minute AI Agent growth consultation. See who we work with, how fast we start, our confidentiality approach, and in-person options in Hangzhou, Shanghai, and Paris.",
+        ? "联系 StartPoint — 预约 30 分钟 AI Agent 增长咨询。杭州 / 上海 / 巴黎线下沟通，24 小时内回复。"
+        : "Contact StartPoint — book a free 30-min AI Agent growth consultation. Hangzhou / Shanghai / Paris in-person or remote. 24-hour reply.",
     path: "/contact",
   });
 }

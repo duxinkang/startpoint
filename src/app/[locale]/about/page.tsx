@@ -9,6 +9,8 @@ import {
   breadcrumbSchema,
   organizationSchema,
   personSchema,
+  aboutPageSchema,
+  websiteSchema,
 } from "@/lib/seo";
 import { FounderStory } from "@/components/sections/FounderStory";
 import { Vs } from "@/components/sections/Vs";
@@ -60,6 +62,11 @@ export default async function AboutPage({
           breadcrumbSchema(locale, [
             { name: nav("about"), path: "/about" },
           ]),
+          // AboutPage wraps the page semantically; WebSite + Organization
+          // are the @id anchors it references. Shipping all three lets
+          // crawlers link page-type → site → org in a single graph.
+          websiteSchema(locale),
+          aboutPageSchema(locale),
           organizationSchema(locale),
           // Emit each founder as its own Person entity. Lets Knowledge Graph
           // link the three of us back to the Organization via worksFor and

@@ -21,8 +21,8 @@ export async function generateMetadata({
         : "Engagement tiers & pricing — StartPoint 0→1 growth for AI",
     description:
       locale === "zh"
-        ? "StartPoint 三档 AI Agent 增长合作模式：战略问诊、轻量陪跑与完整版增长合伙。查看服务边界、启动周期、月费区间与利润分成方式。"
-        : "StartPoint's three AI Agent growth engagement tiers: strategy diagnosis, lite partnership, and full-stack growth partnership with pricing, timelines, and profit-share structure.",
+        ? "StartPoint 三档 AI Agent 增长合作模式：战略问诊、轻量陪跑、完整增长合伙。服务边界、启动周期、月费区间与利润分成方式。"
+        : "Three AI Agent growth engagement tiers — strategy diagnosis, lite sprint, full growth partnership. Scope, timelines, pricing, profit-share.",
     path: "/pricing",
   });
 }
