@@ -3,6 +3,7 @@ import { Inter, Noto_Sans_SC } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { Analytics } from "@vercel/analytics/next";
 import { routing } from "@/i18n/routing";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -72,6 +73,9 @@ export default async function LocaleLayout({
             <Footer />
           </MotionProviders>
         </NextIntlClientProvider>
+        {/* Vercel Analytics — page views and UV. Privacy-friendly,
+            cookie-less. Dashboard at vercel.com/.../analytics. */}
+        <Analytics />
       </body>
     </html>
   );
