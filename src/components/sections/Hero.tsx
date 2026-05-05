@@ -13,7 +13,9 @@ export function Hero() {
   const locale = useLocale();
   const isZh = locale === "zh";
   const primaryTitle = isZh ? t("titleZh") : t("titleEn");
-  const secondaryTitle = isZh ? t("titleEn") : t("titleZh");
+  // English version doesn't carry the 起始点 sub-mark — keeps the hero
+  // visually quieter and avoids out-of-context CJK glyphs for EN visitors.
+  const secondaryTitle = isZh ? t("titleEn") : null;
 
   const [showVideo, setShowVideo] = useState(false);
   useEffect(() => {
@@ -75,7 +77,7 @@ export function Hero() {
               </span>
             </div>
 
-            {/* Title block — primary + secondary mark, with measured air */}
+            {/* Title block — primary + (zh-only) secondary mark */}
             <div className="space-y-5">
               <h1
                 lang={isZh ? "zh-CN" : "en"}
@@ -83,12 +85,14 @@ export function Hero() {
               >
                 {primaryTitle}
               </h1>
-              <h2
-                lang={isZh ? "en" : "zh-CN"}
-                className="sp-display text-[8vw] sm:text-[5.5vw] lg:text-[3vw] xl:text-[44px] text-ink/40 font-medium"
-              >
-                {secondaryTitle}
-              </h2>
+              {secondaryTitle && (
+                <h2
+                  lang="en"
+                  className="sp-display text-[8vw] sm:text-[5.5vw] lg:text-[3vw] xl:text-[44px] text-ink/40 font-medium"
+                >
+                  {secondaryTitle}
+                </h2>
+              )}
             </div>
 
             {/* Subtitle — clean, no SVG bullet, just type */}

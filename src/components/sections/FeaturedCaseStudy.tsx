@@ -3,7 +3,6 @@
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Container, Section } from "@/components/ui/Container";
-import { Pill } from "@/components/ui/Pill";
 import { Link } from "@/i18n/navigation";
 
 // Which service lines actually shipped inside this featured engagement —
@@ -54,32 +53,43 @@ export function FeaturedCaseStudy() {
       />
 
       <Container size="full" className="relative">
-        {/* Header */}
+        {/* Editorial header — eyebrow in left column, headline + lede right. */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl"
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-y-8 gap-x-12"
         >
-          <Pill variant="orange" size="md" className="mb-6">
-            {t("eyebrow")}
-          </Pill>
-          <div className="text-orange-400 text-xs md:text-sm font-bold tracking-[0.25em] uppercase mb-4">
-            {t("category")}
+          <div className="lg:col-span-3 space-y-6">
+            <div className="flex items-center gap-3">
+              <span aria-hidden="true" className="h-px w-8 bg-orange-400" />
+              <span className="sp-eyebrow text-orange-400">
+                {t("eyebrow")}
+              </span>
+            </div>
+            <div className="sp-eyebrow text-white/45">
+              {t("category")}
+            </div>
           </div>
-          <h2 className="sp-display text-3xl md:text-4xl lg:text-5xl leading-[1.1] text-white">
-            {t("title")}
-          </h2>
-          <p className="mt-6 text-lg md:text-xl text-white/75 leading-relaxed max-w-3xl">
-            {t("subtitle")}
-          </p>
+
+          <div className="lg:col-span-9 space-y-7">
+            <h2 className="sp-display text-[2.25rem] md:text-[3rem] lg:text-[3.75rem] text-white leading-[1.05] max-w-[22ch]">
+              {t("title")}
+            </h2>
+            <p className="sp-lede text-white/65 max-w-2xl">
+              {t("subtitle")}
+            </p>
+          </div>
         </motion.div>
 
         {/* Workstreams */}
-        <div className="mt-16 md:mt-20">
-          <div className="text-white/50 text-xs font-bold tracking-[0.25em] uppercase mb-6">
-            {t("workstreamsTitle")}
+        <div className="mt-24 md:mt-32">
+          <div className="flex items-center gap-3 mb-10">
+            <span aria-hidden="true" className="h-px w-8 bg-white/30" />
+            <span className="sp-eyebrow text-white/55">
+              {t("workstreamsTitle")}
+            </span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-7">
             {workstreams.map((ws, i) => (
@@ -88,26 +98,31 @@ export function FeaturedCaseStudy() {
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="rounded-2xl bg-white/[0.04] border border-white/10 p-7 md:p-8 hover:border-orange-500/40 transition-colors"
+                transition={{
+                  duration: 0.6,
+                  delay: i * 0.1,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="rounded-3xl bg-white/[0.04] border border-white/10 p-8 md:p-10 hover:border-orange-500/40 transition-colors"
               >
-                <div className="flex items-baseline gap-3 mb-5">
-                  <span className="sp-display text-orange-500 text-4xl md:text-5xl tabular-nums leading-none">
+                <div className="flex items-center gap-3 mb-7">
+                  <span className="sp-eyebrow sp-tabular text-orange-400">
                     {ws.n}
                   </span>
-                  <h3 className="sp-display text-white text-lg md:text-xl leading-tight">
-                    {ws.title}
-                  </h3>
+                  <span aria-hidden="true" className="h-px w-6 bg-orange-400/60" />
                 </div>
-                <ul className="space-y-3">
+                <h3 className="sp-display text-white text-[1.375rem] md:text-2xl leading-[1.2] mb-6">
+                  {ws.title}
+                </h3>
+                <ul className="space-y-4">
                   {ws.items.map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-3 text-white/75 text-sm leading-relaxed"
+                      className="flex items-start gap-3 text-white/70 text-[0.9375rem] leading-[1.6]"
                     >
                       <span
                         aria-hidden="true"
-                        className="mt-2 shrink-0 w-1 h-1 rounded-full bg-orange-500"
+                        className="mt-2.5 shrink-0 w-1 h-1 rounded-full bg-orange-500"
                       />
                       <span>{item}</span>
                     </li>
@@ -120,28 +135,32 @@ export function FeaturedCaseStudy() {
 
         {/* Results */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6 }}
-          className="mt-16 md:mt-20 rounded-3xl bg-gradient-to-br from-orange-500/10 via-transparent to-orange-500/5 border border-orange-500/30 p-8 md:p-10"
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-20 md:mt-24 rounded-3xl bg-gradient-to-br from-orange-500/[0.08] via-transparent to-orange-500/[0.03] border border-orange-500/25 p-10 md:p-14"
         >
-          <div className="text-orange-400 text-xs md:text-sm font-bold tracking-[0.25em] uppercase mb-6">
-            {t("resultsEyebrow")}
+          <div className="flex items-center gap-3 mb-10">
+            <span aria-hidden="true" className="h-px w-8 bg-orange-400" />
+            <span className="sp-eyebrow text-orange-400">
+              {t("resultsEyebrow")}
+            </span>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 md:gap-x-10">
             {results.map((r, i) => (
               <motion.div
                 key={r.label}
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 + i * 0.06 }}
+                transition={{ duration: 0.6, delay: 0.1 + i * 0.07 }}
+                className="space-y-4"
               >
-                <div className="sp-display text-orange-500 text-5xl md:text-6xl leading-none tabular-nums">
+                <div className="sp-display sp-tabular text-orange-400 text-[3.25rem] md:text-[4rem] leading-[0.95] font-semibold">
                   {r.n}
                 </div>
-                <div className="mt-3 text-white/75 text-sm md:text-base leading-snug">
+                <div className="text-white/70 text-[0.9375rem] md:text-base leading-[1.5] max-w-[20ch]">
                   {r.label}
                 </div>
               </motion.div>
@@ -178,26 +197,39 @@ export function FeaturedCaseStudy() {
           </motion.div>
         )}
 
-        {/* Quote */}
+        {/* Quote — editorial pull-quote with generous leading and air.
+            Uses body type (not sp-display) at large size so each line
+            has room to breathe; a single oversized opening glyph
+            sits in its own column on the left. */}
         <motion.figure
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="mt-16 md:mt-20 max-w-4xl"
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-24 md:mt-32 pt-12 md:pt-16 border-t border-white/10"
         >
-          <blockquote className="sp-display text-xl md:text-2xl lg:text-3xl text-white leading-snug relative">
-            <span
-              aria-hidden="true"
-              className="absolute -top-6 -left-2 md:-left-8 text-orange-500/40 text-6xl md:text-7xl select-none leading-none"
-            >
-              &ldquo;
-            </span>
-            {t("quote")}
-          </blockquote>
-          <figcaption className="mt-6 text-white/55 text-sm tracking-wide">
-            {t("quoteBy")}
-          </figcaption>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-10 gap-x-12">
+            <div className="lg:col-span-2">
+              <span
+                aria-hidden="true"
+                className="block sp-display text-orange-400/70 text-[5rem] md:text-[6.5rem] leading-[0.7] select-none"
+              >
+                &ldquo;
+              </span>
+            </div>
+
+            <blockquote className="lg:col-span-10 max-w-[52ch]">
+              <p className="text-[1.375rem] md:text-[1.625rem] lg:text-[1.875rem] text-white font-light leading-[1.55] tracking-[-0.005em]">
+                {t("quote")}
+              </p>
+              <figcaption className="mt-10 flex items-center gap-3 text-white/55">
+                <span aria-hidden="true" className="h-px w-8 bg-white/30" />
+                <span className="sp-eyebrow text-white/55">
+                  {t("quoteBy").replace(/^—\s*/, "")}
+                </span>
+              </figcaption>
+            </blockquote>
+          </div>
         </motion.figure>
       </Container>
     </Section>
