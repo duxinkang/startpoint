@@ -136,12 +136,12 @@ export default async function ServicesPage({
                 <p>
                   {locale === "zh"
                     ? "StartPoint 不做碎片化的营销外包。六条服务线是同一套 0→1 增长飞轮上的不同支点:Launch Video 负责在 15 秒内把价值主张讲清楚，Product Hunt 和 KOL 负责把首批种子用户拉进来，Reddit 与 GEO 负责让真实用户留下可被搜索到的长尾信任资产，SEO 和 Paid Ads 负责把流量飞轮踩起来。"
-                    : "StartPoint doesn't do piecemeal marketing. The six service lines are different pivots on the same 0→1 flywheel: Launch Video packs the value prop into 15 seconds, Product Hunt and KOL bring the first seed cohort, Reddit and GEO seed durable long-tail trust, and SEO + paid put the wheel in motion."}
+                    : "StartPoint isn't piecemeal marketing. The six service lines are different pivots on one 0→1 flywheel: launch video packs the value prop into 15 seconds, Product Hunt and creators bring the first seed cohort, Reddit and GEO seed durable long-tail trust, and SEO and paid put the wheel in motion."}
                 </p>
                 <p>
                   {locale === "zh"
                     ? "多数合作始于一条线——最常见的是 Launch Video 或 Product Hunt 冲刺——之后再视阶段增补其他模块。早期产品不必六条全开:先让一条打通，再叠加下一条,是我们在 100+ AI Agent 项目上验证过的节奏。"
-                    : "Most engagements start with one line — Launch Video or a Product Hunt sprint is the usual entry — and add the next pivot as the product matures. You don't need all six at once; get one compounding before you stack the next. That's the cadence we've validated across 100+ AI Agent and SaaS launches."}
+                    : "Most engagements start with a single line — usually launch video or a Product Hunt sprint — then layer in the next pivot as the product matures. You don't need all six at once; get one compounding before stacking the next. That's the cadence we've validated across 100+ AI Agent and SaaS launches."}
                 </p>
               </div>
             </div>
@@ -161,10 +161,10 @@ export default async function ServicesPage({
                       "1k+ 用户：Paid Ads 放量 + SEO 长期复利",
                     ]
                   : [
-                      "Pre-MVP — strategy diagnosis + Launch Video narrative prep",
-                      "Demo ready — Product Hunt sprint + seed KOL activation",
-                      "0-1k users — KOL / Reddit expansion + GEO structured data",
-                      "1k+ users — paid ads at scale + compounding SEO",
+                      "Pre-MVP — strategy diagnosis and launch-video narrative prep.",
+                      "Demo ready — Product Hunt sprint and seed-creator activation.",
+                      "0–1k users — creator and Reddit expansion, GEO structured data.",
+                      "1k+ users — paid acquisition at scale, SEO compounding.",
                     ]
                 ).map((line) => (
                   <li
@@ -179,7 +179,7 @@ export default async function ServicesPage({
               <p className="mt-6 text-sm text-ink/55 leading-relaxed">
                 {locale === "zh"
                   ? "不确定该先启动哪一条？30 分钟免费咨询帮你判断。"
-                  : "Not sure which line to start with? A free 30-min call will tell you."}
+                  : "Not sure where to start? A free 30-minute call will tell you."}
               </p>
             </Card>
           </div>

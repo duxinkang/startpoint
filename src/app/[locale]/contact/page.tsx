@@ -119,12 +119,12 @@ export default async function ContactPage({
             <h2 className="sp-display text-3xl md:text-4xl lg:text-5xl leading-[1.08] text-ink">
               {locale === "zh"
                 ? "这 30 分钟我们会聊什么？"
-                : "What we'll cover in 30 minutes"}
+                : "What we'll cover in 30 minutes."}
             </h2>
             <p className="mt-5 text-ink/75 leading-relaxed text-lg">
               {locale === "zh"
                 ? "免费咨询不是销售电话，而是对你当前 AI Agent 产品增长路径的一次快速压力测试。提前把下面几个问题想清楚，我们聊起来会更有效率。"
-                : "The free consultation isn't a sales call — it's a fast pressure-test of your AI Agent or SaaS product's growth plan. Give the questions below a quick think and we'll move faster."}
+                : "The free call isn't a sales pitch — it's a fast pressure-test of your AI Agent or SaaS growth plan. Think through the questions below and we'll move much faster."}
             </p>
           </div>
 
@@ -145,12 +145,12 @@ export default async function ContactPage({
             <h3 className="sp-display text-xl md:text-2xl text-orange-300 mb-3">
               {locale === "zh"
                 ? "不想填表？直接发邮件"
-                : "Prefer email? Just write us"}
+                : "Prefer email? Just write."}
             </h3>
             <p className="leading-relaxed text-white/75">
               {locale === "zh"
                 ? "发邮件到 d541449473@gmail.com，一句话介绍你的产品 + 目前最想解决的增长问题就可以。我们承诺在 24 小时内（工作日）亲自回复一条具体的建议——而不是群发模板。"
-                : "Drop a line to d541449473@gmail.com — one sentence about your product plus the one growth question you most want answered is enough. We'll reply personally within 24 hours on weekdays with a concrete suggestion, not a templated form letter."}
+                : "Drop a line to d541449473@gmail.com — one sentence about your product plus the single growth question you most want answered is enough. You'll get a personal reply within 24 hours on weekdays, with a concrete suggestion — not a templated response."}
             </p>
           </div>
         </Container>
@@ -190,27 +190,27 @@ const PRE_CALL_FAQ: Record<"zh" | "en", FaqItem[]> = {
   en: [
     {
       q: "Should I book if I'm still at demo stage?",
-      a: "Yes. The right 0→1 moves depend on exactly where you are on the path — anywhere between pre-MVP and your first 1,000 users is a useful moment to pressure-test the next channel to invest in.",
+      a: "Yes. The right 0→1 moves depend on exactly where you are. Anywhere between pre-MVP and your first 1,000 users is a useful moment to pressure-test the next channel worth investing in.",
     },
     {
       q: "Will you try to sell me on an engagement?",
-      a: "Not proactively. If it fits, we'll keep talking. If it doesn't, we'll tell you plainly how to push this yourself and, where we can, recommend teams better suited to your stage.",
+      a: "Not proactively. If it fits, we keep talking. If it doesn't, we'll tell you plainly how to push it yourself — and, where we can, recommend teams better suited to your stage.",
     },
     {
       q: "What should I bring to the call?",
-      a: "No formal deck needed. A demo link or screen-recording, a one-sentence ICP description, and the one growth number that most frustrates you right now (signup rate, paid conversion, retention, etc.) are enough.",
+      a: "No formal deck needed. A demo link or screen recording, a one-sentence ICP, and the single growth number that frustrates you most right now (signup rate, paid conversion, retention) is plenty.",
     },
     {
       q: "Do you work with China-based or overseas teams?",
-      a: "Both — but our sweet spot is helping China-built AI Agents and AI SaaS reach 0→1 in the US, EU, and Japan. Our Paris office handles EU-line GTM and GDPR-aware launches.",
+      a: "Both — though our sweet spot is helping China-built AI Agents and SaaS reach 0→1 in the US, EU, and Japan. Our Paris office handles EU-line GTM and GDPR-aware launches.",
     },
     {
       q: "How fast can we actually start?",
-      a: "A strategy diagnosis kicks off within 3 working days. Full engagements can get the first executable step (Launch Video script kickoff, KOL shortlist review, or PH run-of-show) running within 7 days of signing.",
+      a: "Strategy diagnosis kicks off within three working days. Full engagements can have the first executable step (launch-video kickoff, creator shortlist review, or Product Hunt run-of-show) live within seven days of signing.",
     },
     {
       q: "Is this conversation confidential?",
-      a: "Yes. We don't disclose your product name, metrics, or partnership details in case studies, social posts, or talks without your explicit written consent. Our Paris team also follows GDPR data-minimization defaults by default.",
+      a: "Yes. We don't disclose your product name, metrics, or partnership details in case studies, social posts, or talks without your written consent. Our Paris team also defaults to GDPR data-minimization principles.",
     },
   ],
 };

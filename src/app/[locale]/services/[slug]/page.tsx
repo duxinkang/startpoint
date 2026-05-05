@@ -217,7 +217,7 @@ function ServiceDetailCTA({
             {/* Left — headline + outcomes */}
             <div>
               <div className="text-orange-400 text-xs font-bold tracking-[0.25em] uppercase mb-4">
-                {locale === "zh" ? "下一步" : "Next step"}
+                {locale === "zh" ? "下一步" : "What's next"}
               </div>
               <h3 className="sp-display text-3xl md:text-4xl lg:text-5xl text-white leading-[1.1]">
                 {copy.title}
@@ -376,70 +376,70 @@ function getCtaCopy(slug: Slug, locale: string): CtaCopy {
 
   const en: Record<Slug, CtaCopy> = {
     "launch-video": {
-      title: "Turn your product into a launch video that travels",
-      subtitle: "One video, three channels: Product Hunt, homepage hero, social.",
+      title: "Turn your product into a launch video that travels.",
+      subtitle: "One film. Three channels: Product Hunt, homepage hero, paid social.",
       outcomes: [
-        "60-90 sec core value prop, top-20% completion rate",
-        "Existing work averages 3M+ views and 1k+ week-one signups",
-        "Delivered: script + master cut + 9:16/16:9 social edits",
+        "60–90 seconds of core value prop. Top-20% completion rate.",
+        "Past work averages 3M+ views and 1k+ week-one signups.",
+        "Delivered: script, master cut, 9:16 and 16:9 social edits.",
       ],
       timeline: "7 days",
       price: "Project-based",
     },
     kol: {
-      title: "Get your product into the right creators' hands",
-      subtitle: "Real-user perspective in the communities where your buyers hang out.",
+      title: "Put your product in the right creators' hands.",
+      subtitle: "Real users, in the communities where your buyers actually live.",
       outcomes: [
-        "3-10 high-fit top + mid-tier creators sourced",
-        "UTM-level attribution and ROI tracking",
-        "Coverage across YouTube / X / LinkedIn / TikTok",
+        "3–10 vetted creators sourced across top and mid tiers.",
+        "UTM-level attribution and per-creator ROI.",
+        "Coverage across YouTube, X, LinkedIn, and TikTok.",
       ],
       timeline: "14 days",
-      price: "$4-7k/mo",
+      price: "$4–7k / mo",
     },
     "paid-ads": {
-      title: "Every ad dollar — tracked, attributed, optimized",
-      subtitle: "Cold / warm / hot audience tiers, full-funnel from impression to LTV.",
+      title: "Every ad dollar — tracked, attributed, optimized.",
+      subtitle: "Cold, warm, and hot audience tiers — full-funnel from impression to LTV.",
       outcomes: [
-        "Google / Meta / X / LinkedIn / Reddit end-to-end",
-        "Creative factory + weekly A/B-driven iteration",
-        "Cross-channel attribution to lower CAC and lift incrementality",
+        "Google, Meta, X, LinkedIn, and Reddit end to end.",
+        "Creative engine plus weekly A/B-driven iteration.",
+        "Cross-channel attribution to lower CAC and lift incremental conversion.",
       ],
       timeline: "7 days",
-      price: "$4-7k/mo",
+      price: "$4–7k / mo",
     },
     "product-hunt": {
-      title: "Land your launch in the Product Hunt top 3",
-      subtitle: "Full-journey partnership from pre-launch warmup to the day itself.",
+      title: "Land your launch in the Product Hunt top 3.",
+      subtitle: "A full-journey partnership — from pre-launch warm-up to the day itself.",
       outcomes: [
-        "Target: Product of the Day top 3 + 500+ genuine upvotes",
-        "2,000+ site visits + early signup cohort",
-        "Hunter network activation, page polish, traffic capture",
+        "Target: Top 3 Product of the Day, 500+ genuine upvotes.",
+        "2,000+ site visits and an early signup cohort.",
+        "Hunter network activation, page polish, traffic capture.",
       ],
-      timeline: "4-6 weeks ahead",
+      timeline: "4–6 weeks ahead",
       price: "Project-based",
     },
     social: {
-      title: "Grow your brand inside Reddit's AI communities",
-      subtitle: "Win trust with the voice real users recognize — build a durable channel.",
+      title: "Grow your brand inside Reddit's AI communities.",
+      subtitle: "Win trust in the voice real users recognize — and build a durable channel.",
       outcomes: [
-        "3-5 core Subreddits targeted for long-term presence",
-        "Top posts earn Google SEO long-tail traffic for months",
-        "Real user insights and early-adopter feedback flow",
+        "3–5 core subreddits targeted for long-term presence.",
+        "Top posts earn long-tail Google traffic for months.",
+        "A direct flow of user insights and early-adopter feedback.",
       ],
       timeline: "14 days",
-      price: "$4-7k/mo",
+      price: "$4–7k / mo",
     },
     "seo-geo": {
       title: "Rank on Google. Get cited by ChatGPT.",
       subtitle: "Classical SEO and Generative Engine Optimization, run as one system.",
       outcomes: [
-        "Keyword + intent modeling on commercial-high terms",
-        "pSEO page matrix + high-authority link building",
-        "llms.txt / JSON-LD open to AI crawlers",
+        "Keyword and intent modeling on high-commercial-value terms.",
+        "pSEO page matrix and high-authority link building.",
+        "llms.txt and JSON-LD opened to AI crawlers.",
       ],
       timeline: "14 days",
-      price: "$4-7k/mo",
+      price: "$4–7k / mo",
     },
   };
 
