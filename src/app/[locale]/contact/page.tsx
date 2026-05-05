@@ -17,12 +17,12 @@ export async function generateMetadata({
     locale,
     title:
       locale === "zh"
-        ? "联系我们 — StartPoint AI Agent 增长 30 分钟免费咨询"
-        : "Contact StartPoint — Book a free 30-min AI growth consultation",
+        ? "联系我们 — StartPoint AI Agent 与 SaaS 增长 30 分钟免费咨询"
+        : "Contact StartPoint — Book a free 30-min AI Agent & SaaS growth consultation",
     description:
       locale === "zh"
-        ? "联系 StartPoint — 预约 30 分钟 AI Agent 增长咨询。杭州 / 上海 / 巴黎线下沟通，24 小时内回复。"
-        : "Contact StartPoint — book a free 30-min AI Agent growth consultation. Hangzhou / Shanghai / Paris in-person or remote. 24-hour reply.",
+        ? "联系 StartPoint — 预约 30 分钟 AI Agent 与 SaaS 增长咨询。杭州 / 上海 / 巴黎线下沟通，24 小时内回复。"
+        : "Contact StartPoint — book a free 30-min AI Agent and SaaS growth consultation. Hangzhou / Shanghai / Paris in-person or remote. 24-hour reply.",
     path: "/contact",
   });
 }
@@ -124,7 +124,7 @@ export default async function ContactPage({
             <p className="mt-5 text-ink/75 leading-relaxed text-lg">
               {locale === "zh"
                 ? "免费咨询不是销售电话，而是对你当前 AI Agent 产品增长路径的一次快速压力测试。提前把下面几个问题想清楚，我们聊起来会更有效率。"
-                : "The free consultation isn't a sales call — it's a fast pressure-test of your AI Agent product's growth plan. Give the questions below a quick think and we'll move faster."}
+                : "The free consultation isn't a sales call — it's a fast pressure-test of your AI Agent or SaaS product's growth plan. Give the questions below a quick think and we'll move faster."}
             </p>
           </div>
 
@@ -206,7 +206,7 @@ const PRE_CALL_FAQ: Record<"zh" | "en", FaqItem[]> = {
     },
     {
       q: "How fast can we actually start?",
-      a: "Strategy Diagnosis tier kicks off within 3 working days. Lite and Full tiers can get the first executable step (Launch Video script kickoff, KOL shortlist review, or PH run-of-show) running within 7 days of signing.",
+      a: "A strategy diagnosis kicks off within 3 working days. Full engagements can get the first executable step (Launch Video script kickoff, KOL shortlist review, or PH run-of-show) running within 7 days of signing.",
     },
     {
       q: "Is this conversation confidential?",

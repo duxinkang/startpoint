@@ -18,8 +18,8 @@ export async function generateMetadata({
   return buildMetadata({
     locale,
     title: locale === "zh"
-      ? "AI Agent 增长案例 — Product Hunt、SEO 与达人营销实战"
-      : "AI Agent growth case studies — Product Hunt, SEO, and creator campaigns",
+      ? "AI Agent 与 SaaS 增长案例 — Product Hunt、SEO 与达人营销实战"
+      : "AI Agent & SaaS growth case studies — Product Hunt, SEO, and creator campaigns",
     description:
       locale === "zh"
         ? "查看 StartPoint 为 AI Agent 与 AI SaaS 做过的真实增长案例，包括 Product Hunt 冲榜、SEO 有机增长、达人合作获客与融资叙事支持。"

@@ -3,12 +3,11 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Container, Section } from "@/components/ui/Container";
-import { Logo } from "@/components/brand/Logo";
 
 /**
- * P16 — 核心承诺 (Core Commitment)
- * Left: kicker + title.
- * Right: 2x2 grid of soft-orange cards with central "3-6 months" target.
+ * Editorial commitment block — 2-col layout, four steps as warm tile cards
+ * around a center "3-6 months" target. Refined to match the rest of the page:
+ * thinner numerals, looser leading, calmer color shifts.
  */
 export function Commitment() {
   const t = useTranslations("commitment");
@@ -21,30 +20,36 @@ export function Commitment() {
   return (
     <Section bg="cream">
       <Container size="full">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-16 items-start">
-          <div className="space-y-8">
-            <Logo size="md" variant="dark" />
-            <div>
-              <h2 className="sp-display text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
-                {t("title")}
-              </h2>
-              <p className="mt-6 text-lg text-ink/75 max-w-md leading-relaxed">
-                {t("subtitle")}
-              </p>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.45fr] gap-y-16 gap-x-16 items-start">
+          {/* Left — editorial header */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="space-y-10 lg:sticky lg:top-32"
+          >
+            <div className="flex items-center gap-3">
+              <span aria-hidden="true" className="h-px w-8 bg-orange-500" />
+              <span className="sp-eyebrow text-orange-500">Our promise</span>
             </div>
-          </div>
+            <h2 className="sp-display text-[2.5rem] md:text-[3.25rem] lg:text-[4rem] leading-[1.04] max-w-[14ch]">
+              {t("title")}
+            </h2>
+            <p className="sp-lede text-ink/65 max-w-md">{t("subtitle")}</p>
+          </motion.div>
 
-          <div className="relative grid grid-cols-2 gap-5">
-            {/* Center puck */}
+          {/* Right — quadrant tiles around a center target */}
+          <div className="relative grid grid-cols-2 gap-5 md:gap-6">
             <div
               aria-hidden="true"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 md:w-40 md:h-40 rounded-full z-10 flex items-center justify-center text-center text-white p-4"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 md:w-44 md:h-44 rounded-full z-10 flex items-center justify-center text-center text-white p-5 shadow-[0_30px_60px_-20px_rgba(234,69,16,0.55)]"
               style={{
                 background:
-                  "radial-gradient(circle, #FFB483 0%, var(--sp-orange-400) 80%)",
+                  "radial-gradient(circle at 35% 30%, #FFD0A6 0%, var(--sp-orange-400) 70%, var(--sp-orange-600) 100%)",
               }}
             >
-              <span className="text-sm md:text-base font-bold leading-tight">
+              <span className="text-[0.8125rem] md:text-sm font-semibold leading-[1.35] tracking-tight">
                 {t("centerText")}
               </span>
             </div>
@@ -52,11 +57,15 @@ export function Commitment() {
             {steps.map((step, i) => (
               <motion.div
                 key={step.n}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="rounded-2xl p-6 md:p-8 min-h-[200px] flex flex-col"
+                transition={{
+                  duration: 0.6,
+                  delay: i * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="rounded-3xl p-7 md:p-9 min-h-[220px] flex flex-col gap-5 relative overflow-hidden"
                 style={{
                   background:
                     i % 2 === 0
@@ -65,12 +74,43 @@ export function Commitment() {
                   color: i % 2 === 0 ? "var(--sp-ink)" : "#fff",
                 }}
               >
-                <div className="font-bold text-2xl mb-2 flex items-baseline gap-2">
-                  <span className="sp-display">{step.n}</span>
-                  <span className="text-xl">｜</span>
-                  <span>{step.title}</span>
+                <div className="flex items-center gap-3">
+                  <span
+                    className="sp-eyebrow sp-tabular"
+                    style={{
+                      color:
+                        i % 2 === 0
+                          ? "rgba(10,10,10,0.6)"
+                          : "rgba(255,255,255,0.7)",
+                    }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="h-px w-6"
+                    style={{
+                      background:
+                        i % 2 === 0
+                          ? "rgba(10,10,10,0.25)"
+                          : "rgba(255,255,255,0.5)",
+                    }}
+                  />
                 </div>
-                <p className="text-sm md:text-base leading-relaxed opacity-90">
+
+                <h3 className="sp-display text-[1.375rem] md:text-2xl leading-[1.15]">
+                  {step.title}
+                </h3>
+
+                <p
+                  className="text-[0.9375rem] md:text-base leading-[1.6]"
+                  style={{
+                    color:
+                      i % 2 === 0
+                        ? "rgba(10,10,10,0.7)"
+                        : "rgba(255,255,255,0.88)",
+                  }}
+                >
                   {step.text}
                 </p>
               </motion.div>

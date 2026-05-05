@@ -18,11 +18,11 @@ export async function generateMetadata({
   return buildMetadata({
     locale,
     title: locale === "zh"
-      ? "AI Agent 增长服务矩阵 — SEO、GEO、Launch Video、KOL、投放"
-      : "AI Agent growth services — SEO, GEO, Launch Video, KOL, Paid Ads",
+      ? "AI Agent 与 SaaS 增长服务矩阵 — SEO、GEO、Launch Video、KOL、投放"
+      : "AI Agent & SaaS growth services — SEO, GEO, Launch Video, KOL, Paid Ads",
     description: locale === "zh"
-      ? "六条围绕 AI Agent 0→1 的增长服务线：Launch Video、Product Hunt、海外 KOL/KOC、SEO/GEO、Paid Ads 与 Reddit 社区运营，按产品阶段自由组合。"
-      : "Six service lines for AI Agent 0→1 growth: Launch Video, Product Hunt, global creators, SEO/GEO, paid acquisition, and Reddit/community growth.",
+      ? "六条围绕 AI Agent 与 AI SaaS 0→1 的增长服务线：Launch Video、Product Hunt、海外 KOL/KOC、SEO/GEO、Paid Ads 与 Reddit 社区运营，按产品阶段自由组合。"
+      : "Six service lines for AI Agent and SaaS 0→1 growth: Launch Video, Product Hunt, global creators, SEO / GEO, paid acquisition, and Reddit / community growth.",
     path: "/services",
   });
 }
@@ -141,7 +141,7 @@ export default async function ServicesPage({
                 <p>
                   {locale === "zh"
                     ? "多数合作始于一条线——最常见的是 Launch Video 或 Product Hunt 冲刺——之后再视阶段增补其他模块。早期产品不必六条全开:先让一条打通，再叠加下一条,是我们在 100+ AI Agent 项目上验证过的节奏。"
-                    : "Most engagements start with one line — Launch Video or a Product Hunt sprint is the usual entry — and add the next pivot as the product matures. You don't need all six at once; get one compounding before you stack the next. That's the cadence we've validated across 100+ AI Agent launches."}
+                    : "Most engagements start with one line — Launch Video or a Product Hunt sprint is the usual entry — and add the next pivot as the product matures. You don't need all six at once; get one compounding before you stack the next. That's the cadence we've validated across 100+ AI Agent and SaaS launches."}
                 </p>
               </div>
             </div>

@@ -24,29 +24,30 @@ export function ClientLogos() {
   const t = useTranslations("clientLogos");
 
   return (
-    <section className="bg-paper border-t border-b border-ink/10 py-10 md:py-12">
+    <section className="bg-paper border-t border-b border-ink/10 py-14 md:py-16">
       <Container size="full">
-        <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
-          <div className="shrink-0 text-ink/55 text-xs md:text-xs tracking-[0.22em] uppercase font-bold">
-            {t("label")}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-8 gap-x-12 items-center">
+          <div className="lg:col-span-3 flex items-center gap-3 text-ink/55">
+            <span aria-hidden="true" className="h-px w-8 bg-ink/30" />
+            <span className="sp-eyebrow">{t("label")}</span>
           </div>
 
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-wrap items-center gap-x-10 md:gap-x-14 gap-y-4 flex-1"
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-9 flex flex-wrap items-baseline gap-x-12 md:gap-x-16 gap-y-4"
           >
             {CLIENTS.map((c) => (
               <div
                 key={c.name}
                 className="flex items-baseline gap-3 group cursor-default"
               >
-                <span className="sp-display text-2xl md:text-3xl text-ink transition-colors group-hover:text-orange-500">
+                <span className="sp-display text-2xl md:text-[1.75rem] text-ink transition-colors group-hover:text-orange-500">
                   {c.name}
                 </span>
-                <span className="hidden md:inline text-xs text-ink/40 tabular-nums">
+                <span className="hidden md:inline text-xs text-ink/40 sp-tabular">
                   {c.meta}
                 </span>
               </div>

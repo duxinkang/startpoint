@@ -14,10 +14,16 @@ export function Container({
     md: "max-w-4xl",
     lg: "max-w-6xl",
     xl: "max-w-7xl",
-    full: "max-w-[1440px]",
+    full: "max-w-[1480px]",
   };
   return (
-    <div className={clsx("mx-auto px-6 md:px-10 lg:px-16", sizes[size], className)}>
+    <div
+      className={clsx(
+        "mx-auto px-6 md:px-12 lg:px-20 xl:px-24",
+        sizes[size],
+        className,
+      )}
+    >
       {children}
     </div>
   );
@@ -53,11 +59,11 @@ export function Section({
     white: "bg-white text-ink",
   };
   const spacings = {
-    default: "py-20 md:py-28 lg:py-32",
-    tight: "pt-8 pb-20 md:pb-28 lg:pb-32",
+    default: "py-24 md:py-36 lg:py-44",
+    tight: "pt-10 pb-24 md:pb-36 lg:pb-44",
     flush: "",
-    hero: "py-24 md:py-32",
-    cta: "py-20",
+    hero: "py-28 md:py-40 lg:py-48",
+    cta: "py-24 md:py-32",
   };
   return (
     <section

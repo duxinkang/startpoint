@@ -296,32 +296,6 @@ export function contactPointSchema(locale: string) {
   };
 }
 
-export function offerCatalogSchema(
-  locale: string,
-  offers: Array<{
-    name: string;
-    description: string;
-    price?: string;
-  }>,
-) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "OfferCatalog",
-    name: locale === "zh"
-      ? "StartPoint 合作模式"
-      : "StartPoint engagement tiers",
-    url: withLocalePath(locale, "/pricing"),
-    itemListElement: offers.map((offer, index) => ({
-      "@type": "Offer",
-      position: index + 1,
-      name: offer.name,
-      description: offer.description,
-      ...(offer.price ? { priceSpecification: { "@type": "PriceSpecification", price: offer.price } } : {}),
-      seller: { "@id": `${SITE_URL}#organization` },
-    })),
-  };
-}
-
 export function caseStudiesSchema(
   locale: string,
   items: Array<{

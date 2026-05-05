@@ -57,8 +57,8 @@ const TITLE_SUFFIX: Record<Slug, { zh: string; en: string }> = {
     en: "Launch Video production — 60-90s AI product story",
   },
   kol: {
-    zh: "海外 KOL / KOC 达人营销 — AI Agent 精准投放",
-    en: "Global KOL & KOC creator marketing for AI Agents",
+    zh: "海外 KOL / KOC 达人营销 — AI Agent 与 SaaS 精准投放",
+    en: "Global KOL & KOC creator marketing for AI Agents and SaaS",
   },
   "paid-ads": {
     zh: "AI 产品广告投放增长 — Google / Meta / Reddit 全渠道",
@@ -274,12 +274,12 @@ function ServiceDetailCTA({
                   {cta} →
                 </Button>
                 <Button
-                  href="/pricing"
+                  href="/services"
                   variant="outline"
                   size="lg"
                   className="w-full justify-center !border-white/30 !text-white hover:!border-white hover:!bg-white/5"
                 >
-                  {locale === "zh" ? "看完整合作模式" : "See pricing tiers"}
+                  {locale === "zh" ? "查看全部服务" : "Explore all services"}
                 </Button>
               </div>
 

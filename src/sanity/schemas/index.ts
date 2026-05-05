@@ -4,7 +4,6 @@ import { homepage } from "./homepage";
 import { service } from "./service";
 import { caseStudy } from "./caseStudy";
 import { teamMember } from "./teamMember";
-import { pricingPlan } from "./pricingPlan";
 
 export const schemaTypes: SchemaTypeDefinition[] = [
   siteSettings,
@@ -12,5 +11,4 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   service,
   caseStudy,
   teamMember,
-  pricingPlan,
 ];

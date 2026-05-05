@@ -3,35 +3,18 @@
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { Pill } from "@/components/ui/Pill";
 import { Button } from "@/components/ui/Button";
 import { Container, Section } from "@/components/ui/Container";
 import { DoubleBall } from "@/components/brand/GradientBall";
 import { GridCircle, ArcLine, DotMatrix } from "@/components/brand/Decor";
 
-/**
- * P1 — The opening frame of the deck.
- * Layout: eyebrow pill → 起始点 / StartPoint display → tagline.
- * Right side: double gradient ball + grid circle, layered OVER a muted
- * Poly.app launch-video loop that ties the Hero to our actual client proof.
- * The video is decorative — autoplay + muted + loop + playsInline ensures it
- * works on iOS Safari and never blocks scroll. Desktop-only to keep mobile
- * data usage in check.
- */
 export function Hero() {
   const t = useTranslations("hero");
   const locale = useLocale();
   const isZh = locale === "zh";
-  // H1 should carry the page's primary language signal. On /zh we lead with
-  // 起始点; on /en we lead with StartPoint. The other one becomes a visual
-  // sub-mark (H2) so search engines and LLMs read the right brand token first.
   const primaryTitle = isZh ? t("titleZh") : t("titleEn");
   const secondaryTitle = isZh ? t("titleEn") : t("titleZh");
 
-  // Gate the decorative video behind matchMedia so it never even *fetches*
-  // on mobile / data-conscious users. `hidden lg:block` alone still triggered
-  // some browsers to start the MP4 download despite `preload="none"`; removing
-  // the element from the tree entirely is the only reliable way.
   const [showVideo, setShowVideo] = useState(false);
   useEffect(() => {
     if (typeof window === "undefined" || !window.matchMedia) return;
@@ -47,10 +30,11 @@ export function Hero() {
   }, []);
 
   return (
-    <Section bg="paper" className="min-h-[calc(100vh-5rem)] flex items-center relative overflow-hidden">
-      {/* Decorative Poly video loop — desktop only, matchMedia-gated so the
-          5.8 MB MP4 is never fetched on phones. Pointer-events-none so it
-          never intercepts clicks; radial mask fades it at the edges. */}
+    <Section
+      bg="paper"
+      spacing="flush"
+      className="min-h-[calc(100vh-5rem)] flex items-center relative overflow-hidden pt-28 md:pt-36 pb-24 md:pb-32"
+    >
       {showVideo && (
         <video
           // eslint-disable-next-line jsx-a11y/media-has-caption
@@ -62,113 +46,110 @@ export function Hero() {
           playsInline
           preload="metadata"
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover opacity-[0.18] pointer-events-none"
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.14] pointer-events-none"
           style={{
             maskImage:
-              "radial-gradient(ellipse at center, black 35%, transparent 75%)",
+              "radial-gradient(ellipse at 70% 50%, black 30%, transparent 78%)",
             WebkitMaskImage:
-              "radial-gradient(ellipse at center, black 35%, transparent 75%)",
+              "radial-gradient(ellipse at 70% 50%, black 30%, transparent 78%)",
           }}
         />
       )}
       <Container size="full" className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-16 lg:gap-24 items-center">
           {/* Left: copy */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="space-y-8"
+            className="space-y-10 md:space-y-12"
           >
-            <Pill variant="ink" size="md" className="!px-5 !py-2 text-orange-300">
-              <span className="tracking-[0.15em]">{t("eyebrow")}</span>
-            </Pill>
+            {/* Editorial eyebrow — wide-tracked, not pill-shaped */}
+            <div className="flex items-center gap-4 text-ink/55">
+              <span
+                aria-hidden="true"
+                className="h-px w-10 bg-orange-500"
+              />
+              <span className="sp-eyebrow text-orange-500">
+                {t("eyebrow")}
+              </span>
+            </div>
 
-            <div className="space-y-2">
+            {/* Title block — primary + secondary mark, with measured air */}
+            <div className="space-y-5">
               <h1
                 lang={isZh ? "zh-CN" : "en"}
-                className="sp-display text-[15vw] sm:text-[11vw] lg:text-[7.5vw] xl:text-[120px]"
+                className="sp-display-xl text-[18vw] sm:text-[13vw] lg:text-[8.5vw] xl:text-[140px]"
               >
                 {primaryTitle}
               </h1>
               <h2
                 lang={isZh ? "en" : "zh-CN"}
-                className="sp-display text-[10vw] sm:text-[7vw] lg:text-[5vw] xl:text-[80px] text-ink/75"
+                className="sp-display text-[8vw] sm:text-[5.5vw] lg:text-[3vw] xl:text-[44px] text-ink/40 font-medium"
               >
                 {secondaryTitle}
               </h2>
             </div>
 
-            <div className="flex items-start gap-3 text-ink/75 pt-2">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                <circle
-                  cx="14"
-                  cy="14"
-                  r="12"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                />
-                <text
-                  x="14"
-                  y="19"
-                  textAnchor="middle"
-                  fontSize="13"
-                  fontWeight="600"
-                  fill="currentColor"
-                >
-                  1
-                </text>
-              </svg>
-              <span className="text-xl md:text-2xl font-semibold tracking-tight">
-                {t("subtitle")}
-              </span>
-            </div>
+            {/* Subtitle — clean, no SVG bullet, just type */}
+            <p className="sp-lede max-w-xl text-ink/75">
+              {t("subtitle")}
+            </p>
 
-            <div className="flex flex-wrap gap-3 pt-4">
+            {/* CTAs — bigger spacing between primary and ghost link */}
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 pt-2">
               <Button href="/contact" variant="primary" size="lg">
                 {t("cta")} →
               </Button>
-              <Button href="#showcase" variant="outline" size="lg">
-                ▶ {t("ctaSecondary")}
-              </Button>
+              <a
+                href="#showcase"
+                className="group inline-flex items-center gap-3 text-sm font-semibold text-ink hover:text-orange-500 transition-colors"
+              >
+                <span
+                  aria-hidden="true"
+                  className="flex items-center justify-center w-9 h-9 rounded-full border border-ink/20 group-hover:border-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-colors"
+                >
+                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
+                    <path d="M2 2l8 4-8 4V2z" fill="currentColor" />
+                  </svg>
+                </span>
+                {t("ctaSecondary")}
+              </a>
             </div>
           </motion.div>
 
           {/* Right: gradient ball + grid circle */}
-          <div className="relative h-[420px] md:h-[520px] lg:h-[600px]">
+          <div className="relative h-[420px] md:h-[520px] lg:h-[620px]">
             <motion.div
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
               className="absolute inset-0 flex items-center justify-center"
             >
-              <DoubleBall size={420} offset={100} />
+              <DoubleBall size={440} offset={110} />
             </motion.div>
 
-            {/* Grid circle top-right */}
             <motion.div
               initial={{ opacity: 0, rotate: -30 }}
               animate={{ opacity: 1, rotate: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
               className="absolute top-0 right-4 md:right-0 z-10"
             >
-              <GridCircle size={120} />
+              <GridCircle size={112} />
             </motion.div>
 
-            {/* Dot matrix bottom-left of ball */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.7 }}
               className="absolute bottom-12 left-0 md:-left-8 text-ink z-10"
             >
-              <DotMatrix cols={6} rows={5} />
+              <DotMatrix cols={5} rows={5} />
             </motion.div>
           </div>
         </div>
 
-        {/* Decorative arc bottom-left corner */}
-        <div className="hidden md:block absolute -bottom-24 -left-20 text-ink/75 pointer-events-none">
+        <div className="hidden md:block absolute -bottom-24 -left-20 text-ink/60 pointer-events-none">
           <ArcLine size={260} />
         </div>
       </Container>

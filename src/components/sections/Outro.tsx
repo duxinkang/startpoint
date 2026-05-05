@@ -2,60 +2,63 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { Container, Section } from "@/components/ui/Container";
+import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { DotMatrix } from "@/components/brand/Decor";
 
-/**
- * P17 — 更理性、更敏捷、更确定的增长路径
- * Full-width statement block + right-side warm orange curve.
- */
 export function Outro() {
   const t = useTranslations("outro");
   const nav = useTranslations("nav");
 
   return (
-    <section className="relative overflow-hidden bg-paper text-ink py-24 md:py-32">
-      {/* Right decorative curved orange wedge */}
+    <section className="relative overflow-hidden bg-paper text-ink py-28 md:py-40 lg:py-48">
+      {/* Single warm wash on the right — replaces the heavier wedge + dot
+          matrix combo for a calmer closing frame. */}
       <div
         aria-hidden="true"
-        className="absolute right-0 top-0 bottom-0 w-1/2 md:w-2/5 pointer-events-none"
+        className="absolute right-0 top-0 bottom-0 w-1/2 md:w-[55%] pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 110% 50%, var(--sp-orange-400) 0%, var(--sp-apricot) 60%, transparent 75%)",
+            "radial-gradient(ellipse at 105% 50%, var(--sp-orange-400) 0%, var(--sp-apricot) 50%, transparent 75%)",
+          opacity: 0.85,
         }}
-      />
-      <DotMatrix
-        cols={5}
-        rows={5}
-        className="absolute top-24 right-24 text-ink/75"
       />
 
       <Container size="full" className="relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl space-y-8"
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 gap-x-12"
         >
-          <h2 className="sp-display text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
-            {t("title")}
-          </h2>
-          <p className="text-lg md:text-xl text-ink/75 leading-relaxed">
-            {t("body1")}
-          </p>
-          <p className="text-lg md:text-xl text-ink/75 leading-relaxed">
-            {t("body2")}
-          </p>
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-3">
+              <span aria-hidden="true" className="h-px w-8 bg-orange-500" />
+              <span className="sp-eyebrow text-orange-500">In closing</span>
+            </div>
+          </div>
 
-          <div className="flex flex-wrap gap-4 pt-6">
-            <Button href="/contact" variant="primary" size="lg">
-              {nav("cta")} →
-            </Button>
-            <Button href="/pricing" variant="outline" size="lg">
-              {nav("pricing")}
-            </Button>
+          <div className="lg:col-span-8 space-y-10">
+            <h2 className="sp-display text-[2.5rem] md:text-[3.5rem] lg:text-[4.5rem] text-ink leading-[1.04] max-w-[20ch]">
+              {t("title")}
+            </h2>
+
+            <div className="sp-prose sp-measure-lg text-ink/75 text-lg md:text-xl">
+              <p>{t("body1")}</p>
+              <p>{t("body2")}</p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 pt-4">
+              <Button href="/contact" variant="primary" size="lg">
+                {nav("cta")} →
+              </Button>
+              <a
+                href="/services"
+                className="text-sm font-semibold text-ink hover:text-orange-500 transition-colors underline-offset-4 hover:underline"
+              >
+                {nav("services")} →
+              </a>
+            </div>
           </div>
         </motion.div>
       </Container>

@@ -15,17 +15,15 @@ const STATIC_PATHS = [
   "/services",
   "/cases",
   "/about",
-  "/pricing",
   "/contact",
   "/privacy",
 ];
 
 const LAST_MODIFIED: Record<string, string> = {
-  "/": "2026-04-19",
-  "/services": "2026-04-19",
+  "/": "2026-05-05",
+  "/services": "2026-05-05",
   "/cases": "2026-04-19",
-  "/about": "2026-04-19",
-  "/pricing": "2026-04-19",
+  "/about": "2026-05-05",
   "/contact": "2026-04-19",
   "/privacy": "2026-04-18",
   "/services/launch-video": "2026-04-19",

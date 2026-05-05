@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Container, Section } from "@/components/ui/Container";
-import { Pill } from "@/components/ui/Pill";
 import { Button } from "@/components/ui/Button";
 
 /**
@@ -69,65 +68,73 @@ export function Showcase() {
       />
 
       <Container size="full" className="relative">
-        {/* Header */}
-        <div className="max-w-4xl mb-14 md:mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
-          >
-            <Pill variant="orange" size="md" className="mb-6">
-              {t("eyebrow")}
-            </Pill>
-            <h2 className="sp-display text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1]">
+        {/* Header — editorial 12-col layout. Eyebrow column on the left,
+            big headline + lede on the right. Lots of negative space. */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-y-8 gap-x-12 mb-20 md:mb-28"
+        >
+          <div className="lg:col-span-3">
+            <div className="flex items-center gap-3">
+              <span aria-hidden="true" className="h-px w-8 bg-orange-500" />
+              <span className="sp-eyebrow text-orange-400">
+                {t("eyebrow")}
+              </span>
+            </div>
+          </div>
+
+          <div className="lg:col-span-9 space-y-8">
+            <h2 className="sp-display text-[2.5rem] md:text-[3.5rem] lg:text-[4.5rem] text-white max-w-[18ch]">
               {t.rich("title", {
                 em: (chunks) => (
-                  <span className="text-orange-500">{chunks}</span>
+                  <span className="text-orange-400 italic font-medium">
+                    {chunks}
+                  </span>
                 ),
               })}
             </h2>
-            <p className="mt-6 text-lg md:text-xl text-white/75 leading-relaxed max-w-3xl">
+            <p className="sp-lede text-white/65 max-w-2xl">
               {t("subtitle")}
             </p>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
 
         {/* Cases grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-5 lg:gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-8">
           {cases.map((c, i) => (
             <ShowcaseCard key={c.brand} c={c} index={i} />
           ))}
         </div>
 
-        {/* Bottom CTA */}
+        {/* Bottom CTA — calmer, single-row, with a thin rule above */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-14 md:mt-20 flex flex-col sm:flex-row items-start sm:items-center gap-5 justify-between"
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="mt-20 md:mt-28 pt-10 border-t border-white/10 flex flex-col lg:flex-row items-start lg:items-end gap-8 lg:gap-12 justify-between"
         >
-          <div className="space-y-1">
-            <div className="text-white/50 text-sm tracking-[0.2em] uppercase">
+          <div className="space-y-3 max-w-xl">
+            <div className="sp-eyebrow text-white/45">
               {t("ctaEyebrow")}
             </div>
-            <div className="sp-display text-2xl md:text-3xl text-white">
+            <p className="sp-display text-2xl md:text-[1.875rem] text-white leading-[1.2]">
               {t("ctaTitle")}
-            </div>
+            </p>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
             <Button href="/contact" variant="primary" size="lg">
               {t("ctaPrimary")} →
             </Button>
-            <Button
+            <a
               href="/services/launch-video"
-              variant="outline"
-              size="lg"
-              className="!text-white !border-white/30 hover:!bg-white/10"
+              className="text-sm font-semibold text-white/75 hover:text-orange-400 transition-colors underline-offset-4 hover:underline"
             >
-              {t("ctaSecondary")}
-            </Button>
+              {t("ctaSecondary")} →
+            </a>
           </div>
         </motion.div>
       </Container>

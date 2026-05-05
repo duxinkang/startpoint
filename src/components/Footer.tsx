@@ -10,7 +10,6 @@ export function Footer() {
     { href: "/services", label: t("nav.services") },
     { href: "/cases", label: t("nav.cases") },
     { href: "/about", label: t("nav.about") },
-    { href: "/pricing", label: t("nav.pricing") },
     { href: "/contact", label: t("nav.contact") },
   ] as const;
 

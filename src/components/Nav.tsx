@@ -28,7 +28,6 @@ export function Nav() {
     { href: "/services", label: t("services") },
     { href: "/cases", label: t("cases") },
     { href: "/about", label: t("about") },
-    { href: "/pricing", label: t("pricing") },
   ] as const;
 
   const toggleLocale = () => {

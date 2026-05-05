@@ -75,22 +75,157 @@
 
 html {
   scroll-behavior: smooth;
+  /* Smaller base, but body lifts back to 17px below.
+     Setting html to 16px keeps `rem` math sane while sp-* utilities
+     own the visible scale. */
+  font-size: 16px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), var(--font-body);
+  font-size: 1.0625rem;          /* 17px — editorial body */
+  line-height: 1.65;
+  letter-spacing: 0.003em;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "ss02", "cv11", "calt", "kern";
+  font-variant-ligatures: common-ligatures contextual;
 }
 
-/* Utility: big hero title - tight tracking, heavy weight */
+/* ------------------------------------------------------------------
+   Editorial typography utilities
+   Goal: consistent vertical rhythm and a calmer, more confident voice.
+   Replaces the previous "ad-headline" feel of sp-display with one
+   tuned for editorial scale (Pentagram / Linear marketing).
+------------------------------------------------------------------ */
+
+/* Display — refined, not cramped. Tight enough to feel intentional,
+   loose enough to breathe at any size.
+   `text-wrap: balance` ships in all 2024+ browsers and prevents the
+   ugly orphan-line problem in big headlines. */
 .sp-display {
   font-family: var(--font-display);
-  font-weight: 900;
-  letter-spacing: -0.025em;
-  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.018em;
+  line-height: 1.04;
+  text-wrap: balance;
+  font-feature-settings: "ss01", "ss02", "kern", "calt";
+}
+
+/* Even bigger — for hero / page H1. Slightly tighter tracking is
+   correct at this scale; the optical illusion of large type is to
+   look loose, so we compensate. */
+.sp-display-xl {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.028em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+/* Eyebrow — small, wide-tracked, uppercase. Sets the editorial tone. */
+.sp-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Lede — the first paragraph after a headline. Slightly larger and
+   looser than body, in muted ink. Limits to a comfortable measure. */
+.sp-lede {
+  font-size: 1.1875rem;          /* 19px */
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  color: color-mix(in srgb, var(--sp-ink) 72%, transparent);
+  max-width: 38em;
+  text-wrap: pretty;
+}
+
+/* Measure — caps body paragraphs to ~62 characters for legibility.
+   Apply to long paragraphs that previously stretched edge-to-edge. */
+.sp-measure {
+  max-width: 62ch;
+}
+
+.sp-measure-lg {
+  max-width: 72ch;
+}
+
+/* Tabular numerals for stat blocks — locks the digits to equal width
+   so 50+ / 30+ / 7d / 100% never visually wobble. */
+.sp-tabular {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* Hairline rule — replaces the heavy `border-t-2` we had on cards.
+   Editorial pages use 1px ink/15 dividers, not slabs. */
+.sp-rule {
+  height: 1px;
+  background: color-mix(in srgb, var(--sp-ink) 14%, transparent);
+}
+
+/* Vertical rhythm helper — applied to long-form text blocks so all
+   children share consistent spacing without hand-tuning margins. */
+.sp-prose > * + * {
+  margin-top: 1.25em;
+}
+
+.sp-prose p {
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+/* Language-aware refinements — Latin text wants slightly different
+   metrics than CJK. Apply targeted adjustments without breaking the
+   shared scale. */
+:lang(en) .sp-display {
+  letter-spacing: -0.022em;
+  line-height: 1.06;
+}
+
+:lang(en) .sp-display-xl {
+  letter-spacing: -0.034em;
+  line-height: 1.0;
+}
+
+:lang(en) body {
+  letter-spacing: 0.001em;
+  line-height: 1.65;
+}
+
+:lang(en) p {
+  line-height: 1.7;
+}
+
+:lang(zh-CN) .sp-display,
+:lang(zh) .sp-display {
+  /* CJK glyphs are intrinsically wide — keep tracking near 0
+     and rely on weight + leading for hierarchy. */
+  letter-spacing: -0.005em;
+  line-height: 1.18;
+}
+
+:lang(zh-CN) .sp-display-xl,
+:lang(zh) .sp-display-xl {
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+}
+
+:lang(zh-CN) body,
+:lang(zh) body {
+  line-height: 1.75;
+  letter-spacing: 0.012em;
+}
+
+:lang(zh-CN) p,
+:lang(zh) p {
+  line-height: 1.8;
 }
 
 /* Utility: the pill-shaped orange tag used throughout the deck */

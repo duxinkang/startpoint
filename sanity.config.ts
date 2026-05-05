@@ -42,7 +42,6 @@ export default defineConfig({
             S.documentTypeListItem("service").title("Services"),
             S.documentTypeListItem("caseStudy").title("Case studies"),
             S.documentTypeListItem("teamMember").title("Team members"),
-            S.documentTypeListItem("pricingPlan").title("Pricing plans"),
           ]),
     }),
     visionTool({ defaultApiVersion: apiVersion }),
